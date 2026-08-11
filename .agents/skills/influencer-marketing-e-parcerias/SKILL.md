@@ -1,77 +1,52 @@
 ---
 name: influencer-marketing-e-parcerias
-description: Skill de Marketing de Influência, Gifting de Luxo, Embaixadoras e Parcerias para Joalheria.
+description: Parcerias autênticas com influenciadoras, envio de mimos (gifting) e convites elegantes para semi joias.
 ---
 
-# 👑 Skill: Influencer Marketing & Parcerias de Luxo
+# Parcerias e Influencer Marketing
 
-## 🎯 Objetivo da Skill
-Orientar o mapeamento, abordagem, contratação e gestão de parcerias com influenciadoras de moda, lifestyle de luxo e formadoras de opinião, garantindo que a marca seja associada à elegância, prestígio e desejo de consumo.
+## Como construir parcerias reais com influenciadoras
+Esta habilidade mostra como escolher influenciadoras que combinam com a marca, como fazer a abordagem de forma educada e elegante e como enviar mimos (*gifting*) que dão vontade de postar espontaneamente.
 
----
-
-## 🔎 Critérios de Seleção de Embaixadoras e Creator VIPs
-
-```
-                      ┌──────────────────────────────┐
-                      │    💎 CRITÉRIOS DE SELEÇÃO   │
-                      └──────────────┬───────────────┘
-                                     │
-         ┌───────────────────────────┼───────────────────────────┐
-         ▼                           ▼                           ▼
-┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
-│  ✨ APURO ESTÉTICO│        │ 👥 AUDIÊNCIA A/B │        │ 💬 ENGAJAMENTO   │
-│  Feed limpo,     │        │  Público adulto, │        │  Comentários     │
-│  estilo elegante │        │  alta renda      │        │  qualificados    │
-└──────────────────┘        └──────────────────┘        └──────────────────┘
-```
-
-1. **Estética Alinhada ao Luxo**: O perfil da creator deve ter iluminação refinada, composição harmônica, bom gosto na escolha de figurinos e hábitos condizentes com o universo premium.
-2. **Qualidade dos Seguidores (Público A/B)**: Foco em perfis com forte presença de público feminino adulto (25-50 anos), com alto poder de compra, interesse em moda autoral, arquitetura, gastronomia de alto padrão e viagens internacionais.
-3. **Engajamento Real e Relevância**: Analisar a taxa de salvamentos, compartilhamentos e a profundidade dos comentários (evitar perfis com comentários apenas de bots ou emojis genéricos).
+O segredo do marketing de influência em semi joias não é pagar por publicidade forçada. É encontrar mulheres que realmente amem o estilo da loja e sintam orgulho de usar as peças.
 
 ---
 
-## 🎁 Estratégia de Gifting de Luxo (Recebidos VIP)
+## Como Escolher a Parceria Certa
 
-O envio de joias como presente (*gifting*) exige um ritual que desperte o desejo imediato de gravação de unboxing espontâneo.
-
-### Diretrizes para a Caixa de Gifting:
-- **Abertura Memorável**: Caixa rígida personalizada com o monograma da marca, laço de cetim e aroma de borrifação com a fragrância assinatura da joalheria.
-- **Carta Manuscrita**: Bilhete individual assinado pela fundadora/diretora criativa, citando o motivo específico de ter escolhido aquela joia para a influenciadora.
-- **Amostra de Estilo**: Enviar uma peça versátil (ex: um par de brincos ou anel ajustável) que combine perfeitamente com o estilo pessoal da presenteada.
-- **Certificado de Autenticidade**: Acompanhar o certificado do metal/pedra para reforçar a legitimidade e o valor comercial do presente.
+- **Estilo Pessoal**: O feed dela é limpo e bem cuidado? As fotos transmitem elegância?
+- **Público Feminino Real**: Veja os comentários nos posts dela. São mulheres tirando dúvidas de looks ou são apenas comentários automáticos?
+- **Proximidade com o Nicho**: Dê preferência a influenciadoras locais ou regionais de moda, beleza e estilo de vida que conversam direto com o seu público-alvo.
 
 ---
 
-## 📑 Cláusulas e Diretrizes Contratuais de Luxo
+## Como Abordar no Direct do Instagram (Mensagem Humana)
 
-Ao fechar parcerias pagas ou publieditoriais com creators, inclua no contrato:
+Evite mandar propostas prontas no estilo "Somos uma marca e queremos parceria". Fale de pessoa para pessoa:
 
-1. **Diretrizes de Captação**: Uso obrigatório de luz natural ou iluminação de estúdio; proibição de filtros excessivos do Instagram que alterem a cor real do Ouro ou das Gemas.
-2. **Cuidado no Manuseio**: Instruções para a influenciadora mostrar a peça limpa (sem marcas de maquiagem ou impressões digitais).
-3. **Exclusividade de Categoria**: Proibição de divulgar concorrentes diretos de joalheria no prazo de 30 dias antes e depois da ação.
-4. **Direitos de Uso de Imagem**: Garantia de uso do conteúdo produzido nas redes sociais e tráfego pago da joalheria por pelo menos 6 a 12 meses.
-
----
-
-## 🤝 Tipos de Parcerias Estratégicas
-
-- **Co-Branding com Marcas Complementares**: Parcerias com estilistas de vestidos de noiva, marcas de champagne premium, spas de luxo e hotelaria boutique.
-- **Embaixadoras Fixas**: Contratos anuais com 3 a 5 mulheres inspiradoras que usam as joias da marca em eventos sociais, premiações e no dia a dia.
-- **Empréstimo para Red Carpet / Editoriais**: Disponibilização de alta joalheria para capas de revistas, ensaios de moda e eventos de gala em troca de créditos destacados.
+> "Oi, [Nome da Influenciadora]! Tudo bem? 💛 
+> 
+> Acompanho seu conteúdo há um tempo e amo como você combina seus looks no dia a dia.
+> 
+> Sou a [Seu Nome], criadora da [Nome da Loja]. Nós fazemos semi joias folheadas a ouro 18k com acabamento super delicado e lembrei muito do seu estilo quando lançamos a nossa nova coleção.
+> 
+> Queremos muito te mandar um presente carinhoso, sem compromisso nenhum de postagem. Você topa receber uma caixinha no seu endereço? Se sim, me passa seu CEP ou tamanho de anel!"
 
 ---
 
-## 🤖 Prompt para Abordagem de Influenciadoras (Outreach)
+## A Caixinha do Recebido (Como Encantar)
 
-```text
-Você é a Head de Relações Públicas de uma marca de joias de luxo. Escreva uma mensagem elegante e personalizada para enviar via DM ou E-mail para uma influenciadora de estilo de luxo chamada [NOME].
+Para a influenciadora ter vontade de gravar um unboxing espontâneo nos Stories:
 
-Objetivo: Convidá-la para receber um presente exclusivo da nova coleção [NOME DA COLEÇÃO] e propor uma parceria.
+1. **Caixa Cheirosa e Bem Acabada**: Borrife o perfume da marca na fita de cetim ou no papel de seda.
+2. **Bilhete Escrito à Mão**: *"Oi, [Nome]! Preparamos esse presente pensando no seu estilo delicado. Esperamos que acompanhe você em momentos muito especiais! Com carinho, [Seu Nome]"*.
+3. **Peças Fáceis de Usar**: Envie 1 ou 2 peças versáteis (como uma argola clássica ou um colar gravatinha) que combinem com qualquer roupa.
+4. **Cupom para os Seguidores**: Ofereça um cupom personalizado (ex: `NOME10`) para ela compartilhar com a audiência caso decida postar.
 
-Requisitos:
-- Demonstre que realmente conhece o estilo dela (mencione algo recente do perfil dela).
-- Tom altamente cortês, exclusivo e sem pressão de postagem.
-- Proposta clara e direta para confirmação de endereço e preferências de joia.
-```
+---
+
+## Checklist de Envio de Parcerias
+- [ ] O estilo da influenciadora tem a ver com a proposta da marca?
+- [ ] O bilhete manuscrito foi incluído com o nome correto dela?
+- [ ] A peça foi inspecionada para garantir que o banho e o fecho estão 100% perfeitos?
+- [ ] O cupom exclusivo para os seguidores dela foi cadastrado no site?

@@ -1,106 +1,52 @@
 ---
 name: cadastro-e-gestao-de-marketplaces
-description: Skill de Cadastro Técnico, Precificação por Canal, SEO de Marketplaces e Integração ERP (Bling/Tiny) para Semi Joias.
+description: Cadastro de produtos, títulos para busca, cálculo de taxas por canal e estoque unificado para semi joias.
 ---
 
-# 🛒 Skill: Cadastro & Gestão de Marketplaces para Semi Joias
+# Cadastro e Gestão de Marketplaces
 
-## 🎯 Objetivo da Skill
-Capacitar a equipe a cadastrar, otimizar e gerenciar semi joias em múltiplos canais de venda (Mercado Livre, Shopee, TikTok Shop, Shein, Amazon, Instagram Shopping e E-commerce próprio), garantindo precificação correta por comissão de canal, títulos otimizados para cada algoritmo de busca, cumprimento das políticas dos marketplaces e sincronização de estoque via ERP.
+## Como vender em múltiplos canais sem confusão de estoque ou prejuízo em taxas
+Esta habilidade mostra como cadastrar e gerenciar semi joias no Mercado Livre, Shopee, TikTok Shop, Shein e no site próprio.
 
----
-
-## 🏛️ Matriz de Canais & Regras Específicas
-
-| Canal | Foco Principal | Estilo de Foto Recomendado | Título SEO Recomendado | Comissão Médica Est. |
-| :--- | :--- | :--- | :--- | :--- |
-| **Mercado Livre** | Busca direta e alta conversão rápida | Fundo branco puro (1000x1000px) sem marca d'água | `[Tipo de Peça] + [Material] + [Detalhe] + [Antialérgico]` | 11% a 19% + taxa fixa por item abaixo de R$ 79 |
-| **Shopee** | Volume, kits e buscas por menor preço / cupom | Foto de produto limpa com acento de cor ou selo de garantia | Palavras-chave repetidas + variações + hashtags no final | 14% a 20% (com frete grátis ativado) |
-| **TikTok Shop** | Compra por impulso via vídeos e lives | Foto de capa estilo lifestyle + vídeo curto em uso | Título curto e direto focado no benefício e tendência | 5% a 8% (taxas de introdução/promoção) |
-| **Instagram Shopping** | Vitrine visual conectada ao Meta Catalog | Foto estilo editorial / lifestyle de alta resolução | Nome do produto elegante e alinhado ao site | Integrado ao e-commerce (sem comissão direta Meta) |
-| **Shein** | Moda acessível, conjuntos e público jovem | Foto em modelo humana ou busto neutro | `[Estilo] + [Tipo de Joia] + Folheado a Ouro` | 10% a 16% |
-| **Amazon Brasil** | Clientes Prime, busca técnica e presentes | Fundo 100% branco no produto principal | `[Marca] + [Tipo] + Folheado Ouro 18k + [Gema] + [Antialérgico]` | 13% a 15% em Acessórios |
+O foco é ajustar os preços para cobrir as comissões de cada plataforma e manter o estoque integrado pelo ERP (Bling ou Tiny), evitando vender a mesma peça duas vezes.
 
 ---
 
-## 💰 Fórmula de Precificação por Canal (Mark-up com Comissões)
+## Onde Vender e Como Apresentar as Peças
 
-Como cada canal cobra uma taxa de comissão e frete diferente, o preço final deve ser calculado individualmente para manter a **mesma margem de lucro líquida** em todas as plataformas.
-
-$$\text{Preço no Canal} = \frac{\text{Preço Base Desejado (Site)} + \text{Taxa Fixa do Canal}}{1 - (\text{Comissão \%} + \text{Imposto \%} + \text{Margem Adicional \%})}$$
-
-### Exemplo Prático para Anel Folheado (Preço no Site: R$ 120,00):
-- **Custo da Peça**: R$ 30,00
-- **Margem Líquida Alvo**: R$ 60,00
-- **Preço no Mercado Livre (Comissão 16% + R$ 6,00 taxa fixa)**:
-  $$\text{Preço ML} = \frac{120 + 6}{1 - 0.16} = \frac{126}{0.84} = \text{R\$ 150,00}$$
-- **Preço na Shopee (Comissão 20%)**:
-  $$\text{Preço Shopee} = \frac{120}{1 - 0.20} = \frac{120}{0.80} = \text{R\$ 150,00}$$
+| Canal | Tipo de Foto que Funciona | Como Escrever o Título | Dica de Operação |
+| :--- | :--- | :--- | :--- |
+| **Mercado Livre** | Fundo 100% branco limpo, sem marca d'água | `[Tipo de Peça] + Folheado Ouro 18k + [Detalhe] + Antialérgico` | Responda as perguntas dos clientes em menos de 10 minutos para subir de medalha. |
+| **Shopee** | Foto clara da peça com selo "Garantia + Banho 18k" | Título com palavras-chave diretas e variações de busca | Use os cupons de frete grátis da plataforma para atração. |
+| **TikTok Shop** | Foto lifestyle + vídeo curto mostrando a peça no corpo | Título direto ao ponto ressaltando estilo | Funciona melhor com peças de preço de impulso (R$ 49 a R$ 119). |
+| **Site Próprio** | Fotos conceituais em luz natural + fotos de detalhe | Nome elegante alinhado ao branding | Canal de maior margem e onde se constrói marca própria. |
 
 ---
 
-## 📋 Ficha Técnica Padrão de Cadastro (Template de Produto)
+## Como Calcular o Preço de Venda por Canal
 
-Para cada nova semi joia, a Ficha Técnica Operacional deve conter:
+Cada marketplace cobra uma comissão diferente. Para não perder margem de lucro, calcule o preço final em cada canal usando uma conta simples:
 
-```yaml
-SKU_Pai: SJ-COL-COR-001
-Nome_Produto_Base: Colar Coração Folheado a Ouro 18k Antialérgico
-Categoria_NCM: 7117.19.00 (Bijuterias de metais comuns, mesmo folheadas)
-GTIN_EAN: 789XXXXXXXXXX (Código de Barras)
-Peso_Bruto: 0.150 kg (com embalagem)
-Dimensoes_Caixa: 15cm (C) x 11cm (L) x 6cm (A)
-Material_Base: Latão nobre de grau joalheiro
-Banho: Ouro 18k (3 a 5 mícrons)
-Pedra: Zircônia Cúbica de Lapidação Brilhante
-Garantia: 6 meses de garantia no banho
-Antialergico: Sim (Livre de Níquel)
-```
+1. Pegue o preço base que você quer receber pelo produto no seu site.
+2. Adicione as taxas fixas da plataforma (ex: R$ 6,00 do Mercado Livre para itens abaixo de R$ 79).
+3. Ajuste o valor final dividindo pelo percentual restante após a comissão da plataforma.
+
+*Exemplo*: Se você quer receber R$ 100 líquidos numa peça e o canal cobra 20% de comissão, o preço anunciado deve ser R$ 125,00.
 
 ---
 
-## ⚙️ Sincronização via ERP (Bling / Tiny)
+## Sincronização de Estoque via ERP (Bling ou Tiny)
 
-Para cadastrar em **todos os marketplaces simultaneamente** sem retrabalho:
+Para não precisar atualizar estoque manualmente em cada site:
 
-```
-                  ┌───────────────────────────────┐
-                  │   📦 CADASTRO ÚNICO NO ERP   │
-                  │        (Bling ou Tiny)        │
-                  └──────────────┬────────────────┘
-                                 │
-     ┌───────────────────────────┼───────────────────────────┐
-     ▼                           ▼                           ▼
-┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
-│  🛍️ NUVEMSHOP /  │    │  💛 MERCADO LIVRE│    │  🧡 SHOPEE       │
-│     SHOPIFY      │    │  (Exportação)    │    │  (Exportação)    │
-└──────────────────┘    └──────────────────┘    └──────────────────┘
-     │                           │                           │
-     ▼                           ▼                           ▼
-┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
-│ 📸 INSTA SHOPPING│    │ 🎵 TIKTOK SHOP   │    │ 📦 SHEIN / AMAZON│
-└──────────────────┘    └──────────────────┘    └──────────────────┘
-```
-
-1. **Cadastrar 1x no ERP**: Título base, especificações técnicas, NCM, fotos em alta resolução, estoque físico.
-2. **Configurar Regras de Preço**: Aplicar acréscimo percentual automático no ERP por categoria de canal (ex: +15% para Mercado Livre, +18% para Shopee).
-3. **Mapeamento de Categorias**: Associar a categoria do ERP à árvore de categorias oficial de cada marketplace.
-4. **Sincronização Ativa**: Estoque atualizado automaticamente — se vendeu 1 peça na Shopee, o ERP baixa o estoque do site e do Mercado Livre na hora.
+1. **Cadastre a peça 1 única vez no ERP**: Coloque as especificações (peso, tamanho da caixa, material, foto e código de barras).
+2. **Defina regras de preço automático**: Configure o ERP para aplicar +15% no Mercado Livre e +18% na Shopee sobre o preço base do site.
+3. **Ative o controle de estoque unificado**: Quando sair 1 venda na Shopee, o ERP reduz o estoque do Mercado Livre e do site na mesma hora.
 
 ---
 
-## 🤖 Prompt de Suporte para Cadastro em Marketplaces
-
-```text
-Você é o Gestor de E-commerce e Marketplaces de uma loja de semi joias. 
-Receba as informações do produto abaixo e gere:
-
-1. Título otimizado para Mercado Livre (máx 60 caracteres, focado em busca).
-2. Título otimizado para Shopee (com palavras-chave e hashtags).
-3. Título otimizado para TikTok Shop (curto e com apelo visual).
-4. Tabela de Atributos da Ficha Técnica (Material, Banho, Gema, NCM, Dimensoes).
-5. Preço sugerido para cada canal considerando as comissões padrão.
-
-Produto a cadastrar:
-[Nome e detalhes da peça]
-```
+## Checklist de Cadastro de Novo Produto
+- [ ] O título inclui as palavras que as clientes buscam (*"folheado a ouro 18k"*, *"antialérgico"*, *"zircônia"*)?
+- [ ] A ficha técnica está completa com peso e dimensões corretas da embalagem?
+- [ ] As fotos estão nítidas e sem sombras escuras?
+- [ ] O preço está ajustado de acordo com a taxa específica do canal?

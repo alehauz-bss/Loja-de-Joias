@@ -1,85 +1,51 @@
 ---
 name: social-media-e-conteudo-visual
-description: Skill de Gestão de Redes Sociais, Direção de Fotografia Macro e Conteúdo Visual para Joias.
+description: Estratégia visual, ideias de Reels, fotografia real de peças e curadoria de feed para semi joias.
 ---
 
-# 📸 Skill: Social Media & Conteúdo Visual para Joalheria
+# Social Media e Conteúdo Visual
 
-## 🎯 Objetivo da Skill
-Definir a estratégia de conteúdo visual e curadoria para redes sociais (Instagram, TikTok, Pinterest), estabelecendo diretrizes estéticas rigorosas para fotos e vídeos de joias que capturem a refração da luz, os detalhes da cravação e o apelo tátil do luxo.
+## Como criar conteúdo visual que gera desejo
+Esta habilidade orienta a produção de fotos, Reels e Stories que mostram o brilho real das semi joias, ensinam a combinar peças e transformam seguidores em clientes ativas.
 
----
-
-## 💡 Pilares de Conteúdo para Redes Sociais
-
-```
-                  ┌───────────────────────────────┐
-                  │ 👑 BRANDING & ATEMPORALIDADE │
-                  │  (Desfile, Ensaio, Conceito)   │
-                  └──────────────┬────────────────┘
-                                 │
-     ┌───────────────────────────┴───────────────────────────┐
-     ▼                                                       ▼
-┌──────────────────────────┐                           ┌──────────────────────────┐
-│ 💎 PRODUTO & CRAFTSMANSHIP│                           │ 🎁 DESEJO & ESTILO DE VIDA│
-│  Macro, Pedras, Bastidores│                           │  Mix de Joias, Unboxing  │
-└──────────────────────────┘                           └──────────────────────────┘
-```
-
-1. **Branding & Conceito (20%)**: Produções editoriais com modelos, conceito da coleção e vídeos cinematográficos de alto apelo estético.
-2. **Craftsmanship & Detalhes (40%)**: Vídeos em macro 4K mostrando a lapidação dos diamantes, a chama da solda no atelier, o polimento do ouro e o brilho sob a luz natural.
-3. **Estilo de Vida & Mix de Joias (30%)**: Inspirações de "Jewelry Stacking" (combinação de vários anéis ou pulseiras), lookbooks para eventos sociais e sugestões de presentes.
-4. **Educação & Autoridade (10%)**: Como cuidar da joia, diferenças entre Ouro 18k e 10k, significados das gemas naturais e guia de medidas.
+O objetivo é ter um perfil vivo, bonito e com cara de marca desejável — sem parecer banco de imagem genérico ou catálogo frio.
 
 ---
 
-## 🎥 Roteiros de Vídeos Curtos (Reels / TikTok)
+## 4 Tipos de Conteúdo para o Feed e Reels
 
-### Roteiro 1: "O Efeito Macro" (Foco em Produto - Alta Conversão)
-- **0.0 - 0.2s**: Close extremo (macro lens) em um diamante refletindo fachos de luz brilhantes.
-- **0.2 - 0.5s**: Transição suave para a mão de uma modelo vestindo o anel ao ajustar o cabelo.
-- **0.5 - 0.8s**: Mostra o anel em movimento em um fundo neutro de seda ou veludo.
-- **Legenda**: "A perfeição existe nos mínimos detalhes. Anel em Ouro 18k com pavê de diamantes."
-- **Áudio**: Instrumental elegante ou ASMR do toque suave da caixa de veludo abrindo.
-
-### Roteiro 2: "Como Montar o Ring Stack Perfeito" (Conteúdo de Valor / Desejo)
-- **0.0 - 0.3s**: Início com a mão sem anéis + texto na tela: *"3 regras para combinar anéis com elegância"*.
-- **0.3 - 0.6s**: Adiciona primeiro a peça imponente (Anel Solitário ou com Gema).
-- **0.6 - 0.9s**: Adiciona alianças aparadoras finas para complementar.
-- **0.9 - 1.2s**: Finaliza com o resultado brilhante e sorrisos leves.
+1. **O Brilho da Peça em Movimento (40%)**: Vídeos curtos (5 a 10 segundos) mostrando o reflexo da luz na zircônia, o ajuste do colar no pescoço ou o balanço dos brincos. Joia é movimento.
+2. **Combinações de Look e "Mix de Peças" (30%)**: Tutoriais rápidos de como fazer camadas de colares (mix de correntes) ou como combinar vários anéis e brincos numa só orelha.
+3. **Bastidores e Experiência de Compra (20%)**: Mostrando a preparação dos pedidos, a caixa sendo perfumada, a escrita dos bilhetes e os novos modelos chegando do banho.
+4. **Dicas de Cuidados e Uso (10%)**: Como limpar a peça em casa, como aplicar perfume sem danificar o banho e como guardar sem embolar a corrente.
 
 ---
 
-## 📷 Diretrizes de Fotografia Macro e Captação
+## Roteiros Práticos para Reels (Vídeos Curtos)
 
-| Parâmetro | Diretriz Técnica para Joias |
-| :--- | :--- |
-| **Iluminação** | Luz difusa contínua com rebatedores brancos e refletores pontuais focados nas gemas para criar o efeito "sparkle" (faiscação). Evitar flash direto que estoura metais polidos. |
-| **Lente / Equipamento** | Lentes Macro dedicadas (ex: 90mm f/2.8 ou 100mm Macro) ou smartphones de última geração com modo macro manual travado no foco correto. |
-| **Superfícies & Fundos** | Mármore branco/negro, veludo italiano, seda creme, linho cru, pedestais geométricos neutros. |
-| **Limpeza da Peça** | **Obrigatório**: Limpar todas as joias com flanela de microfibra e álcool isopropílico antes da gravação para eliminar marcas de dedos e poeira. |
+### Roteiro 1: "O Toque Final do Look" (5 segundos)
+- **Cena**: Comece com a pessoa vestindo uma camiseta branca simples ou blazer. Em seguida, adicione o colar ou brinco em close suave.
+- **Áudio**: Música suave e inspiradora ou áudio em alta no Instagram.
+- **Legenda**: "Aquele básico que deixa de ser básico em 3 segundos. Colar folheado a ouro 18k com zircônias. Link no perfil!"
 
----
-
-## 📌 Estratégia por Plataforma
-
-- **Instagram**: Feed como vitrine conceitual e impecável; Stories para mostrar bastidores, atendimento personalizado e reposição de estoque; Reels para alcance de novos clientes.
-- **Pinterest**: Canal essencial de busca para noivas, inspirações de anel de noivado e presentes de luxo. Todas as fotos devem conter links diretos para o e-commerce.
-- **TikTok**: Conteúdo humanizado, rotina do atelier de ourivesaria, ASMR de embalagem de pacotes VIP e dicas de estilo.
+### Roteiro 2: "Como Montar seu Mix de Brincos" (15 segundos)
+- **Cena**: Colocando o primeiro furo (argola maior), depois o segundo furo (ponto de luz) e o piercing de pressão.
+- **Texto na tela**: "Combinação sem mistério: 1º furo + 2º furo + piercing fake."
+- **Legenda**: "Qual o seu mix favorito? Todos disponíveis no site!"
 
 ---
 
-## 🤖 Prompt para Planejamento de Calendário Editorial
+## Dicas Rápidas para Fotografar Joias no Celular
 
-```text
-Você é o Social Media Manager de uma marca de joias de alta gama. Elabore uma grade de conteúdo para 1 semana no Instagram (3 posts de feed/Reels + 5 sequências de Stories por dia).
+- **Luz Natural é Tudo**: Fotografe perto de uma janela durante o dia. Evite o flash do celular, que cria reflexos estourados no metal.
+- **Pano de Microfibra Sem Mão**: Antes de gravar ou fotografar, passe uma flanela limpa na peça para tirar marcas de dedo e poeira.
+- **Fundos Naturais**: Use fundos neutros como linho cru, superfícies claras, mármore ou tecidos leves em tons de creme.
+- **Modelos Reais**: Mostre a peça na pele (mãos bem cuidadas, pescoço, orelha). Joia no corpo vende 5 vezes mais do que peça parada na mesa.
 
-A marca foca em: [Anéis de noivado / Joias casuais de luxo / Peças com pedras preciosas naturais].
-Objetivo da semana: [Lançamento da Coleção de Outono / Campanha de Dia dos Namorados].
+---
 
-Para cada publicação, forneça:
-1. Formato (Reels, Carrossel, Foto Estática).
-2. Conceito visual e direção de cena (luz, fundo, modelo).
-3. Copy da legenda e hashtags estratégicas de luxo.
-4. Sugestão de áudio ou efeito sonoro.
-```
+## Como Dividir a Atuação por Rede
+
+- **Instagram**: Feed como vitrine principal da marca; Stories diários para conversar com as clientes, mostrar detalhes e fechar vendas no direct.
+- **TikTok**: Vídeos curtos mais espontâneos (unboxing, perrengues engraçados de montagem de look, bastidores do dia a dia).
+- **Pinterest**: Postar fotos de alta qualidade de mix de joias com links diretos para o site.

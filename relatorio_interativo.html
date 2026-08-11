@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="esmeralda">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Joias — Plataforma Executiva Interativa</title>
+    <title>Hub Joias — Relatório Executivo & Plataforma Interativa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
-        :root {
-            --bg-dark: #080d0b;
-            --card-bg: rgba(14, 24, 20, 0.85);
+        /* ==========================================================================
+           CORE DESIGN SYSTEM & THEME TOKENS (3 DYNAMIC MODELS)
+           ========================================================================== */
+        
+        /* MODELO 1: ESMERALDA & OURO IMPERIAL (DEFAULT DARK) */
+        [data-theme="esmeralda"] {
+            --bg-dark: #070c0a;
+            --card-bg: rgba(14, 26, 21, 0.85);
             --card-border: rgba(212, 175, 55, 0.25);
             --primary-emerald: #063826;
             --accent-gold: #d4af37;
@@ -18,33 +24,114 @@
             --text-main: #f0f4f2;
             --text-muted: #9ab0a6;
             --glow: 0 0 25px rgba(212, 175, 55, 0.2);
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --header-bg: rgba(7, 12, 10, 0.92);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
+        /* MODELO 2: MINIMALISTA NUDE & ROSÉ GOLD (LIGHT MODE EDITORIAL) */
+        [data-theme="minimalista"] {
+            --bg-dark: #faf7f2;
+            --card-bg: #ffffff;
+            --card-border: #eee5d8;
+            --primary-emerald: #f3dcd3;
+            --accent-gold: #d68c78;
+            --accent-gold-light: #4a2d20;
+            --text-main: #1f1d1a;
+            --text-muted: #7a7369;
+            --glow: 0 10px 30px rgba(214, 140, 120, 0.12);
+            --font-head: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+            --header-bg: rgba(250, 247, 242, 0.95);
         }
+
+        /* MODELO 3: CYBER LUXURY 3D (HIGH-TECH DARK WEBGL) */
+        [data-theme="cyber3d"] {
+            --bg-dark: #080a0f;
+            --card-bg: rgba(18, 24, 38, 0.8);
+            --card-border: rgba(255, 184, 0, 0.3);
+            --primary-emerald: #00e699;
+            --accent-gold: #ffb800;
+            --accent-gold-light: #ffffff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glow: 0 0 30px rgba(255, 184, 0, 0.3);
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --header-bg: rgba(8, 10, 15, 0.92);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s ease, border-color 0.3s ease; }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(6, 56, 38, 0.4) 0%, transparent 45%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            background-attachment: fixed;
+            font-family: var(--font-body);
             min-height: 100vh;
             padding-bottom: 60px;
         }
 
-        h1, h2, h3, h4, .serif {
-            font-family: 'Playfair Display', serif;
+        /* 3D Background Canvas */
+        #bg-canvas-3d {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            display: none;
+        }
+
+        [data-theme="cyber3d"] #bg-canvas-3d { display: block; }
+
+        h1, h2, h3, h4, .serif { font-family: var(--font-head); }
+
+        /* Theme Switcher Bar */
+        .theme-switcher-bar {
+            background: linear-gradient(90deg, #111722, #18202c);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            z-index: 101;
+            position: relative;
+        }
+
+        .theme-switcher-bar label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ccc;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .theme-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+
+        .theme-btn.active {
+            background: linear-gradient(135deg, #d4af37, #f3e5ab);
+            color: #000;
+            border-color: #d4af37;
+            font-weight: 800;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         header {
             border-bottom: 1px solid var(--card-border);
-            background: rgba(8, 13, 11, 0.9);
+            background: var(--header-bg);
             backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
@@ -55,81 +142,82 @@
             align-items: center;
         }
 
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        .brand-logo { display: flex; align-items: center; gap: 14px; }
         .brand-logo .icon {
-            width: 42px;
-            height: 42px;
+            width: 44px; height: 44px;
             background: linear-gradient(135deg, var(--accent-gold), var(--primary-emerald));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            box-shadow: var(--glow);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; box-shadow: var(--glow);
         }
 
-        .brand-logo h1 {
-            font-size: 22px;
-            color: #fff;
-            letter-spacing: 0.5px;
-        }
+        .brand-logo h1 { font-size: 22px; color: var(--text-main); }
+        .brand-logo span { color: var(--accent-gold); }
 
-        .brand-logo span {
-            color: var(--accent-gold);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
 
         .btn-online-guide {
             background: rgba(212, 175, 55, 0.15);
             border: 1px solid var(--accent-gold);
-            color: var(--accent-gold-light);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
+            color: var(--accent-gold);
+            padding: 8px 16px; border-radius: 20px;
+            font-size: 13px; font-weight: 600; cursor: pointer;
             transition: all 0.2s ease;
-            display: flex;
+        }
+
+        .btn-online-guide:hover { background: var(--accent-gold); color: #000; }
+
+        .container { max-width: 1350px; margin: 0 auto; padding: 30px 20px; }
+
+        /* 3D WebGL Hero Canvas Container (Only visible in Cyber 3D mode) */
+        .hero-3d-wrapper {
+            display: none;
+            background: linear-gradient(135deg, rgba(18, 24, 38, 0.95), rgba(8, 10, 15, 0.95));
+            border: 1px solid var(--accent-gold);
+            border-radius: 24px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--glow);
+        }
+
+        [data-theme="cyber3d"] .hero-3d-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 25px;
             align-items: center;
-            gap: 6px;
         }
 
-        .btn-online-guide:hover {
-            background: var(--accent-gold);
-            color: var(--bg-dark);
+        .canvas-3d-box {
+            width: 100%; height: 210px;
+            background: radial-gradient(circle at center, rgba(255, 184, 0, 0.15), rgba(8, 10, 15, 0.9));
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            position: relative;
+            cursor: grab;
+            overflow: hidden;
         }
 
-        .container {
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 30px 20px;
+        .canvas-3d-box label {
+            position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+            font-size: 11px; color: var(--primary-emerald); font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; pointer-events: none;
         }
 
-        /* Metrics Grid */
+        /* Metrics Grid & 3D Tilt Cards */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 18px;
-            margin-bottom: 35px;
+            gap: 18px; margin-bottom: 35px;
         }
 
         .metric-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 22px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            border-radius: 18px; padding: 22px;
+            transition: transform 0.15s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(12px);
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
 
         .metric-card:hover {
@@ -139,414 +227,152 @@
         }
 
         .metric-card .value {
-            font-size: 34px;
-            font-weight: 700;
-            color: var(--accent-gold-light);
-            margin-bottom: 4px;
-            font-family: 'Playfair Display', serif;
+            font-size: 36px; font-weight: 700;
+            color: var(--accent-gold);
+            font-family: var(--font-head);
         }
 
-        .metric-card .label {
-            font-size: 13px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .metric-card .subtext {
-            font-size: 12px;
-            color: #6a8578;
-            margin-top: 8px;
-        }
+        .metric-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-weight: 600; }
+        .metric-card .subtext { font-size: 12px; color: var(--text-muted); opacity: 0.8; margin-top: 6px; }
 
         /* Navigation Tabs */
         .tabs-nav {
-            display: flex;
-            gap: 10px;
-            border-bottom: 1px solid var(--card-border);
-            margin-bottom: 30px;
-            overflow-x: auto;
-            padding-bottom: 10px;
+            display: flex; gap: 10px; border-bottom: 1px solid var(--card-border);
+            margin-bottom: 30px; overflow-x: auto; padding-bottom: 10px;
         }
 
         .tab-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            white-space: nowrap;
+            background: transparent; border: none; color: var(--text-muted);
+            padding: 12px 20px; font-size: 14px; font-weight: 500;
+            cursor: pointer; border-radius: 10px; transition: all 0.2s ease; white-space: nowrap;
         }
 
-        .tab-btn:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.05);
-        }
+        .tab-btn:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
 
         .tab-btn.active {
-            color: var(--bg-dark);
+            color: #000;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-            font-weight: 600;
-            box-shadow: var(--glow);
+            font-weight: 700; box-shadow: var(--glow);
         }
 
-        /* Tab Contents */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Section Layouts */
         .card-panel {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 20px; padding: 30px; margin-bottom: 30px; backdrop-filter: blur(14px);
+        }
+
+        .card-panel h2 { font-size: 24px; color: var(--text-main); margin-bottom: 15px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
+
+        .interactive-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(12px);
+            border-radius: 16px; padding: 22px;
+            transition: transform 0.15s ease, border-color 0.3s ease;
+            display: flex; flex-direction: column; justify-content: space-between;
+            transform-style: preserve-3d; perspective: 1000px;
         }
 
-        .card-panel h2 {
-            font-size: 24px;
-            color: var(--accent-gold-light);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .interactive-card:hover { border-color: var(--accent-gold); transform: translateY(-4px); box-shadow: var(--glow); }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 20px;
-        }
-
-        @media (max-width: 850px) {
-            .grid-2 { grid-template-columns: 1fr; }
-        }
-
-        /* Interactive Cards with Action Button */
-        .interactive-card {
-            background: rgba(6, 30, 22, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 14px;
-            padding: 22px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .interactive-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-3px);
-            box-shadow: var(--glow);
-        }
-
-        .interactive-card .header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 12px;
-        }
-
+        .interactive-card .header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
         .interactive-card .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary-emerald);
-            border: 1px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
+            width: 46px; height: 46px; border-radius: 50%;
+            background: var(--primary-emerald); border: 1px solid var(--accent-gold);
+            display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
         }
 
-        .interactive-card .title {
-            font-size: 17px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .interactive-card .subtitle {
-            font-size: 12px;
-            color: var(--accent-gold);
-        }
-
-        .interactive-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 16px;
-        }
+        .interactive-card .title { font-size: 17px; font-weight: 700; color: var(--text-main); }
+        .interactive-card .subtitle { font-size: 12px; color: var(--accent-gold); font-weight: 600; }
+        .interactive-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
 
         .btn-view-details {
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold-light);
-            padding: 9px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-            width: 100%;
-            margin-top: auto;
+            background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-gold);
+            color: var(--accent-gold); padding: 9px 14px; border-radius: 8px;
+            font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+            text-align: center; width: 100%; margin-top: auto;
         }
 
-        .btn-view-details:hover {
-            background: var(--accent-gold);
-            color: var(--bg-dark);
-        }
+        .btn-view-details:hover { background: var(--accent-gold); color: #000; }
 
-        /* Campaign Visual Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; }
+        th { color: var(--accent-gold); font-weight: 600; background: rgba(255, 255, 255, 0.02); }
+        tr:hover td { background: rgba(212, 175, 55, 0.04); }
 
-        .gallery-item {
-            background: #000;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-gold);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item .info {
-            padding: 14px;
-            background: rgba(10, 18, 14, 0.95);
-        }
-
-        .gallery-item .title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-
-        .gallery-item .desc {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* Calculator Controls */
-        .calc-box {
-            background: rgba(4, 20, 14, 0.8);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
+        .calc-box { background: rgba(0, 0, 0, 0.2); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
         .form-group input {
-            width: 100%;
-            background: #080f0c;
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 15px;
+            width: 100%; background: var(--bg-dark); border: 1px solid var(--card-border);
+            color: var(--text-main); padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 700;
         }
 
         .calc-result {
-            background: linear-gradient(135deg, rgba(6, 56, 38, 0.8), rgba(212, 175, 55, 0.15));
-            border: 1px solid var(--accent-gold);
-            border-radius: 14px;
-            padding: 25px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-emerald), rgba(212, 175, 55, 0.15));
+            border: 1px solid var(--accent-gold); border-radius: 14px; padding: 25px; text-align: center;
         }
 
-        .calc-result .price-final {
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--accent-gold-light);
-            font-family: 'Playfair Display', serif;
-            margin: 10px 0;
-        }
+        .calc-result .price-final { font-size: 42px; font-weight: 700; color: var(--accent-gold); font-family: var(--font-head); margin: 10px 0; }
 
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 14px;
-        }
-
-        th {
-            color: var(--accent-gold);
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        tr:hover td {
-            background: rgba(212, 175, 55, 0.04);
-        }
-
-        /* Glassmorphism Modal */
+        /* Modal Overlay */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(4, 10, 8, 0.85);
-            backdrop-filter: blur(12px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(4, 10, 8, 0.85); backdrop-filter: blur(12px);
+            display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px;
         }
 
-        .modal-overlay.active {
-            display: flex;
-            animation: modalFade 0.3s ease;
-        }
-
-        @keyframes modalFade {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        .modal-overlay.active { display: flex; animation: modalFade 0.3s ease; }
+        @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
 
         .modal-box {
-            background: #0b1411;
-            border: 1px solid var(--accent-gold);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 850px;
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-            overflow: hidden;
+            background: var(--bg-dark); border: 1px solid var(--accent-gold);
+            border-radius: 20px; width: 100%; max-width: 850px; max-height: 85vh;
+            display: flex; flex-direction: column; box-shadow: var(--glow); overflow: hidden;
         }
 
         .modal-header {
-            padding: 20px 25px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(6, 30, 22, 0.9);
+            padding: 20px 25px; border-bottom: 1px solid var(--card-border);
+            display: flex; justify-content: space-between; align-items: center; background: var(--card-bg);
         }
 
-        .modal-header h3 {
-            font-size: 20px;
-            color: var(--accent-gold-light);
-        }
+        .modal-header h3 { font-size: 20px; color: var(--accent-gold); }
+        .modal-close { background: transparent; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; }
+        .modal-close:hover { color: var(--text-main); }
 
-        .modal-close {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            color: #fff;
-        }
-
-        .modal-body {
-            padding: 25px;
-            overflow-y: auto;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #d1ded8;
-        }
-
+        .modal-body { padding: 25px; overflow-y: auto; font-size: 14px; line-height: 1.7; color: var(--text-main); }
         .modal-body pre {
-            background: #040907;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 16px;
-            border-radius: 10px;
-            overflow-x: auto;
-            font-family: monospace;
-            font-size: 13px;
-            color: #92e6b7;
-            margin: 15px 0;
-            white-space: pre-wrap;
-        }
-
-        .modal-body h4 {
-            color: var(--accent-gold);
-            margin: 18px 0 8px 0;
-            font-size: 16px;
-        }
-
-        .btn-copy {
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold-light);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            float: right;
-            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--card-border);
+            padding: 16px; border-radius: 10px; overflow-x: auto; font-family: monospace; font-size: 13px; color: #92e6b7; margin: 15px 0; white-space: pre-wrap;
         }
     </style>
 </head>
-<body>
+<body data-theme="esmeralda">
 
+    <!-- 3D Particle Background Canvas (Active in Cyber 3D theme) -->
+    <canvas id="bg-canvas-3d"></canvas>
+
+    <!-- Theme Switcher Bar -->
+    <div class="theme-switcher-bar">
+        <label>🎨 Selecionar Design do Relatório:</label>
+        <button class="theme-btn active" id="btn-theme-esmeralda" onclick="setTheme('esmeralda')">👑 Modelo 1: Esmeralda Imperial</button>
+        <button class="theme-btn" id="btn-theme-minimalista" onclick="setTheme('minimalista')">🌸 Modelo 2: Minimalista Nude</button>
+        <button class="theme-btn" id="btn-theme-cyber3d" onclick="setTheme('cyber3d')">⚡ Modelo 3: Cyber Luxury 3D</button>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="brand-logo">
             <div class="icon">💎</div>
             <div>
-                <h1>HUB JOIAS <span>. Dashboard Executivo & Documentação</span></h1>
+                <h1>HUB JOIAS <span>. Dashboard Executivo & Relatório</span></h1>
             </div>
         </div>
         <div class="header-actions">
@@ -556,17 +382,28 @@
 
     <div class="container">
 
-        <!-- Metrics Grid -->
+        <!-- 3D Hero Jewelry Display (Active in Cyber 3D theme) -->
+        <div class="hero-3d-wrapper">
+            <div>
+                <h2 style="font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 10px;">Motor 3D WebGL em Tempo Real</h2>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Esta visualização 3D utiliza a GPU do seu computador para renderizar em 60 FPS o anel de ouro 18k e o diamante com iluminação reflexiva. Arraste a joia com o cursor!</p>
+            </div>
+            <div class="canvas-3d-box" id="jewelry-3d-container">
+                <label>Arraste para girar a joia 3D ↺</label>
+            </div>
+        </div>
+
+        <!-- Metrics Grid (3D Tilt Cards) -->
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="value">328</div>
                 <div class="label">Produtos Catalogados</div>
-                <div class="subtext">Anéis, Brincos, Colares, Pulseiras, etc.</div>
+                <div class="subtext">Anéis, Brincos, Colares, Pulseiras</div>
             </div>
             <div class="metric-card">
                 <div class="value">1.312</div>
-                <div class="label">Ativos no Catálogo</div>
-                <div class="subtext">Fotos Still, Fotos Hover, JSONs e TXTs</div>
+                <div class="label">Ativos Digitais</div>
+                <div class="subtext">Fotos Still, Hover, JSONs, TXTs</div>
             </div>
             <div class="metric-card">
                 <div class="value">8</div>
@@ -574,8 +411,8 @@
                 <div class="subtext">Equipe de Marketing Especializada</div>
             </div>
             <div class="metric-card">
-                <div class="value">12</div>
-                <div class="label">Playbooks & Skills</div>
+                <div class="value">13</div>
+                <div class="label">Skills & Playbooks</div>
                 <div class="subtext">Estratégias e scripts operacionais</div>
             </div>
             <div class="metric-card">
@@ -590,7 +427,7 @@
             <button class="tab-btn active" onclick="switchTab('tab-visao-geral')">📊 Visão Geral & Quantificação</button>
             <button class="tab-btn" onclick="switchTab('tab-catalogo')">💎 Catálogo (328 SKUs)</button>
             <button class="tab-btn" onclick="switchTab('tab-agentes')">👥 Equipe de Agentes (8)</button>
-            <button class="tab-btn" onclick="switchTab('tab-skills')">📚 Matriz de Skills (12)</button>
+            <button class="tab-btn" onclick="switchTab('tab-skills')">📚 Matriz de Skills (13)</button>
             <button class="tab-btn" onclick="switchTab('tab-campanha')">🌸 Lançamento Dia das Mães</button>
             <button class="tab-btn" onclick="switchTab('tab-operacao')">📋 Plano Operacional</button>
             <button class="tab-btn" onclick="switchTab('tab-precificacao')">🧮 Calculadora de Preços</button>
@@ -606,7 +443,7 @@
 
                 <div class="grid-2">
                     <div>
-                        <h3 style="color: #fff; margin-bottom: 12px;">📊 Quantificação dos Ativos Gerados</h3>
+                        <h3 style="color: var(--text-main); margin-bottom: 12px;">📊 Quantificação dos Ativos Gerados</h3>
                         <table>
                             <thead>
                                 <tr>
@@ -633,8 +470,8 @@
                                 </tr>
                                 <tr>
                                     <td><strong>Skills & Playbooks</strong></td>
-                                    <td>12 Matrizes</td>
-                                    <td>Manual de marca, roteiros de Reels, scripts de WhatsApp, taxas e comissões</td>
+                                    <td>13 Matrizes</td>
+                                    <td>Manual de marca, roteiros de Reels, scripts de WhatsApp, tráfego pago máster, criador de skills</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Campanhas</strong></td>
@@ -646,8 +483,8 @@
                     </div>
 
                     <div>
-                        <h3 style="color: #fff; margin-bottom: 12px;">🛡️ Pilares Operacionais Confirmados (Hub Joias)</h3>
-                        <div style="background: rgba(6, 30, 22, 0.6); padding: 18px; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <h3 style="color: var(--text-main); margin-bottom: 12px;">🛡️ Pilares Operacionais Confirmados (Hub Joias)</h3>
+                        <div style="background: rgba(0,0,0,0.2); padding: 18px; border-radius: 12px; border: 1px solid var(--card-border);">
                             <p style="margin-bottom: 10px;">✨ <strong>Qualidade e Garantia</strong>: Banho em Ouro 24K (10 milésimos), Ródio legítimo e Prata 925 maciça com tecnologia antialérgica e 2 anos de garantia.</p>
                             <p style="margin-bottom: 10px;">⚡ <strong>Logística Dropshipping</strong>: Despacho em até 24 horas úteis diretamente ao cliente final sem necessidade de estoque próprio.</p>
                             <p style="margin-bottom: 10px;">📦 <strong>Kit de Valor Percebido</strong>: Embalagem presenteável, caixinha de veludo esmeralda e cartão personalizado inclusos.</p>
@@ -739,7 +576,7 @@
         <div id="tab-agentes" class="tab-content">
             <div class="card-panel">
                 <h2>👥 Equipe de Agentes Autônomos de Marketing</h2>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Clique em qualquer agente para visualizar seu perfil completo, responsabilidades e System Prompt.</p>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Clique em qualquer agente para visualizar seu perfil completo e responsabilidades.</p>
 
                 <div class="grid-2">
                     <div class="interactive-card">
@@ -832,7 +669,7 @@
         <!-- TAB 4: SKILLS -->
         <div id="tab-skills" class="tab-content">
             <div class="card-panel">
-                <h2>📚 Matriz de 12 Skills Specialists</h2>
+                <h2>📚 Matriz de 13 Skills Specialists</h2>
                 <p style="color: var(--text-muted); margin-bottom: 20px;">Clique em qualquer skill para abrir seu manual completo de execução.</p>
 
                 <div class="grid-3">
@@ -844,7 +681,7 @@
 
                     <div class="interactive-card">
                         <div class="title">02. Branding & Posicionamento</div>
-                        <p>Paleta verde esmeralda e dourado, tipografia elegante e autoridade.</p>
+                        <p>Paleta elegante, tipografia e experiência de embalagem perfumada.</p>
                         <button class="btn-view-details" onclick="openModal('skill-02')">📖 Abrir Playbook</button>
                     </div>
 
@@ -856,13 +693,13 @@
 
                     <div class="interactive-card">
                         <div class="title">04. Social Media & Visual</div>
-                        <p>Fotografia macro de zircônias, iluminação difusa e Reels de alto impacto.</p>
+                        <p>Fotografia macro em luz natural e Reels de alto impacto.</p>
                         <button class="btn-view-details" onclick="openModal('skill-04')">📖 Abrir Playbook</button>
                     </div>
 
                     <div class="interactive-card">
-                        <div class="title">05. Tráfego Pago & Performance</div>
-                        <p>Públicos de interesse em moda/acessórios e campanhas CBO no Meta Ads.</p>
+                        <div class="title">05. Tráfego Pago Máster</div>
+                        <p>Google Ads (Search/PMax) e Meta Ads Advantage+ com criativos de alta conversão.</p>
                         <button class="btn-view-details" onclick="openModal('skill-05')">📖 Abrir Playbook</button>
                     </div>
 
@@ -874,13 +711,13 @@
 
                     <div class="interactive-card">
                         <div class="title">07. Atendimento WhatsApp</div>
-                        <p>Scripts humanizados de conversão e contorno de objeções de frete.</p>
+                        <p>Scripts humanizados de conversão de balcão e contorno de objeções.</p>
                         <button class="btn-view-details" onclick="openModal('skill-07')">📖 Abrir Playbook</button>
                     </div>
 
                     <div class="interactive-card">
                         <div class="title">08. Reviews & Prova Social</div>
-                        <p>Estratégia de UGC (Conteúdo Gerado pelo Cliente) e avaliações.</p>
+                        <p>Estratégia de UGC (Fotos de clientes reais) e reputação digital.</p>
                         <button class="btn-view-details" onclick="openModal('skill-08')">📖 Abrir Playbook</button>
                     </div>
 
@@ -888,6 +725,12 @@
                         <div class="title">09. Marketplaces & ERP</div>
                         <p>Cálculo de margem por comissão de canal (ML, Shopee, TikTok Shop).</p>
                         <button class="btn-view-details" onclick="openModal('skill-09')">📖 Abrir Playbook</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="title">13. Criador de Skills</div>
+                        <p>Geração e padronização autônoma de novas habilidades em linguagem humana.</p>
+                        <button class="btn-view-details" onclick="openModal('skill-13')">📖 Abrir Playbook</button>
                     </div>
                 </div>
             </div>
@@ -899,54 +742,24 @@
                 <h2>🌸 Lançamento Completo: Colar "Amor Eterno"</h2>
                 <p style="color: var(--text-muted); margin-bottom: 20px;">Exemplo prático de campanha gerada com a atuação integrada dos agentes de IA.</p>
 
-                <h3 style="color: #fff; margin-bottom: 15px;">🎨 Galeria de Artes Promocionais Geradas</h3>
-                <div class="gallery-grid" style="margin-bottom: 30px;">
-                    <div class="gallery-item">
-                        <img src="./Campanhas/Dia_das_Maes_Colar_Amor_Eterno/Imagens/01_colar_base_nano_banana.png" alt="Colar Base">
-                        <div class="info">
-                            <div class="title">01. Colar Base Still</div>
-                            <div class="desc">Fotografia studio com iluminação suave.</div>
-                        </div>
+                <div class="grid-2">
+                    <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <h3 style="color: var(--text-main); margin-bottom: 12px;">📌 Detalhes da Peça Anunciada</h3>
+                        <p style="line-height: 1.7; font-size: 14px;">
+                            • <strong>Nome</strong>: Colar Coração Amor Eterno<br>
+                            • <strong>Material</strong>: Banho Ouro 24K (10 milésimos) + Cravação Zircônia Cúbica<br>
+                            • <strong>Preço Sugerido</strong>: R$ 149,90 (Custo: R$ 34,90)<br>
+                            • <strong>Público-Alvo</strong>: Filhos(as) presenteando mães & esposas
+                        </p>
                     </div>
-                    <div class="gallery-item">
-                        <img src="./Campanhas/Dia_das_Maes_Colar_Amor_Eterno/Imagens/02_feed_capa_carrossel.png" alt="Capa Feed">
-                        <div class="info">
-                            <div class="title">02. Capa Carrossel Instagram</div>
-                            <div class="desc">Arte promocional para Feed e Anúncio.</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./Campanhas/Dia_das_Maes_Colar_Amor_Eterno/Imagens/03_macro_detalhe_zirconias.png" alt="Macro Zircônias">
-                        <div class="info">
-                            <div class="title">03. Detalhe Macro Zircônias</div>
-                            <div class="desc">Foco no brilho e acabamento 10 milésimos.</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./Campanhas/Dia_das_Maes_Colar_Amor_Eterno/Imagens/04_kit_presente_veludo_cartao.png" alt="Kit Presente">
-                        <div class="info">
-                            <div class="title">04. Kit Caixa Veludo Esmeralda</div>
-                            <div class="desc">Valor percebido com embalagem e cartão.</div>
-                        </div>
-                    </div>
-                </div>
 
-                <h3 style="color: #fff; margin-bottom: 15px;">📄 Entregáveis e Fichas dos Agentes</h3>
-                <div class="grid-3">
-                    <div class="interactive-card">
-                        <div class="title">01. Branding Armando Joia</div>
-                        <p>Direcionamento de cores, kit presente e posicionamento da campanha.</p>
-                        <button class="btn-view-details" onclick="openModal('camp-branding')">🔍 Ver Entregável</button>
-                    </div>
-                    <div class="interactive-card">
-                        <div class="title">02. Copys Lucas Pinto</div>
-                        <p>Legendas de Instagram, e-mail de venda e textos emotivos de Dia das Mães.</p>
-                        <button class="btn-view-details" onclick="openModal('camp-copy')">🔍 Ver Entregável</button>
-                    </div>
-                    <div class="interactive-card">
-                        <div class="title">05. Estrutura Meta Ads (JSON)</div>
-                        <p>Payload técnico com públicos, orçamento e posicionamentos para Cássio Pix.</p>
-                        <button class="btn-view-details" onclick="openModal('camp-ads')">🔍 Ver Entregável</button>
+                    <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <h3 style="color: var(--text-main); margin-bottom: 12px;">🚀 Canais de Divulgação</h3>
+                        <p style="line-height: 1.7; font-size: 14px;">
+                            • <strong>Meta Ads</strong>: Anúncio de vídeo de unboxing em Reels.<br>
+                            • <strong>WhatsApp</strong>: Disparo de lista VIP para clientes antigas.<br>
+                            • <strong>E-mail</strong>: Régua especial de Dia das Mães com frete grátis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -955,42 +768,38 @@
         <!-- TAB 6: PLANO OPERACIONAL -->
         <div id="tab-operacao" class="tab-content">
             <div class="card-panel">
-                <h2>📋 Plano Operacional Hub Joias</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Diretrizes operacionais, política de garantia, prazos e lacunas financeiras resolvidas.</p>
-                <button class="btn-view-details" style="max-width: 250px; margin-bottom: 20px;" onclick="openModal('op-plan')">📄 Visualizar Documento Completo</button>
+                <h2>📋 Plano Operacional & Integração ERP</h2>
+                <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border); margin-bottom: 20px;">
+                    <h3 style="color: var(--text-main); margin-bottom: 10px;">📦 Fluxo Logístico Dropshipping SLA 24h</h3>
+                    <p style="line-height: 1.7; font-size: 14px;">
+                        1. Cliente efetua a compra no site ou marketplace.<br>
+                        2. Pedido entra automaticamente no Bling/Tiny ERP via API.<br>
+                        3. Pedido é faturado e enviado em 24h úteis direto ao cliente com embalagem presenteável.<br>
+                        4. Código de rastreamento enviado via WhatsApp e e-mail.
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- TAB 7: PRECIFICAÇÃO -->
         <div id="tab-precificacao" class="tab-content">
             <div class="card-panel">
-                <h2>🧮 Calculadora de Precificação Interativa</h2>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Fórmula oficial definida em <code>docs/Plano_Operacional_Hub_Joias.md</code>.</p>
-
+                <h2>🧮 Calculadora de Margem & Precificação</h2>
                 <div class="grid-2">
                     <div class="calc-box">
                         <div class="form-group">
-                            <label>Custo do Produto na Hub (R$)</label>
-                            <input type="number" id="custoHub" value="28.00" oninput="calcularPreco()">
+                            <label>Custo do Produto (R$):</label>
+                            <input type="number" id="cost" value="30.00" oninput="calc()">
                         </div>
                         <div class="form-group">
-                            <label>Frete Estimado Hub (R$)</label>
-                            <input type="number" id="freteHub" value="14.00" oninput="calcularPreco()">
-                        </div>
-                        <div class="form-group">
-                            <label>Embalagem Personalizada (R$)</label>
-                            <input type="number" id="embalagem" value="5.00" oninput="calcularPreco()">
-                        </div>
-                        <div class="form-group">
-                            <label>CAC Previsto por Venda (R$)</label>
-                            <input type="number" id="cac" value="20.00" oninput="calcularPreco()">
+                            <label>Preço de Venda no Site (R$):</label>
+                            <input type="number" id="price" value="120.00" oninput="calc()">
                         </div>
                     </div>
-
                     <div class="calc-result">
-                        <div style="font-size: 14px; color: var(--accent-gold); text-transform: uppercase;">Preço de Venda Recomendado</div>
-                        <div class="price-final" id="precoVendaResult">R$ 138.88</div>
-                        <p style="font-size: 13px; color: var(--text-muted);">Considerando 15% de taxas + impostos e 30% de margem líquida pretendida.</p>
+                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Lucro Líquido Estimado</div>
+                        <div class="price-final" id="res">R$ 90,00</div>
+                        <div style="font-size: 14px; color: var(--primary-emerald); font-weight: 700;" id="margin-pct">75,0% de Margem Bruta</div>
                     </div>
                 </div>
             </div>
@@ -998,323 +807,197 @@
 
     </div>
 
-    <!-- GLASSMORPHISM MODAL READER -->
-    <div class="modal-overlay" id="modalOverlay">
+    <!-- Modal Viewer -->
+    <div class="modal-overlay" id="modal-viewer">
         <div class="modal-box">
             <div class="modal-header">
-                <h3 id="modalTitle">Detalhes</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h3 id="modal-title">Detalhes do Módulo</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
             </div>
-            <div class="modal-body" id="modalContent">
-                <!-- Content injected dynamically -->
+            <div class="modal-body" id="modal-content">
+                <p>Carregando conteúdo...</p>
             </div>
         </div>
     </div>
 
+    <!-- Dynamic JavaScript Engine (Themes + 3D WebGL + Tabs + Modals) -->
     <script>
+        // --- 1. Theme Switcher Engine ---
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('btn-theme-' + themeName);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Trigger 3D WebGL engine if cyber3d is selected
+            if (themeName === 'cyber3d') {
+                if (!window.threeInitialized) init3DEngine();
+            }
+        }
+
+        // --- 2. Tab Switcher Engine ---
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) targetContent.classList.add('active');
+            if (event && event.target) event.target.classList.add('active');
         }
 
-        function calcularPreco() {
-            const custoHub = parseFloat(document.getElementById('custoHub').value) || 0;
-            const freteHub = parseFloat(document.getElementById('freteHub').value) || 0;
-            const embalagem = parseFloat(document.getElementById('embalagem').value) || 0;
-            const cac = parseFloat(document.getElementById('cac').value) || 0;
-
-            const custoTotalDirecto = custoHub + freteHub + embalagem + cac;
-            const precoVenda = custoTotalDirecto / 0.55;
-
-            document.getElementById('precoVendaResult').innerText = 'R$ ' + precoVenda.toFixed(2);
+        // --- 3. Calculator Engine ---
+        function calc() {
+            let cost = parseFloat(document.getElementById('cost').value) || 0;
+            let price = parseFloat(document.getElementById('price').value) || 0;
+            let profit = price - cost;
+            let margin = price > 0 ? ((profit / price) * 100).toFixed(1) : 0;
+            document.getElementById('res').innerText = 'R$ ' + profit.toFixed(2);
+            document.getElementById('margin-pct').innerText = margin + '% de Margem Bruta';
         }
 
-        const dataStore = {
+        // --- 4. Modal Viewer Engine ---
+        const modalData = {
             'guide-online': {
-                title: '🌐 Como Colocar Este Projeto Online Gratuitamente',
-                content: `
-                    <h4>Opção 1: GitHub Pages (Recomendado - Grátis)</h4>
-                    <ol style="margin-left: 20px;">
-                        <li>Crie uma conta gratuita no <strong>GitHub.com</strong>.</li>
-                        <li>Crie um novo repositório chamado <code>loja-de-joias</code>.</li>
-                        <li>Suba os arquivos da pasta do seu computador para o repositório.</li>
-                        <li>Renomeie o arquivo <code>relatorio_interativo.html</code> para <code>index.html</code>.</li>
-                        <li>Vá em <strong>Settings -> Pages</strong> no GitHub e ative o site. Pronto! Seu link estará online para qualquer pessoa acessar.</li>
-                    </ol>
-
-                    <h4>Opção 2: Vercel ou Netlify (Arrastar e Soltar - 1 Minuto)</h4>
-                    <ol style="margin-left: 20px;">
-                        <li>Acesse <strong>Vercel.com</strong> ou <strong>Netlify.com</strong>.</li>
-                        <li>Arraste a pasta <code>Loja de Joias</code> inteira para a tela.</li>
-                        <li>Em segundos você receberá um link público seguro (ex: <code>https://loja-de-joias.vercel.app</code>) para enviar no WhatsApp ou LinkedIn!</li>
-                    </ol>
-                `
-            },
-            'agent-01': {
-                title: '👑 Armando Joia - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Diretor de Marca (CMO)</p>
-                    <p><strong>Lema:</strong> "Semi joia de qualidade não precisa fingir que é ouro maciço — ela precisa fazer qualquer mulher se sentir poderosa ao usá-la."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Armando Joia, Diretor de Marca e Posicionamento de uma loja de semi joias sofisticada.
-
-Nossa marca vende semi joias — peças folheadas a ouro 18k, antialérgicas, com design cuidadoso e acabamento de qualidade. Ocupamos o espaço premium acessível.
-
-Sua missão é garantir que toda a comunicação transmitam sofisticação acessível — elegante sem ser esnobe, desejável sem ser inalcançável.
-
-Responda sempre com elegância, autoridade refinada e pragmatismo estratégico.</pre>
-                `
-            },
-            'agent-02': {
-                title: '✍️ Lucas Pinto - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Senior Copywriter & Storyteller</p>
-                    <p><strong>Lema:</strong> "Uma boa copy não vende uma peça folheada; vende o olhar de admiração que ela provoca na rua."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Lucas Pinto, Copywriter Principal e Storyteller de uma loja de semi joias sofisticada.
-
-Seu trabalho é transformar características técnicas (folheado a ouro 18k, zircônia cúbica, antialérgico) em narrativas emocionais elegantes, honestas e de alta conversão.
-
-Regras de Redação:
-1. Seja honesto sobre os materiais com orgulho.
-2. Use vocabulário elegante mas acessível.
-3. Combine gatilhos emocionais com clareza nas especificações.</pre>
-                `
-            },
-            'agent-03': {
-                title: '📸 Kayo Feed - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Social Media & Criador Visual</p>
-                    <p><strong>Lema:</strong> "No Instagram, a cliente não pega na peça; ela compra com os olhos. O brilho da zircônia tem que saltar da tela."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Kayo Feed, responsável pelas redes sociais e direção de fotografia da marca de semi joias.
-
-Seu foco é criar curadoria visual para o feed, Reels atraentes demonstrando o brilho das zircônias e prompts de geração de imagem sofisticados para mockups de produtos.
-
-Regras Estéticas:
-1. Sempre use fundos limpos e naturais (madeira clara, caixas de veludo verde, mármore).
-2. Destaque os detalhes macro (o cravejado das zircônias, o acabamento do banho).
-3. Produza roteiros de Reels focados em uso (lifestyle, transição de looks, caixas de presentes sendo abertas).</pre>
-                `
-            },
-            'agent-04': {
-                title: '🎯 Cássio Pix - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Gestor de Tráfego Pago & Performance</p>
-                    <p><strong>Lema:</strong> "Anuncio com elegância, mas otimizo com matemática fria. No Meta Ads, ROAS é o único elogio que me interessa."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Cássio Pix, Gestor de Tráfego Pago focado em e-commerce de acessórios de luxo acessível.
-
-Sua função é planejar, estruturar e gerenciar campanhas de Meta Ads e Google Ads com foco em ROAS (Retorno sobre Investimento em Anúncios) e CPA (Custo por Aquisição) saudável.
-
-Diretrizes de Performance:
-1. Segmente públicos refinados (interesses em moda premium, marcas de luxo, comportamento de compradores envolvidos).
-2. Configure campanhas CBO (orçamento a nível de campanha) com distribuição automática para os melhores criativos.
-3. Use públicos de remarketing dinâmico para reengajar visitantes que visualizaram produtos mas não compraram.</pre>
-                `
-            },
-            'agent-05': {
-                title: '✉️ Beto Zap - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Especialista em CRM & Clienteling</p>
-                    <p><strong>Lema:</strong> "O primeiro pedido atrai a cliente; o pós-venda perfeito transforma ela em fã que compra todo mês."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Beto Zap, Especialista em CRM (Customer Relationship Management) e vendas consultivas pelo WhatsApp.
-
-Sua missão é estruturar e enviar mensagens para recuperação de carrinho abandonado, réguas de e-mail marketing e manter o relacionamento de clienteling pós-venda.
-
-Diretrizes de Conversão:
-1. Aborde com simpatia, elegância e urgência sutil ("separados especialmente para você").
-2. Ofereça soluções imediatas para problemas de frete ("consegui frete fixo") ou parcelamento.
-3. Envie lembretes personalizados de datas comemorativas e reposição de coleções.</pre>
-                `
-            },
-            'agent-08': {
-                title: '🌐 Hugo Hub - System Prompt & Perfil',
-                content: `
-                    <h4>Perfil do Agente</h4>
-                    <p><strong>Cargo:</strong> Gestor de E-commerce & Marketplaces</p>
-                    <p><strong>Lema:</strong> "Produto sem ficha técnica perfeita não vende no e-commerce. Preço sem margem calculada por canal é prejuízo certo."</p>
-
-                    <h4>System Prompt Oficial</h4>
-                    <pre>Você é Hugo Hub, responsável por gerenciar a operação no e-commerce próprio e canais de marketplaces.
-
-Sua missão é estruturar fichas técnicas perfeitas, calcular as margens com base nas taxas e comissões de cada plataforma e manter a integração automatizada via Bling ERP.
-
-Regras de Operação:
-1. Certifique-se de que pesos, dimensões e variações estejam corretos no painel.
-2. Ajuste o preço final de venda para cada canal de acordo com suas taxas administrativas (ML clássico vs premium, Shopee).
-3. Monitore erros de sincronização de estoque para evitar vendas sem saldo.</pre>
-                `
-            },
-            'skill-01': {
-                title: '📖 Skill 01: Identidade Semi Joias',
-                content: `
-                    <h4>Conceito Central</h4>
-                    <p>Definição exata do posicionamento de semi joias: não é bijuteria, não é ouro maciço. É o espaço de luxo acessível onde a cliente pode brilhar diariamente sem comprometer o orçamento.</p>
-                    <p><strong>Objeções Comuns Resolvidas:</strong> Garantia de 2 anos, tecnologia antialérgica livre de níquel e o diferencial de espessura de 10 milésimos de ouro.</p>
-                `
-            },
-            'skill-02': {
-                title: '📖 Skill 02: Branding & Posicionamento',
-                content: `
-                    <h4>Manual Estético</h4>
-                    <p><strong>Paleta Principal:</strong> Verde Esmeralda (#043927) e Dourado Ouro 24K (#D4AF37).</p>
-                    <p><strong>Tipografia:</strong> Playfair Display para títulos luxuosos e Inter/Plus Jakarta para leitura dinâmica.</p>
-                    <p><strong>Brand Equity:</strong> Construção de valor percebido através de caixas rígidas de presente e certificado impresso.</p>
-                `
-            },
-            'skill-03': {
-                title: '📖 Skill 03: Copywriting & Storytelling',
-                content: `
-                    <h4>Fórmulas Prontas</h4>
-                    <p><strong>Look Completo:</strong> Gancho emocional + Apresentação da peça folheada 18k + Transformação visual + CTA elegante.</p>
-                    <p><strong>Auto-Recompensa:</strong> Foco no merecimento pessoal e elegância cotidiana sem depender de datas especiais.</p>
-                `
-            },
-            'skill-04': {
-                title: '📸 Skill 04: Social Media & Conteúdo Visual',
-                content: `
-                    <h4>Manual de Fotografia e Vídeo</h4>
-                    <p>Como destacar o brilho das zircônias e a textura do banho de ouro 18k:</p>
-                    <ul>
-                        <li>Use luz natural difusa (próximo a janelas) ou anéis de luz com difusor de tecido.</li>
-                        <li><strong>Fotografia Macro:</strong> Aproxime a câmera e garanta o foco absoluto nos detalhes das garras e cravejado.</li>
-                        <li><strong>Presets Estéticos:</strong> Mantenha tons quentes, dourados realçados e fundos suaves (neutros ou verdes).</li>
-                    </ul>
-                `
-            },
-            'skill-05': {
-                title: '🎯 Skill 05: Tráfego Pago & Performance',
-                content: `
-                    <h4>Estruturação de Meta Ads</h4>
-                    <p>Estratégia de mídia paga para conversões de e-commerce:</p>
-                    <ul>
-                        <li><strong>Funil de Vendas:</strong> Distribuição de 70% do orçamento em TOPO (focado em interesses de joias/moda), 20% MEIO (visualizou produto ou adicionou ao carrinho) e 10% BASE (clientes antigos para recompra).</li>
-                        <li><strong>Criativos Ganhadores:</strong> Vídeos curtos gravados de celular (UGC) mostrando o unboxing e o brilho no sol convertem mais do que fotos estúdio frias.</li>
-                    </ul>
-                `
-            },
-            'skill-06': {
-                title: '✉️ Skill 06: E-mail Marketing & CRM',
-                content: `
-                    <h4>Fluxos Automatizados Essenciais</h4>
-                    <p>Estratégias para aumentar o Life Time Value (LTV) da cliente:</p>
-                    <ul>
-                        <li><strong>Carrinho Abandonado:</strong> Disparo após 15min (lembrete do produto), 6h (frete fixo ou desconto sutil) e 24h (urgência - última unidade separada).</li>
-                        <li><strong>E-mail de Boas-Vindas:</strong> Apresentação do propósito da marca + cupom de primeira compra VIP.</li>
-                    </ul>
-                `
-            },
-            'skill-07': {
-                title: '💬 Skill 07: Atendimento & WhatsApp',
-                content: `
-                    <h4>Scripts de Conversão Rápida</h4>
-                    <p>Como atender no WhatsApp Business de forma humanizada e ágil:</p>
-                    <ul>
-                        <li><strong>Abordagem:</strong> "Olá, [Nome]! Vi que você se apaixonou pelo [Produto]. Ele já está separado na nossa caixinha de veludo especial..."</li>
-                        <li><strong>Contorno de Objeção de Frete:</strong> "Para a sua região o frete ficou R$ X, mas caso você adicione [Acessório complementar] no carrinho, o seu frete fica totalmente grátis!"</li>
-                    </ul>
-                `
-            },
-            'skill-08': {
-                title: '⭐ Skill 08: Reviews & Prova Social',
-                content: `
-                    <h4>Criação de Prova Social Ativa</h4>
-                    <p>Como coletar depoimentos reais de clientes satisfeitas:</p>
-                    <ul>
-                        <li><strong>Automação pós-entrega:</strong> Envie mensagem 7 dias após o recebimento perguntando o que ela achou do brilho e acabamento da peça.</li>
-                        <li><strong>Programa de Incentivo UGC:</strong> Ofereça 10% de desconto na próxima compra para toda cliente que postar uma foto marcando a loja no Instagram.</li>
-                    </ul>
-                `
-            },
-            'skill-09': {
-                title: '🌐 Skill 09: Cadastro & Gestão de Marketplaces',
-                content: `
-                    <h4>Precificação por Canal e Comissões</h4>
-                    <p>Regras para evitar prejuízo na venda em plataformas de terceiros:</p>
-                    <ul>
-                        <li><strong>Mercado Livre Clássico (12% taxa) vs Premium (17% + taxas de parcelamento sem juros)</strong>: Ajustar o markup do produto na planilha antes de subir via ERP.</li>
-                        <li><strong>Fichas Técnicas SEO:</strong> Sempre incluir termos de busca no título (ex: "Colar Feminino Coração Cravejado Folheado Ouro 18k") para ranqueamento orgânico.</li>
-                    </ul>
-                `
-            },
-            'camp-branding': {
-                title: '🌸 Entregável 01: Armando Joia (Branding)',
-                content: `
-                    <h4>Direcionamento da Campanha</h4>
-                    <p><strong>Nome:</strong> Amor Eterno — O Presente que Inicia Memórias</p>
-                    <p><strong>Kit de Valor Percebido:</strong> Caixa de Veludo Esmeralda Grátis + Cartão de Mensagem + Certificado de Garantia de 2 Anos.</p>
-                `
-            },
-            'camp-copy': {
-                title: '🌸 Entregável 02: Lucas Pinto (Copywriting)',
-                content: `
-                    <h4>Texto de Instagram Lançamento</h4>
-                    <pre>"Tem presente que dura um dia. E tem presente que fica para sempre no peito. ✨
-
-Apresentamos o Colar Amor Eterno — confeccionado em latão nobre com banho galvânico de ouro 24k (10 milésimos) e zircônia cúbica de brilho supremo. Antialérgico e pronto para emocionar quem mais te ama.
-
-Disponível no site com Caixa de Veludo Esmeralda grátis. Link na bio 💛"</pre>
-                `
-            },
-            'camp-ads': {
-                title: '🌸 Entregável 05: Cássio Pix (Payload Meta Ads JSON)',
-                content: `
-                    <pre>{
-  "campaign_name": "CAMP_DIA_DAS_MAES_COLAR_AMOR_ETERNO_2026",
-  "objective": "CONVERSIONS",
-  "budget_type": "CBO",
-  "daily_budget": 100.00,
-  "target_audiences": [
-    {
-      "name": "Filhos_Filhas_Presentes_Dia_das_Maes",
-      "age_range": "20-45",
-      "interests": ["Moda feminina", "Acessórios", "Joalharia", "Presentes"]
-    }
-  ]
-}</pre>
-                `
+                title: '🌐 Como Colocar Este Site Online Gratuitamente',
+                content: `<h4>Opção 1: Vercel (Recomendado)</h4>
+<p>1. Crie uma conta em <a href="https://vercel.com" target="_blank" style="color:var(--accent-gold)">vercel.com</a>.<br>
+2. Arraste e solte esta pasta no dashboard da Vercel.<br>
+3. Seu site estará publicado em segundos com SSL grátis!</p>
+<h4>Opção 2: Netlify</h4>
+<p>1. Acesse <a href="https://app.netlify.com/drop" target="_blank" style="color:var(--accent-gold)">app.netlify.com/drop</a>.<br>
+2. Solte a pasta e receba um link público imediato.</p>`
             },
             'op-plan': {
-                title: '📋 Plano Operacional Hub Joias Completo',
-                content: `
-                    <h4>Dados Confirmados do Dropshipping</h4>
-                    <ul>
-                        <li><strong>Modelo:</strong> Dropshipping Nacional sem estoque próprio e sem pedido mínimo.</li>
-                        <li><strong>Despacho:</strong> Em até 24h úteis após entrada do pedido.</li>
-                        <li><strong>Garantia:</strong> 2 anos e tecnologia antialérgica em todas as peças.</li>
-                    </ul>
-
-                    <h4>Fórmula de Precificação</h4>
-                    <pre>Preço = (custo Hub + frete + embalagem + custo fixo + CAC) / (1 - taxas - impostos - margem)</pre>
-                `
+                title: '📄 Plano Operacional Dropshipping SLA 24h',
+                content: `<p>Este plano garante expedição direta com qualidade de joalheria, banho de 10 milésimos de ouro 24k, embalagem presenteável e integração em tempo real com Bling ERP e Shopify/Nuvemshop.</p>`
+            },
+            'agent-01': {
+                title: '👑 Armando Joia — Diretor de Marca',
+                content: `<p>Guardião do posicionamento sofisticado e acessível. Orienta o tom de voz elegante, transparente e humano da loja de semi joias.</p>`
+            },
+            'agent-02': {
+                title: '✍️ Lucas Pinto — Copywriter Sênior',
+                content: `<p>Especialista em criar textos de alta conversão, descrições fascinantes e e-mails que encantam e vendem.</p>`
+            },
+            'agent-04': {
+                title: '🎯 Cássio Pix — Gestor de Tráfego Pago',
+                content: `<p>Especialista em anúncios em Meta Ads Advantage+ e Google Ads Performance Max direcionados para compras com ROAS alto.</p>`
+            },
+            'skill-05': {
+                title: '📖 Playbook: Tráfego Pago Máster',
+                content: `<p>Guia definitivo de tráfego pago para semi joias, com listas completas de palavras-chave positivas e negativas, testes criativos e tagueamento CAPI.</p>`
             }
         };
 
         function openModal(key) {
-            const data = dataStore[key] || { title: 'Detalhes', content: 'Conteúdo em carregamento...' };
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalContent').innerHTML = data.content;
-            document.getElementById('modalOverlay').classList.add('active');
+            const data = modalData[key] || { title: 'Detalhes do Módulo', content: '<p>Conteúdo detalhado indisponível no momento.</p>' };
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-content').innerHTML = data.content;
+            document.getElementById('modal-viewer').classList.add('active');
         }
 
         function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
+            document.getElementById('modal-viewer').classList.remove('active');
         }
+
+        // --- 5. 3D WebGL Three.js Engine (Loaded Dynamically) ---
+        function init3DEngine() {
+            window.threeInitialized = true;
+            try {
+                // Background Particle Scene
+                const bgCanvas = document.getElementById('bg-canvas-3d');
+                const bgScene = new THREE.Scene();
+                const bgCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const bgRenderer = new THREE.WebGLRenderer({ canvas: bgCanvas, alpha: true, antialias: true });
+                bgRenderer.setSize(window.innerWidth, window.innerHeight);
+
+                const particleCount = 350;
+                const geometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3);
+                const colors = new Float32Array(particleCount * 3);
+
+                for(let i=0; i<particleCount*3; i+=3) {
+                    positions[i] = (Math.random() - 0.5) * 30;
+                    positions[i+1] = (Math.random() - 0.5) * 30;
+                    positions[i+2] = (Math.random() - 0.5) * 30;
+
+                    if (Math.random() > 0.5) {
+                        colors[i] = 1.0; colors[i+1] = 0.72; colors[i+2] = 0.0;
+                    } else {
+                        colors[i] = 0.0; colors[i+1] = 0.9; colors[i+2] = 0.6;
+                    }
+                }
+
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+                const material = new THREE.PointsMaterial({ size: 0.08, vertexColors: true, transparent: true, opacity: 0.7 });
+                const particles = new THREE.Points(geometry, material);
+                bgScene.add(particles);
+                bgCamera.position.z = 10;
+
+                function animateBg() {
+                    requestAnimationFrame(animateBg);
+                    if (document.documentElement.getAttribute('data-theme') === 'cyber3d') {
+                        particles.rotation.y += 0.001;
+                        particles.rotation.x += 0.0005;
+                        bgRenderer.render(bgScene, bgCamera);
+                    }
+                }
+                animateBg();
+
+                // Hero 3D Jewelry Render
+                const jContainer = document.getElementById('jewelry-3d-container');
+                if (jContainer) {
+                    const jScene = new THREE.Scene();
+                    const jCamera = new THREE.PerspectiveCamera(50, jContainer.clientWidth / jContainer.clientHeight, 0.1, 100);
+                    const jRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                    jRenderer.setSize(jContainer.clientWidth, jContainer.clientHeight);
+                    jContainer.appendChild(jRenderer.domElement);
+
+                    const ringGeom = new THREE.TorusGeometry(1.2, 0.28, 30, 100);
+                    const goldMat = new THREE.MeshStandardMaterial({ color: 0xffb800, metalness: 0.95, roughness: 0.15, emissive: 0x332400 });
+                    const ringMesh = new THREE.Mesh(ringGeom, goldMat);
+                    ringMesh.rotation.x = Math.PI / 3;
+                    jScene.add(ringMesh);
+
+                    const diamondGeom = new THREE.OctahedronGeometry(0.5, 0);
+                    const diamondMat = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.1, roughness: 0.05, transparent: true, opacity: 0.9, emissive: 0x00e699 });
+                    const diamondMesh = new THREE.Mesh(diamondGeom, diamondMat);
+                    diamondMesh.position.y = 1.35;
+                    jScene.add(diamondMesh);
+
+                    const light1 = new THREE.PointLight(0xffb800, 2, 50); light1.position.set(5, 5, 5); jScene.add(light1);
+                    const light2 = new THREE.PointLight(0x00e699, 2, 50); light2.position.set(-5, -5, 5); jScene.add(light2);
+                    jScene.add(new THREE.AmbientLight(0xffffff, 0.8));
+                    jCamera.position.z = 4.5;
+
+                    function animateJewelry() {
+                        requestAnimationFrame(animateJewelry);
+                        if (document.documentElement.getAttribute('data-theme') === 'cyber3d') {
+                            ringMesh.rotation.y += 0.01;
+                            diamondMesh.rotation.y += 0.015;
+                            jRenderer.render(jScene, jCamera);
+                        }
+                    }
+                    animateJewelry();
+                }
+            } catch(e) {
+                console.log('3D WebGL initialized silently:', e);
+            }
+        }
+
+        // --- 6. Vanilla 3D Tilt Cards Effect ---
+        document.querySelectorAll('.metric-card, .interactive-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) translateZ(8px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+            });
+        });
     </script>
 </body>
 </html>

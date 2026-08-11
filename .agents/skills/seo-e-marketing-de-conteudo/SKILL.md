@@ -1,123 +1,66 @@
 ---
 name: seo-e-marketing-de-conteudo
-description: Skill de SEO para E-commerce de Semi Joias, Arquitetura de Conteúdo e Guias Educativos do Segmento.
+description: Textos otimizados para busca no Google, descrições de produtos e artigos de blog que atraem clientes reais.
 ---
 
-# 🔍 Skill: SEO & Marketing de Conteúdo para Semi Joias
+# SEO e Marketing de Conteúdo para Semi Joias
 
-## 🎯 Objetivo da Skill
-Posicionar o e-commerce de semi joias no topo dos motores de busca (Google) para palavras-chave de alta intenção de compra, construir autoridade educacional sobre o segmento (o que é semi joia, cuidados, durabilidade) e atrair tráfego orgânico qualificado de mulheres que buscam joias acessíveis de qualidade.
+## Como ser encontrada no Google sem precisar pagar anúncios o tempo todo
+Esta habilidade mostra como organizar as páginas de produto, categorias e artigos de blog para que mulheres que pesquisam por semi joias no Google encontrem a sua loja organicamente.
 
----
-
-## 🏛️ Estrutura de Palavras-Chave para Semi Joias
-
-```
-              ┌─────────────────────────────────┐
-              │ 🔍 CATEGORIAS TRANSACIONAIS     │
-              │  "semi joia folheada a ouro"    │
-              └────────────────┬────────────────┘
-                               │
-    ┌──────────────────────────┴──────────────────────────┐
-    ▼                                                     ▼
-┌───────────────────────────┐               ┌───────────────────────────┐
-│ 💛 ESPECÍFICOS DE PRODUTO │               │ 📖 GUIAS EDUCATIVOS       │
-│  "brinco antialérgico"    │               │  "quanto dura semi joia?" │
-└───────────────────────────┘               └───────────────────────────┘
-```
-
-### 1. Palavras-Chave Transacionais (Páginas de Categoria & Produto)
-
-**Categorias Principais**:
-- `"semi joia folheada a ouro"`
-- `"semi joia feminina"`
-- `"conjunto de semi joias"`
-- `"semi joia antialérgica"`
-- `"semi joia presente"`
-- `"semi joia sem níquel"`
-
-**Produtos Específicos**:
-- `"brinco dourado feminino antialérgico"`
-- `"colar folheado a ouro delicado"`
-- `"anel ajustável dourado"`
-- `"pulseira semi joia"`
-- `"conjunto brinco e colar dourado"`
-
-**Cauda Longa (Alta Intenção)**:
-- `"semi joia para pele sensível"`
-- `"brinco que não mancha"`
-- `"presente de semi joia para namorada"`
-- `"semi joia boa e barata"`
-- `"semi joia atacado para revendedoras"`
-
-### 2. Palavras-Chave Informativas (Blog & Guias do Consumidor)
-
-- `"quanto tempo dura uma semi joia?"`
-- `"diferença entre semi joia e bijuteria"`
-- `"como conservar semi joias"`
-- `"semi joia mancha?"`
-- `"como saber se semi joia é de qualidade"`
-- `"o que é banho galvânico em joias"`
-- `"semi joia para pele com alergia"`
-- `"como limpar semi joia dourada"`
+O segredo do SEO humano é escrever para pessoas reais primeiro e para o algoritmo depois. O Google recompensa páginas com texto claro, respostas honestas e informações completas de produto.
 
 ---
 
-## 📄 Estrutura Ideal de Ficha de Produto para SEO (Semi Joias)
+## Palavras que as Clientes Mais Buscam no Google
 
-Para garantir indexação máxima e alta taxa de conversão:
+### Páginas de Produtos e Categorias
+- *"semi joia folheada a ouro 18k"*
+- *"brinco antialérgico feminino"*
+- *"colar dourado delicado"*
+- *"anel ajustável banhado a ouro"*
+- *"presente de semi joia para namorada"*
+- *"semi joias sem níquel"*
 
-1. **Título H1 Otimizado**:
-   `[Tipo de Peça] + [Metal/Acabamento] + [Característica Principal] + [Uso/Ocasião]`
-   *Exemplo*: `Brinco Argola Folheado a Ouro 18k Antialérgico — Coleção Dia a Dia`
-
-2. **Descrição Rica em Texto (mínimo 200 palavras)**:
-   - Parágrafo 1: O estilo, o design e o look que a peça cria.
-   - Parágrafo 2: Os materiais com precisão honesta (folheado a ouro 18k, sem níquel, zircônia cúbica).
-   - Parágrafo 3: Cuidados e durabilidade — o que fazer para ela durar mais.
-
-3. **Tabela de Especificações Técnicas**:
-   - **Material base**: Latão nobre / Prata 925
-   - **Acabamento**: Folheado a Ouro 18k (banho galvânico)
-   - **Pedra/Detalhe**: Zircônia cúbica / Cristal / Esmalte
-   - **Antialérgico**: Sim — livre de níquel
-   - **Peso Aproximado**: Xg
-   - **Acompanha**: Caixinha presenteável + Guia de Conservação
-
-4. **Marcação Schema.org (Product Data)**:
-   - Incluir dados estruturados de Preço, Disponibilidade, Avaliações (Reviews), Marca e SKU para exibir os *Rich Snippets* no Google.
+### Dúvidas Frequentes que Viram Artigos no Blog
+- *"Quanto tempo dura uma semi joia?"*
+- *"Qual a diferença entre semi joia e bijuteria?"*
+- *"Como limpar semi joia dourada em casa?"*
+- *"Semi joia dá alergia?"*
 
 ---
 
-## 📝 Guias de Conteúdo de Alta Autoridade (Blog)
+## Como Estruturar a Descrição de um Produto no Site
 
-### Guia 1: "Semi Joia ou Bijuteria? Entenda a Diferença de Uma Vez Por Todas"
-- **Objetivo**: Atrair quem pesquisa sobre qualidade e durabilidade.
-- **Tópicos**: O que é semi joia, o que é bijuteria, o que é alta joalheria, tabela comparativa de preços e durabilidade, como identificar semi joia de qualidade.
+Uma boa página de produto precisa responder todas as dúvidas da cliente em poucos segundos:
 
-### Guia 2: "Como Conservar Suas Semi Joias e Fazê-las Durar Anos"
-- **Objetivo**: Reduzir reclamações pós-venda e ranquear para buscas de dúvidas.
-- **Tópicos**: O que estraga uma semi joia, como guardar corretamente, o que evitar (perfume, creme, água), como limpar em casa.
+1. **Título da Peça (Claro e Direto)**:
+   `[Tipo de Peça] + Folheado a Ouro 18k + [Detalhe]`
+   *Exemplo*: `Colar Pingente Coração Folheado a Ouro 18k Antialérgico`
 
-### Guia 3: "O Guia Completo de Presentes de Semi Joia para Cada Ocasião"
-- **Objetivo**: Capturar busca de quem procura presente.
-- **Tópicos**: Presentes para namorada, mãe, amiga, formanda, aniversário — com sugestões por faixa de preço.
+2. **Texto de Apresentação (2 parágrafos simples)**:
+   - Descreva como a peça fica no corpo e para quais ocasiões ela é ideal.
+   - Explique abertamente a qualidade: banho espesso de ouro 18k, acabamento antialérgico sem níquel e pedras de zircônia cravejadas.
 
-### Guia 4: "Como Revender Semi Joias e Ter Renda Extra"
-- **Objetivo**: Atrair potenciais revendedoras via busca orgânica.
-- **Tópicos**: Como funciona a revenda de semi joias, margem de lucro, como captar clientes, dicas para vender pelo WhatsApp.
+3. **Ficha Técnica em Formato de Lista**:
+   - **Metal Base**: Latão nobre de alta qualidade
+   - **Banho**: Ouro 18k premium
+   - **Pedra**: Zircônia Cúbica brilhante
+   - **Alergia**: 100% antialérgica (livre de níquel)
+   - **O que acompanha**: Caixinha presenteável + Guia de cuidados
 
 ---
 
-## 🤖 Prompt para Redação de Artigo de Blog SEO sobre Semi Joias
+## Ideias de Artigos para o Blog da Loja
 
-```text
-Você é um especialista em SEO e em semi joias. Escreva um artigo completo e envolvente para o blog de uma loja de semi joias sobre o tema: "[NOME DO TEMA, Ex: Como conservar semi joias e fazê-las durar mais]".
+- **Artigo 1**: *"Semi Joia ou Bijuteria: Entenda a Diferença de Uma Vez por Todas"* (explica porque a semi joia dura mais e vale o investimento).
+- **Artigo 2**: *"Como Conservar Suas Semi Joias e Manter o Brilho por Anos"* (dicas práticas de conservação que diminuem trocas no pós-venda).
+- **Artigo 3**: *"Guia de Presentes de Semi Joia: Como Escolhar a Peça Certa para Cada Estilo"* (ajuda maridos, namorados e amigas a acertarem no presente).
 
-Requisitos:
-- Título H1 atraente com palavra-chave principal.
-- Subtítulos H2 e H3 bem distribuídos.
-- Linguagem acessível, próxima e informativa (como uma amiga expert em semi joias).
-- Inclusão natural de termos técnicos (folheado a ouro, banho galvânico, antialérgico, sem níquel).
-- Chamada para ação no final convidando o leitor a conhecer os produtos da loja.
-```
+---
+
+## Checklist de Conteúdo e SEO
+- [ ] O título da peça tem o nome real do produto e o material (ouro 18k, prata 925)?
+- [ ] A descrição deixa claro que é antialérgica?
+- [ ] O texto responde às dúvidas mais comuns de quem quer comprar a peça?
+- [ ] O artigo de blog tem links diretos para os produtos citados?

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o Modelo de Design — Relatório Interativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body {
+            background-color: #080a0f;
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 40px 20px 80px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+        }
+
+        .header-title h1 {
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .header-title h1 span {
+            color: #ffb800;
+        }
+
+        .header-title p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .models-grid {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .model-card {
+            background: #111722;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .model-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffb800;
+            box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2);
+        }
+
+        .model-card .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        .badge-1 { background: rgba(212, 175, 55, 0.2); color: #f3e5ab; border: 1px solid #d4af37; }
+        .badge-2 { background: rgba(214, 140, 120, 0.2); color: #e5a995; border: 1px solid #d68c78; }
+        .badge-3 { background: linear-gradient(90deg, rgba(255, 184, 0, 0.3), rgba(0, 230, 153, 0.3)); color: #00e699; border: 1px solid #00e699; }
+
+        .model-card .preview-box {
+            height: 220px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            position: relative;
+        }
+
+        .preview-1 { background: linear-gradient(135deg, #070c0a, #063826); border-bottom: 2px solid #d4af37; }
+        .preview-2 { background: linear-gradient(135deg, #faf7f2, #e5cfc3); color: #4a2d20; border-bottom: 2px solid #d68c78; }
+        .preview-3 { background: linear-gradient(135deg, #080a0f, #131822); border-bottom: 2px solid #00e699; }
+
+        .model-content {
+            padding: 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-content h3 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .model-content p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-open {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-top: auto;
+        }
+
+        .btn-1 { background: linear-gradient(135deg, #d4af37, #b89327); color: #000; }
+        .btn-1:hover { background: #fff; }
+
+        .btn-2 { background: linear-gradient(135deg, #d68c78, #c47662); color: #fff; }
+        .btn-2:hover { background: #1f1d1a; color: #fff; }
+
+        .btn-3 { background: linear-gradient(135deg, #ffb800, #00e699); color: #000; box-shadow: 0 0 20px rgba(0, 230, 153, 0.3); }
+        .btn-3:hover { background: #fff; transform: translateY(-2deg); }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">
+        <h1>Escolha o Modelo de Design do <span>Relatório Interativo</span></h1>
+        <p>Desenvolvemos 3 propostas estéticas completas. Abra cada uma delas no seu navegador para testar o design, as animações e a interatividade!</p>
+    </div>
+
+    <div class="models-grid">
+
+        <!-- MODELO 1 -->
+        <div class="model-card">
+            <div class="preview-box preview-1">
+                <span>👑</span>
+            </div>
+            <div class="model-content">
+                <span class="badge badge-1">Dark Mode Clássico</span>
+                <h3>Modelo 1: Esmeralda & Ouro Imperial</h3>
+                <p>Estética refinada em verde esmeralda profundo, detalhes reluzentes em ouro champanhe e efeito vidro temperado (glassmorphic).</p>
+                <ul class="features-list">
+                    <li>✓ Fundo Dark Premium (#070c0a)</li>
+                    <li>✓ Acentos Ouro Imperial & Esmeralda</li>
+                    <li>✓ Tipografia Clássica de Joalheria</li>
+                    <li>✓ Ideal para passar prestígio e tradição</li>
+                </ul>
+                <a href="relatorio_modelo_1_esmeralda.html" class="btn-open btn-1" target="_blank">👑 Abrir Modelo 1 em Tela Cheia</a>
+            </div>
+        </div>
+
+        <!-- MODELO 2 -->
+        <div class="model-card">
+            <div class="preview-box preview-2">
+                <span>🌸</span>
+            </div>
+            <div class="model-content">
+                <span class="badge badge-2">Light Mode Editorial</span>
+                <h3>Modelo 2: Minimalista Nude & Rosé</h3>
+                <p>Estética leve de revista de moda (Vogue/Elle), com tons nude champagne, rosé suave, tipografia moderna e máxima clareza visual.</p>
+                <ul class="features-list">
+                    <li>✓ Fundo Light Nude Off-White (#faf7f2)</li>
+                    <li>✓ Acentos em Rosé Gold & Champagne</li>
+                    <li>✓ Tipografia Limpa Outfit & Cormorant</li>
+                    <li>✓ Ideal para visual clean e moderno</li>
+                </ul>
+                <a href="relatorio_modelo_2_minimalista.html" class="btn-open btn-2" target="_blank">🌸 Abrir Modelo 2 em Tela Cheia</a>
+            </div>
+        </div>
+
+        <!-- MODELO 3 -->
+        <div class="model-card">
+            <div class="preview-box preview-3">
+                <span>✨</span>
+            </div>
+            <div class="model-content">
+                <span class="badge badge-3">🚀 3D WebGL + Three.js Engine</span>
+                <h3>Modelo 3: Cyber Luxury 3D (Com Animações 3D)</h3>
+                <p>Estética ultra-moderna alimentada pelo motor Three.js WebGL, com renderização de anel/diamante 3D em tempo real, campo de partículas 3D e cards com efeito 3D Tilt ao passar o mouse.</p>
+                <ul class="features-list">
+                    <li>✓ Motor WebGL 3D em Tempo Real (Three.js)</li>
+                    <li>✓ Renderização 3D Interativa de Joia em Ouro 18k</li>
+                    <li>✓ Campo de Partículas 3D com Parallax no Cursor</li>
+                    <li>✓ Cards com Efeito 3D Tilt (Perspective/Rotate)</li>
+                </ul>
+                <a href="relatorio_modelo_3_cyber_luxury.html" class="btn-open btn-3" target="_blank">✨ Abrir Modelo 3D em Tela Cheia</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

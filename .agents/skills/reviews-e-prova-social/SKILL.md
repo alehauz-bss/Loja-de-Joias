@@ -1,130 +1,49 @@
 ---
 name: reviews-e-prova-social
-description: Skill de Gestão de Avaliações, Prova Social e Conteúdo Gerado por Clientes (UGC) para Semi Joias.
+description: Depoimentos de clientes reais, fotos de uso (UGC) e gestão acolhedora de avaliações para semi joias.
 ---
 
-# ⭐ Skill: Reviews & Prova Social para Semi Joias
+# Reviews e Prova Social
 
-## 🎯 Objetivo da Skill
-Construir e gerenciar ativamente a reputação digital da loja, coletando avaliações positivas, respondendo críticas com elegância e usando o conteúdo gerado pelas próprias clientes (UGC) como o ativo de marketing mais poderoso para superar a principal objeção de semi joias: *"será que é de qualidade?"*.
+## Como transformar a satisfação das clientes no seu maior canal de vendas
+Esta habilidade mostra como coletar e divulgar depoimentos reais, fotos de clientes usando as peças e como responder com carinho e agilidade quando algo não sair como esperado.
 
----
-
-## 💡 Por que Prova Social é Crítica para Semi Joias
-
-A maior barreira de compra de semi joias online é a **dúvida sobre qualidade e durabilidade**. Uma cliente nunca tocou a peça antes de comprar. Fotos de outras clientes usando a joia, avaliações detalhadas e vídeos de unboxing resolvem esse problema de forma que nenhum anúncio consegue — porque vem de pessoas reais.
-
-> **Dado de mercado**: Lojas de semi joias com UGC ativo no feed convertem até 3x mais do que lojas que usam apenas fotos de estúdio.
+Na internet, ver uma mulher real usando o colar no pescoço vale mais do que dez anúncios. É a prova máxima de que a peça é bonita, tem bom acabamento e chega direitinho em casa.
 
 ---
 
-## 📣 Canais de Coleta de Avaliações
+## 3 Maneiras Naturais de Pedir Depoimentos
 
-| Canal | Ação Recomendada |
-| :--- | :--- |
-| **Google Meu Negócio** | Solicitar avaliação via WhatsApp após entrega confirmada |
-| **Instagram (Marcações)** | Pedir que clientes marquem a loja ao usar a peça |
-| **Reclame Aqui** | Monitorar semanalmente e responder em < 24h |
-| **Página do Produto (E-commerce)** | Ativar campo de avaliação + foto do cliente |
-| **Stories / Highlights** | Criar destaque "Clientes ❤️" com reposts de fotos |
+### 1. Pedido Carinhoso no WhatsApp (Após a Entrega)
+> "Oi, [Nome]! Vi que o seu pacote já foi entregue! 💛 
+> 
+> Quando tiver um tempinho para abrir, me conta o que achou da peça pessoalmente? E se quiser deixar uma avaliação rápida de 1 minutinho pra gente no Google, ajuda demais outras mulheres a conhecerem a loja! 🌟 
+> [Link direto do Google]"
 
----
+### 2. Convite para Postar no Instagram
+> "[Nome], sua foto usando o nosso brinco ficou perfeita! 😍 
+> 
+> Você se importa se a gente repostar nos nossos Stories? Amamos mostrar nossas clientes reais usando as peças!"
 
-## 📝 Scripts para Solicitar Avaliações
-
-### Script 1 — Pedir Avaliação no Google (via WhatsApp pós-entrega)
-
-```
-Oi, [Nome]! Sua peça chegou lindinha? ✨
-
-Sua opinião é muito importante para a gente e ajuda outras clientes a conhecerem a qualidade das nossas semi joias 💛
-
-Se tiver 2 minutinhos, poderia deixar uma avaliação no Google? 🌟
-👉 [Link direto para o Google Meu Negócio]
-
-Qualquer dúvida, pode me chamar aqui! Obrigada de coração 😊
-```
+### 3. Programa de Mimos por Foto
+Colocar um cartão delicado dentro da caixa do pedido:
+> *"Amou seu pedido? Tire uma foto usando sua nova semi joia, marque a gente no Instagram (@nossamarca) e receba um cupom exclusivo para a sua próxima compra!"*
 
 ---
 
-### Script 2 — Pedir UGC (foto/vídeo usando a peça)
+## Como Responder a Reclamações sem Pânico
 
-```
-[Nome], que orgulho ver nossa peça sendo usada assim! 😍✨
+Se uma cliente disser que a peça deu alergia ou que manchou, não discuta e não use termos jurídicos frios. A acolhida humana resolve 90% dos casos.
 
-Você toparia nos marcar quando for usar? É só usar @[nome_da_loja] no Instagram!
-
-A gente adora repostar as clientes lindas — e quem repostar fica com um mimo especial na próxima compra 💛🎁
-```
-
----
-
-### Script 3 — Resposta a Avaliação Negativa (manchou/descascou)
-
-```
-Olá, [Nome]! Ficamos muito tristes em saber dessa experiência 😔
-
-Sua satisfação é o que mais importa para a gente. Vamos verificar o que aconteceu e resolver da melhor forma possível para você!
-
-Pode nos enviar uma foto pelo WhatsApp [número]? Nossa equipe vai analisar com atenção e te dar um retorno o quanto antes 💛
-```
+### Resposta Exemplo para WhatsApp ou Comentário:
+> "Oi, [Nome]! Poxa, sinto muito mesmo por isso ter acontecido. Não é a experiência que queremos que você tenha com as nossas peças. 😔 
+> 
+> Por favor, me chama aqui no WhatsApp [Número] com o número do seu pedido. Vamos analisar o que houve e trocar a peça ou fazer o reembolso para você sem complicação, tá bom? Queremos ver você feliz!"
 
 ---
 
-## 📸 Estratégia de UGC (Conteúdo Gerado por Clientes)
+## Onde Mostrar os Depoimentos
 
-### Como Usar o UGC no Marketing:
-
-1. **Feed do Instagram**: Criar um highlight dedicado *"Clientes Reais"* com reposts de fotos das clientes usando as peças — sempre com crédito e autorização.
-2. **Anúncios Pagos**: Criativos com UGC (fotos/vídeos de clientes reais) tendem a ter CTR mais alto que fotos de estúdio — testar nos anúncios de Meta Ads como variação.
-3. **Página do Produto (E-commerce)**: Exibir fotos de clientes diretamente abaixo das fotos de produto — prova visual imediata.
-4. **Stories e Reels de Testemunhal**: Gravar clientes falando sobre a experiência de compra, qualidade da entrega e brilho da peça.
-
-### Programa de Incentivo ao UGC
-
-| Ação da Cliente | Benefício Oferecido |
-| :--- | :--- |
-| Avaliação de 5 estrelas no Google | 10% de desconto na próxima compra |
-| Foto marcando a loja no Instagram | Sorteio mensal de kit de semi joias |
-| Vídeo de unboxing publicado | Brinde surpresa no próximo pedido |
-| Testemunhal em Reels parceria | Crédito em loja no valor do produto recebido |
-
----
-
-## 🔍 Monitoramento de Reputação
-
-### Ferramentas e Rotina Semanal:
-
-| Ferramenta | O que Monitorar | Frequência |
-| :--- | :--- | :--- |
-| **Google Meu Negócio** | Novas avaliações e perguntas | Diária |
-| **Reclame Aqui** | Reclamações abertas | Diária |
-| **Instagram** | Marcações e menções da loja | Diária |
-| **Meta Business Suite** | Comentários em anúncios pagos | Diária |
-| **Google Alerts** | Menções ao nome da loja online | Semanal |
-
----
-
-## 📊 KPIs de Reputação
-
-- **Média de avaliações no Google**: Meta > 4.7 estrelas
-- **Tempo de resposta a reclamações**: Meta < 24 horas
-- **Taxa de UGC mensal**: Meta ≥ 15 posts de clientes no Instagram/mês
-- **Taxa de recompra de clientes satisfeitos**: Meta > 30% em 90 dias
-
----
-
-## 🤖 Prompt para Resposta a Avaliações e Comentários
-
-```text
-Você é o gerente de relacionamento de uma loja de semi joias. Responda o seguinte comentário/avaliação de cliente de forma elegante, calorosa e resolutiva:
-
-Avaliação/Comentário: [Cole aqui]
-Contexto: [Positivo / Negativo / Dúvida técnica]
-
-A resposta deve:
-1. Ser personalizada (mencionar algo específico da avaliação).
-2. Para positivos: agradecer com entusiasmo genuíno e convidar para voltar.
-3. Para negativos: mostrar empatia, pedir desculpas e propor solução concreta.
-4. Ter no máximo 3 linhas — objetiva e humana.
-```
+- **Destaque nos Stories**: Tenha um destaque "Clientes Amam" no perfil do Instagram.
+- **Página do Produto no Site**: Coloque prints de avaliações do WhatsApp ou fotos de clientes logo abaixo da descrição do item.
+- **Nos Anúncios**: Anúncios que mostram o print da conversa do WhatsApp ("Chegou super rápido e é linda!") costumam vender muito mais.

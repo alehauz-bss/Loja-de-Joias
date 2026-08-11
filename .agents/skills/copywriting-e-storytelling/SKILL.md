@@ -1,87 +1,70 @@
 ---
 name: copywriting-e-storytelling
-description: Skill de Copywriting persuasivo, Storytelling e Redação Emocional para Semi Joias.
+description: Redação persuasiva, textos para redes sociais, e-mails e histórias reais que vendem semi joias.
 ---
 
-# ✍️ Skill: Copywriting & Storytelling para Semi Joias
+# Copywriting e Storytelling para Semi Joias
 
-## 🎯 Objetivo da Skill
-Capacitar a equipe e os agentes virtuais a escreverem textos altamente persuasivos, elegantes e honestos, capazes de transformar semi joias folheadas a ouro em símbolos de estilo, personalidade, empoderamento e presentes inesquecíveis — sem fingir que são ouro maciço e sem parecer bijuteria de feira.
+## Como escrever textos que vendem com elegância
+Esta habilidade mostra como escrever legendas, descrições de produtos e mensagens que geram desejo imediato sem parecer aquele vendedor chato e apelativo.
 
----
-
-## 💛 Fórmulas de Copywriting para Semi Joias
-
-### 1. A Fórmula do Look Completo (Estilo + Peça + Transformação)
-- **Gancho (Hook)**: Conecte com um look, uma ocasião ou um sentimento.
-- **Produto (Product)**: Apresente a semi joia com precisão e elegância (folheado a ouro 18k, antialérgico, design exclusivo).
-- **Transformação (Result)**: Mostre o "depois" — como ela se sente ao usar.
-- **Chamada para Ação (CTA)**: Convite leve e próximo para conhecer ou comprar.
-
-*Exemplo*: "Aquele look que parece que você se preparou por horas — mas foi só adicionar este colar. ✨ Folheado a ouro 18k, antialérgico e pronto para virar o seu favorito. Link na bio."
-
-### 2. A Fórmula da Auto-Recompensa (Empoderamento & Merecimento)
-- **Gancho**: "Você não precisa de uma data especial. Só de uma peça que combine com quem você é."
-- **Desenvolvimento**: Reconhecimento das vitórias do dia a dia, do gosto próprio refinado.
-- **Peça**: Semi joia versátil e marcante (ex: argola grande, anel ajustável, pulseira de elos).
-- **CTA**: "Escolha a sua. Você merece."
-
-### 3. A Fórmula do Presente Perfeito (Para Quem Ama Presentear)
-- **Gancho**: "O presente que qualquer mulher quer receber — e ela vai lembrar de você cada vez que usar."
-- **Apresentação da Joia**: Descrever o design + embalagem presenteável + guia de conservação incluso.
-- **Garantia de Qualidade**: Semi joia antialérgica, folheado espesso, durabilidade com cuidados.
-- **CTA**: "Compre agora e receba em [X dias] — dá tempo de surpreender."
+O segredo do copywriting de joias é conectar a peça a um sentimento, a um momento do dia ou à autoestima da cliente.
 
 ---
 
-## 📝 Exemplos de Textos Prontos por Categoria
+## 3 Estruturas de Texto Práticas
 
-### Exemplo 1: Descrição de Produto no E-commerce (Colar Delicado)
-> **Título**: Colar Pingente Coração Folheado a Ouro 18k — Coleção Amor Próprio
-> **Descrição**: Delicado o suficiente para o dia a dia, marcante o suficiente para não passar despercebido. Este colar com pingente de coração é confeccionado em latão nobre com banho galvânico de ouro 18k de alta espessura — garantindo um brilho duradouro e um acabamento suave ao toque. Antialérgico e livre de níquel, é a peça que a cliente de pele sensível sempre quis encontrar.
-> **Especificações**: Material base: Latão Nobre | Acabamento: Folheado a Ouro 18k | Antialérgico: Sim | Comprimento: 45cm + extensor de 5cm | Acompanha caixinha presenteável + guia de conservação.
+### 1. O Rito do Dia a Dia (Look + Sentimento)
+- **Gancho**: Comece pelo contexto em que a mulher se encontra (ex: arrumação de manhã, um evento à noite).
+- **A Peça**: Apresente a peça como o toque final que muda o visual.
+- **Detalhe Técnico**: Comente brevemente o banho de ouro 18k e o acabamento antialérgico.
+- **Chamada**: Convite direto para conferir no site ou chamar no WhatsApp.
 
-### Exemplo 2: Legenda para Instagram (Lançamento de Coleção)
-> "Tem peça que entra na sua vida e nunca mais sai do seu pescoço. 🌟
->
-> Apresentamos a Coleção [Nome] — criada para mulheres que sabem o que querem. Folheada a ouro 18k, antialérgica e com design exclusivo que combina com tudo.
->
-> Disponível agora no site e pelo WhatsApp. Link na bio 💛"
+*Exemplo prático*:
+> "Sabe aquele dia em que a roupa é básica, mas você quer parecer pronta para qualquer reunião? Um mix de argolas douradas faz exatamente esse trabalho. Peças leves, com banho de ouro 18k e antialérgicas para acompanhar você o dia todo. Clique no link da bio e escolha o seu par favorito."
 
-### Exemplo 3: Mensagem de E-mail (Carrinho Abandonado)
-> **Assunto**: A sua semi joia favorita está esperando por você ✨
-> **Corpo**: Oi, [Nome]! A gente separou a peça que você escolheu — ela ainda está disponível e pronta para ir até você. Feita em folheado a ouro 18k, antialérgica e com embalagem presenteável inclusa. Quer finalizar o pedido? Estamos aqui para ajudar 💛
+### 2. O Presente com Significado
+- **Gancho**: Fale sobre a intenção de acertar em cheio no presente.
+- **A Experiência**: Descreva como a pessoa vai se sentir ao abrir a caixinha cheirosa.
+- **Garantia**: Lembre do banho de qualidade e do cartão de cuidados.
+- **Chamada**: "Chama a gente no WhatsApp que ajudamos a escolher o modelo ideal."
+
+### 3. A Auto-Recompensa
+- **Gancho**: Lembrar que ela não precisa esperar uma data comemorativa para se dar um presente.
+- **A Peça**: Destacar a versatilidade da joia.
+- **Chamada**: "Você merece esse carinho hoje. Disponível no site."
 
 ---
 
-## 📖 Dicionário de Vocabulário para Semi Joias
+## Exemplos Reais de Textos Prontos
 
-Seja honesta, mas elegante. Semi joias têm beleza própria — não precisam se esconder.
+### Legenda para Lançamento no Instagram
+> "Peça nova no ar! 💛
+> 
+> Desenvolvemos esse colar pensando em quem ama peças delicadas, mas que chamam atenção pela luz e pelo acabamento. Ele leva banho espesso de ouro 18k e pedras de zircônia cravejadas uma a uma.
+> 
+> Perfeito para usar sozinho ou fazendo camada com correntes mais curtas.
+> 
+> Já está disponível no site (link na bio) e enviamos para todo o Brasil com embalagem de presente inclusa!"
 
-| Evite usar... | Prefira usar... |
+### Descrição Simples para Site
+> **Colar Gravatinha Folheado a Ouro 18k**
+> 
+> Um clássico que valoriza qualquer decote. Nosso colar gravatinha é feito com base nobre, banho galvânico de 10 micras de ouro 18k e acabamento antialérgico livre de níquel.
+> 
+> • Comprimento: 45 cm + 5 cm de extensor
+> • Banho: Ouro 18k premium
+> • Garantia: 1 ano no banho
+> • Acompanha caixinha de presente e guia de cuidados.
+
+---
+
+## Vocabulário Que Funciona vs. O Que Evitar
+
+| Evite usar (Sintético / Apelativo) | Prefira usar (Humano / Elegante) |
 | :--- | :--- |
-| "Ouro de verdade" | "Folheado a ouro 18k" |
-| "Pedras naturais" | "Zircônia cúbica de corte brilhante" |
-| "Barato" | "Preço acessível com qualidade" |
-| "Vai durar pra sempre" | "Com cuidados simples, dura anos" |
-| "É igual ao ouro" | "Tem o brilho e a elegância do ouro" |
-| "Promoção bombástica" | "Condição especial por tempo limitado" |
-| "Tô doida" / "Arrasou" | "Sofisticado", "Encantador", "Marcante" |
-
----
-
-## 🤖 Prompt de Geração de Copy para Semi Joias
-
-```text
-Você é um Copywriter especialista em semi joias e moda feminina acessível. Crie uma legenda envolvente para o Instagram sobre [DESCREVER PRODUTO/COLEÇÃO].
-
-Objetivo da copy: [Venda direta / Engajamento / Lançamento / Auto-presenteio]
-Público-alvo: [Ex: Mulheres de 25–40 anos que buscam estilo acessível / Homens buscando presente para namorada]
-
-Requisitos:
-- Gancho emocional nos primeiros 3 segundos de leitura.
-- Linguagem sofisticada, próxima e acessível.
-- Mencionar que é folheado a ouro 18k e antialérgico de forma natural (não forçada).
-- CTA leve e convidativo.
-- Máximo de 5 linhas + hashtags.
-```
+| "Ouro puro" (se for folheado) | "Banho espesso de ouro 18k" |
+| "Promoção bombástica!" | "Condição especial de lançamento" |
+| "Peça barata" | "Preço acessível com acabamento de joia" |
+| "Vai durar a vida toda" | "Com cuidados simples, dura anos mantendo o brilho" |
+| "Alavancar seu visual" | "Dar aquele toque final no seu look" |
