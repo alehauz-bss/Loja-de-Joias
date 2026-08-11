@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo 1: Esmeralda & Ouro Imperial — Relatório Completo</title>
+    <title>Modelo 1: Esmeralda & Ouro Imperial — Amarlena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -49,20 +49,11 @@
             background: rgba(7, 12, 10, 0.92);
             backdrop-filter: blur(16px);
             position: sticky; top: 0; z-index: 100;
-            padding: 16px 40px; display: flex;
+            padding: 14px 40px; display: flex;
             justify-content: space-between; align-items: center;
         }
 
-        .brand-logo { display: flex; align-items: center; gap: 14px; }
-        .brand-logo .icon {
-            width: 44px; height: 44px;
-            background: linear-gradient(135deg, var(--accent-gold), var(--primary-emerald));
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 24px; box-shadow: var(--glow);
-        }
-
-        .brand-logo h1 { font-size: 22px; color: #fff; }
-        .brand-logo span { color: var(--accent-gold); }
+        .brand-logo-img { height: 42px; width: auto; }
 
         .btn-portal-back {
             background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-gold);
@@ -208,15 +199,10 @@
 </head>
 <body>
 
-    <div class="model-banner">👑 MODELO 1: ESMERALDA & OURO IMPERIAL — RELATÓRIO COMPLETO</div>
+    <div class="model-banner">👑 MODELO 1: ESMERALDA & OURO IMPERIAL — AMARLENA</div>
 
     <header>
-        <div class="brand-logo">
-            <div class="icon">💎</div>
-            <div>
-                <h1>HUB JOIAS <span>. Relatório Executivo Completo</span></h1>
-            </div>
-        </div>
+        <img src="assets/amarlena_logo.png" alt="Amarlena Semi Joias" class="brand-logo-img">
         <a href="index.html" class="btn-portal-back">⬅ Voltar ao Portal de Escolha</a>
     </header>
 
@@ -253,7 +239,7 @@
 
         <!-- Navigation Tabs -->
         <div class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab('tab-visao-geral')">📊 Visão Geral & Quantificação</button>
+            <button class="tab-btn active" onclick="switchTab('tab-visao-geral')">📊 Visão Geral Amarlena</button>
             <button class="tab-btn" onclick="switchTab('tab-catalogo')">💎 Catálogo (328 SKUs)</button>
             <button class="tab-btn" onclick="switchTab('tab-agentes')">👥 Equipe de Agentes (8)</button>
             <button class="tab-btn" onclick="switchTab('tab-skills')">📚 Matriz de Skills (13)</button>
@@ -267,7 +253,7 @@
             <div class="card-panel">
                 <h2>📈 Resumo Executivo & Quantificação do Trabalho</h2>
                 <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-                    Todo o ecossistema da <strong>Loja de Joias</strong> foi mapeado, estruturado e automatizado. O projeto une um catálogo completo de dropshipping nacional da Hub Joias a uma equipe inteligente de agentes de IA e estratégias de alta conversão.
+                    Todo o ecossistema da marca <strong>Amarlena Semi Joias</strong> foi mapeado, estruturado e automatizado. O projeto une um catálogo completo de dropshipping nacional a uma equipe inteligente de agentes de IA e estratégias de alta conversão.
                 </p>
 
                 <div class="grid-2">
@@ -312,7 +298,7 @@
                     </div>
 
                     <div>
-                        <h3 style="color: #fff; margin-bottom: 12px;">🛡️ Pilares Operacionais Confirmados (Hub Joias)</h3>
+                        <h3 style="color: #fff; margin-bottom: 12px;">🛡️ Pilares Operacionais Confirmados (Amarlena)</h3>
                         <div style="background: rgba(6, 30, 22, 0.6); padding: 18px; border-radius: 12px; border: 1px solid var(--card-border);">
                             <p style="margin-bottom: 10px;">✨ <strong>Qualidade e Garantia</strong>: Banho em Ouro 24K (10 milésimos), Ródio legítimo e Prata 925 maciça com tecnologia antialérgica e 2 anos de garantia.</p>
                             <p style="margin-bottom: 10px;">⚡ <strong>Logística Dropshipping</strong>: Despacho em até 24 horas úteis diretamente ao cliente final sem necessidade de estoque próprio.</p>
@@ -404,7 +390,7 @@
         <!-- TAB 3: AGENTES -->
         <div id="tab-agentes" class="tab-content">
             <div class="card-panel">
-                <h2>👥 Equipe de Agentes Autônomos de Marketing</h2>
+                <h2>👥 Equipe de Agentes Autônomos Amarlena</h2>
                 <p style="color: var(--text-muted); margin-bottom: 25px;">Clique em qualquer agente para visualizar seu perfil completo e responsabilidades.</p>
 
                 <div class="grid-2">
@@ -417,7 +403,7 @@
                                     <div class="subtitle">Diretor de Marca & Posicionamento</div>
                                 </div>
                             </div>
-                            <p>Guardião do tom de voz, identidade visual e branding de sofisticação acessível.</p>
+                            <p>Guardião do tom de voz, identidade visual e branding Amarlena de sofisticação acessível.</p>
                         </div>
                         <button class="btn-view-details" onclick="openModal('agent-01')">🔍 Ver Prompt & Detalhes</button>
                     </div>
@@ -439,20 +425,6 @@
                     <div class="interactive-card">
                         <div>
                             <div class="header">
-                                <div class="avatar">📸</div>
-                                <div>
-                                    <div class="title">Kayo Feed</div>
-                                    <div class="subtitle">Social Media & Criador Visual</div>
-                                </div>
-                            </div>
-                            <p>Curadoria de feed no Instagram, prompts para imagens fotorrealistas e roteiros de Reels.</p>
-                        </div>
-                        <button class="btn-view-details" onclick="openModal('agent-03')">🔍 Ver Prompt & Detalhes</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div>
-                            <div class="header">
                                 <div class="avatar">🎯</div>
                                 <div>
                                     <div class="title">Cássio Pix</div>
@@ -462,34 +434,6 @@
                             <p>Estrutura de campanhas de conversão no Meta Ads e Google Ads calibradas para ROAS alto.</p>
                         </div>
                         <button class="btn-view-details" onclick="openModal('agent-04')">🔍 Ver Prompt & Detalhes</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div>
-                            <div class="header">
-                                <div class="avatar">✉️</div>
-                                <div>
-                                    <div class="title">Beto Zap</div>
-                                    <div class="subtitle">CRM & Atendimento WhatsApp</div>
-                                </div>
-                            </div>
-                            <p>Recuperação de carrinho abandonado 24/7, réguas de e-mail marketing e atendimento humanizado.</p>
-                        </div>
-                        <button class="btn-view-details" onclick="openModal('agent-05')">🔍 Ver Prompt & Detalhes</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div>
-                            <div class="header">
-                                <div class="avatar">🌐</div>
-                                <div>
-                                    <div class="title">Hugo Hub</div>
-                                    <div class="subtitle">E-commerce & Marketplaces</div>
-                                </div>
-                            </div>
-                            <p>Gestor de cadastros no Mercado Livre, Shopee, Bling ERP e precificação por canal.</p>
-                        </div>
-                        <button class="btn-view-details" onclick="openModal('agent-08')">🔍 Ver Prompt & Detalhes</button>
                     </div>
                 </div>
             </div>
@@ -515,45 +459,9 @@
                     </div>
 
                     <div class="interactive-card">
-                        <div class="title">03. Copywriting & Storytelling</div>
-                        <p>Ganchos emocionais para Instagram, e-mail e fichas de e-commerce.</p>
-                        <button class="btn-view-details" onclick="openModal('skill-03')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div class="title">04. Social Media & Visual</div>
-                        <p>Fotografia macro em luz natural e Reels de alto impacto.</p>
-                        <button class="btn-view-details" onclick="openModal('skill-04')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
                         <div class="title">05. Tráfego Pago Máster</div>
                         <p>Google Ads (Search/PMax) e Meta Ads Advantage+ com criativos de alta conversão.</p>
                         <button class="btn-view-details" onclick="openModal('skill-05')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div class="title">06. E-mail Marketing & CRM</div>
-                        <p>Réguas automatizadas de pós-venda, aniversário e recompra.</p>
-                        <button class="btn-view-details" onclick="openModal('skill-06')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div class="title">07. Atendimento WhatsApp</div>
-                        <p>Scripts humanizados de conversão e contorno de objeções de frete.</p>
-                        <button class="btn-view-details" onclick="openModal('skill-07')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div class="title">08. Reviews & Prova Social</div>
-                        <p>Estratégia de UGC (Fotos de clientes reais) e avaliações.</p>
-                        <button class="btn-view-details" onclick="openModal('skill-08')">📖 Abrir Playbook</button>
-                    </div>
-
-                    <div class="interactive-card">
-                        <div class="title">09. Marketplaces & ERP</div>
-                        <p>Cálculo de margem por comissão de canal (ML, Shopee, TikTok Shop).</p>
-                        <button class="btn-view-details" onclick="openModal('skill-09')">📖 Abrir Playbook</button>
                     </div>
 
                     <div class="interactive-card">
@@ -569,13 +477,13 @@
         <div id="tab-campanha" class="tab-content">
             <div class="card-panel">
                 <h2>🌸 Lançamento Completo: Colar "Amor Eterno"</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Exemplo prático de campanha gerada com a atuação integrada dos agentes de IA.</p>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Exemplo prático de campanha gerada com a atuação integrada dos agentes de IA Amarlena.</p>
 
                 <div class="grid-2">
                     <div style="background: rgba(6, 30, 22, 0.6); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border);">
                         <h3 style="color: #fff; margin-bottom: 12px;">📌 Detalhes da Peça Anunciada</h3>
                         <p style="line-height: 1.7; font-size: 14px;">
-                            • <strong>Nome</strong>: Colar Coração Amor Eterno<br>
+                            • <strong>Nome</strong>: Colar Coração Amor Eterno Amarlena<br>
                             • <strong>Material</strong>: Banho Ouro 24K (10 milésimos) + Cravação Zircônia Cúbica<br>
                             • <strong>Preço Sugerido</strong>: R$ 149,90 (Custo: R$ 34,90)<br>
                             • <strong>Público-Alvo</strong>: Filhos(as) presenteando mães & esposas
@@ -601,7 +509,7 @@
                 <div style="background: rgba(6, 30, 22, 0.6); padding: 20px; border-radius: 12px; border: 1px solid var(--card-border); margin-bottom: 20px;">
                     <h3 style="color: #fff; margin-bottom: 10px;">📦 Fluxo Logístico Dropshipping SLA 24h</h3>
                     <p style="line-height: 1.7; font-size: 14px;">
-                        1. Cliente efetua a compra no site ou marketplace.<br>
+                        1. Cliente efetua a compra no site ou marketplace Amarlena.<br>
                         2. Pedido entra automaticamente no Bling/Tiny ERP via API.<br>
                         3. Pedido é faturado e enviado em 24h úteis direto ao cliente com embalagem presenteável.<br>
                         4. Código de rastreamento enviado via WhatsApp e e-mail.
@@ -674,7 +582,7 @@
             },
             'agent-01': {
                 title: '👑 Armando Joia — Diretor de Marca',
-                content: `<p>Guardião do posicionamento sofisticado e acessível. Orienta o tom de voz elegante, transparente e humano da loja de semi joias.</p>`
+                content: `<p>Guardião do posicionamento sofisticado e acessível. Orienta o tom de voz elegante, transparente e humano da marca Amarlena.</p>`
             },
             'agent-02': {
                 title: '✍️ Lucas Pinto — Copywriter Sênior',

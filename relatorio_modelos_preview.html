@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha o Modelo de Design — Relatório Interativo</title>
+    <title>Amarlena — Escolha o Modelo de Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -14,17 +14,31 @@
             background-color: #080a0f;
             color: #f1f5f9;
             min-height: 100vh;
-            padding: 40px 20px 80px 20px;
+            padding-bottom: 80px;
+        }
+
+        header {
+            padding: 35px 20px 15px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-logo-img {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
         }
 
         .header-title {
-            text-align: center;
             max-width: 850px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto;
         }
 
         .header-title h1 {
-            font-size: 36px;
+            font-size: 38px;
             font-family: 'Playfair Display', serif;
             color: #fff;
             margin-bottom: 12px;
@@ -42,10 +56,11 @@
 
         .models-grid {
             max-width: 1350px;
-            margin: 0 auto;
+            margin: 35px auto 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+            padding: 0 20px;
         }
 
         .model-card {
@@ -62,7 +77,7 @@
         .model-card:hover {
             transform: translateY(-8px);
             border-color: #ffb800;
-            box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(255, 184, 0, 0.25);
         }
 
         .model-card .badge {
@@ -81,18 +96,26 @@
         .badge-3 { background: linear-gradient(90deg, rgba(255, 184, 0, 0.3), rgba(0, 230, 153, 0.3)); color: #00e699; border: 1px solid #00e699; }
 
         .model-card .preview-box {
-            height: 220px;
+            height: 240px;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
             position: relative;
+            overflow: hidden;
         }
 
-        .preview-1 { background: linear-gradient(135deg, #070c0a, #063826); border-bottom: 2px solid #d4af37; }
-        .preview-2 { background: linear-gradient(135deg, #faf7f2, #e5cfc3); color: #4a2d20; border-bottom: 2px solid #d68c78; }
-        .preview-3 { background: linear-gradient(135deg, #080a0f, #131822); border-bottom: 2px solid #00e699; }
+        .model-card .preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .model-card:hover .preview-box img {
+            transform: scale(1.06);
+        }
+
+        .preview-1 { border-bottom: 2px solid #d4af37; }
+        .preview-2 { border-bottom: 2px solid #d68c78; }
+        .preview-3 { border-bottom: 2px solid #00e699; }
 
         .model-content {
             padding: 28px;
@@ -153,67 +176,70 @@
 </head>
 <body>
 
-    <div class="header-title">
-        <h1>Escolha o Modelo de Design do <span>Relatório Interativo</span></h1>
-        <p>Desenvolvemos 3 propostas estéticas completas. Abra cada uma delas no seu navegador para testar o design, as animações e a interatividade!</p>
-    </div>
+    <header>
+        <img src="assets/amarlena_logo.png" alt="Amarlena Semi Joias Logo" class="brand-logo-img">
+        <div class="header-title">
+            <h1>AMARLENA <span>— Escolha o Modelo de Design</span></h1>
+            <p>Selecione abaixo o modelo de design desejado para testar a experiência visual e a interatividade da marca Amarlena.</p>
+        </div>
+    </header>
 
     <div class="models-grid">
 
         <!-- MODELO 1 -->
         <div class="model-card">
             <div class="preview-box preview-1">
-                <span>👑</span>
+                <img src="assets/card_modelo_1_esmeralda.png" alt="Modelo 1: Esmeralda & Ouro Imperial">
             </div>
             <div class="model-content">
                 <span class="badge badge-1">Dark Mode Clássico</span>
                 <h3>Modelo 1: Esmeralda & Ouro Imperial</h3>
-                <p>Estética refinada em verde esmeralda profundo, detalhes reluzentes em ouro champanhe e efeito vidro temperado (glassmorphic).</p>
+                <p>Estética refinada em verde esmeralda profundo, detalhes reluzentes em ouro champanhe 18k e efeito vidro temperado (glassmorphic).</p>
                 <ul class="features-list">
+                    <li>✓ Relatório Amarlena 100% Completo (7 Abas)</li>
                     <li>✓ Fundo Dark Premium (#070c0a)</li>
                     <li>✓ Acentos Ouro Imperial & Esmeralda</li>
-                    <li>✓ Tipografia Clássica de Joalheria</li>
-                    <li>✓ Ideal para passar prestígio e tradição</li>
+                    <li>✓ Tipografia Clássica de Alta Joalheria</li>
                 </ul>
-                <a href="relatorio_modelo_1_esmeralda.html" class="btn-open btn-1" target="_blank">👑 Abrir Modelo 1 em Tela Cheia</a>
+                <a href="relatorio_modelo_1_esmeralda.html" class="btn-open btn-1">👑 Abrir Relatório Completo Modelo 1</a>
             </div>
         </div>
 
         <!-- MODELO 2 -->
         <div class="model-card">
             <div class="preview-box preview-2">
-                <span>🌸</span>
+                <img src="assets/card_modelo_2_nude.png" alt="Modelo 2: Minimalista Nude & Rosé">
             </div>
             <div class="model-content">
                 <span class="badge badge-2">Light Mode Editorial</span>
                 <h3>Modelo 2: Minimalista Nude & Rosé</h3>
                 <p>Estética leve de revista de moda (Vogue/Elle), com tons nude champagne, rosé suave, tipografia moderna e máxima clareza visual.</p>
                 <ul class="features-list">
+                    <li>✓ Relatório Amarlena 100% Completo (7 Abas)</li>
                     <li>✓ Fundo Light Nude Off-White (#faf7f2)</li>
                     <li>✓ Acentos em Rosé Gold & Champagne</li>
                     <li>✓ Tipografia Limpa Outfit & Cormorant</li>
-                    <li>✓ Ideal para visual clean e moderno</li>
                 </ul>
-                <a href="relatorio_modelo_2_minimalista.html" class="btn-open btn-2" target="_blank">🌸 Abrir Modelo 2 em Tela Cheia</a>
+                <a href="relatorio_modelo_2_minimalista.html" class="btn-open btn-2">🌸 Abrir Relatório Completo Modelo 2</a>
             </div>
         </div>
 
         <!-- MODELO 3 -->
         <div class="model-card">
             <div class="preview-box preview-3">
-                <span>✨</span>
+                <img src="assets/card_modelo_3_cyber.png" alt="Modelo 3: Cyber Luxury 3D WebGL">
             </div>
             <div class="model-content">
                 <span class="badge badge-3">🚀 3D WebGL + Three.js Engine</span>
                 <h3>Modelo 3: Cyber Luxury 3D (Com Animações 3D)</h3>
-                <p>Estética ultra-moderna alimentada pelo motor Three.js WebGL, com renderização de anel/diamante 3D em tempo real, campo de partículas 3D e cards com efeito 3D Tilt ao passar o mouse.</p>
+                <p>Estética ultra-moderna alimentada pelo motor Three.js WebGL, com renderização 3D do Anel Solitário do catálogo, partículas com paralaxe no mouse e cards 3D Tilt.</p>
                 <ul class="features-list">
-                    <li>✓ Motor WebGL 3D em Tempo Real (Three.js)</li>
-                    <li>✓ Renderização 3D Interativa de Joia em Ouro 18k</li>
-                    <li>✓ Campo de Partículas 3D com Parallax no Cursor</li>
+                    <li>✓ Relatório Amarlena 100% Completo (7 Abas)</li>
+                    <li>✓ Motor WebGL 3D com Paralaxe no Cursor</li>
+                    <li>✓ Anel Solitário Ponto de Luz 18k do Catálogo 3D</li>
                     <li>✓ Cards com Efeito 3D Tilt (Perspective/Rotate)</li>
                 </ul>
-                <a href="relatorio_modelo_3_cyber_luxury.html" class="btn-open btn-3" target="_blank">✨ Abrir Modelo 3D em Tela Cheia</a>
+                <a href="relatorio_modelo_3_cyber_luxury.html" class="btn-open btn-3">✨ Abrir Relatório Completo Modelo 3D</a>
             </div>
         </div>
 
