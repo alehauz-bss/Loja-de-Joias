@@ -1,0 +1,86 @@
+{
+  "meta_ads_campaign": {
+    "nome_campanha": "[CONV] [DIA_DAS_MAES] Colar Amor Eterno - 2026",
+    "objetivo": "PURCHASE",
+    "estrategia_lance": "LOWEST_COST",
+    "orcamento_diario_brl": 150.00,
+    "conjuntos_de_anuncios": [
+      {
+        "nome_conjunto": "CBO_01_TOPO_Filhos_Presentes_20-45_BR",
+        "orcamento_proporcao": 0.40,
+        "segmentacao": {
+          "idade_min": 20,
+          "idade_max": 45,
+          "generos": ["Feminino", "Masculino"],
+          "localizacao": "Brasil",
+          "interesses": [
+            "Dia das Mães",
+            "Presentes",
+            "Joias",
+            "Semijoias",
+            "Compras online"
+          ]
+        },
+        "anuncios": [
+          {
+            "id": "AD_01_VIDEO_NANO_BANANA_FILHOS",
+            "formato": "REELS_STORY_FEED_VIDEO",
+            "headline": "O Presente que a Sua Mãe Jamais Vai Esquecer 💖",
+            "texto": "Colar banhado a ouro 24k com caixa de veludo esmeralda e cartão grátis. Frete grátis garantido!",
+            "cta": "SHOP_NOW"
+          }
+        ]
+      },
+      {
+        "nome_conjunto": "CBO_02_TOPO_Maridos_Esposos_28-55_BR",
+        "orcamento_proporcao": 0.35,
+        "segmentacao": {
+          "idade_min": 28,
+          "idade_max": 55,
+          "generos": ["Masculino"],
+          "localizacao": "Brasil",
+          "interesses": [
+            "Casado",
+            "Relacionamento sério",
+            "Presentes de luxo"
+          ]
+        },
+        "anuncios": [
+          {
+            "id": "AD_02_CARROSSEL_MARIDOS",
+            "formato": "CAROUSEL_IMAGE",
+            "headline": "Surpreenda a Mãe dos Seus Filhos neste Dia das Mães ✨",
+            "texto": "Uma joia fina em Ouro 24k com 2 anos de garantia para demonstrar toda a sua admiração.",
+            "cta": "SHOP_NOW"
+          }
+        ]
+      },
+      {
+        "nome_conjunto": "CBO_03_REMARKETING_Visitantes_Cart_14D",
+        "orcamento_proporcao": 0.25,
+        "segmentacao": {
+          "publico_customizado": [
+            "Pixel_Visitantes_14D",
+            "Pixel_Carrinho_Abandonado_7D",
+            "Engajamento_Instagram_30D"
+          ]
+        },
+        "anuncios": [
+          {
+            "id": "AD_03_REMARKETING_CUPOM",
+            "formato": "SINGLE_IMAGE",
+            "headline": "Ainda dá tempo! Use o Cupom MAES10 🌸",
+            "texto": "Sua mãe merece este carinho. Finalize seu pedido agora com 10% OFF + Frete Grátis.",
+            "cta": "GET_OFFER"
+          }
+        ]
+      }
+    ],
+    "metricas_kpi_alvo": {
+      "ctr_esperado": 2.5,
+      "cpc_maximo_brl": 1.20,
+      "cpa_alvo_brl": 28.00,
+      "roas_desejado": 3.17
+    }
+  }
+}

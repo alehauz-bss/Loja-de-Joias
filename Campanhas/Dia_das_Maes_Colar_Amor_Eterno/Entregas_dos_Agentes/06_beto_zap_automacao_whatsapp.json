@@ -1,0 +1,21 @@
+{
+  "whatsapp_crm_campaign": {
+    "nome_fluxo": "DISPARO_VIP_DIA_DAS_MAES_2026",
+    "gatilho": "BASE_DE_CLIENTES_COMPRADORES_60D",
+    "mensagens": [
+      {
+        "passo": 1,
+        "tempo_espera": "Imediato",
+        "tipo": "TEXTO_COM_IMAGEM",
+        "url_imagem": "colar_dia_das_maes_nano_banana_1786427429669.png",
+        "conteudo": "Olá {primeiro_nome}! 🌸 O Dia das Mães está se aproximando e preparamos um lançamento VIP exclusivo para nossos clientes especiais.\n\nApresentamos o *Colar Amor Eterno*: banhado a Ouro 24k com caixa de veludo esmeralda e cartão personalizado de presente *GRÁTIS*.\n\nComo você é nossa cliente VIP, liberamos um cupom de *10% OFF exclusivo*: *MAES10* com Frete Grátis garantido até o Dia das Mães!\n\nToque no link para garantir a edição limitada: {link_checkout_vip}"
+      },
+      {
+        "passo": 2,
+        "tempo_espera": "24h após carrinho abandonado",
+        "tipo": "TEXTO_REMARKETING",
+        "conteudo": "Oi {primeiro_nome}, notamos que você deixou o Colar Amor Eterno no carrinho! 💖\n\nO estoque dessa edição de Dia das Mães é limitado. Quer ajuda para personalizar o cartão da sua mãe antes de esgotar?\n\nClique para concluir agora com presente surpresa: {link_carrinho}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "produto": {
+    "sku": "COL-MAES-2026-OURO",
+    "nome": "Colar Amor Eterno Banhado a Ouro 24k com Zircônias - Edição Dia das Mães",
+    "ncm": "7117.19.00",
+    "gtin_ean": "7898765432109",
+    "categoria_principal": "Colares",
+    "subcategoria": "Colares Temáticos / Dia das Mães",
+    "marca": "Hub Joias",
+    "tipo_acabamento": "Banho de Ouro 24k (10 milésimos)",
+    "pedras": "Zircônias Cúbicas de Alta Lapidação",
+    "peso_gramas": 15.5,
+    "dimensoes_embalagem_cm": {
+      "altura": 4,
+      "largura": 10,
+      "comprimento": 10
+    },
+    "precos": {
+      "custo_produto": 18.00,
+      "preco_venda_site": 89.00,
+      "preco_venda_marketplaces": 99.00,
+      "markup_site": 4.94
+    },
+    "estoque_inicial": 250,
+    "badging_ecommerce": [
+      "Especial Dia das Mães",
+      "Caixa de Veludo Grátis",
+      "Frete Grátis",
+      "Chega Antes do Dia das Mães"
+    ],
+    "canais_ativos": [
+      "Nuvemshop",
+      "Mercado Livre",
+      "Shopee",
+      "TikTok Shop",
+      "Shein Brasil"
+    ]
+  }
+}
