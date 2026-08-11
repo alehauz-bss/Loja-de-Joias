@@ -69,26 +69,93 @@
 
         .container { max-width: 1350px; margin: 0 auto; padding: 30px 20px; }
 
-        /* 3D Hero Display */
-        .hero-3d-panel {
-            background: linear-gradient(135deg, rgba(18, 24, 38, 0.85), rgba(8, 10, 15, 0.95));
+        /* ─── 3D HERO SHOWCASE (Full-Width Cinematic) ─── */
+        .hero-3d-showcase {
+            position: relative;
             border: 1px solid var(--card-border);
-            border-radius: 24px; padding: 25px 30px; margin-bottom: 35px;
-            display: grid; grid-template-columns: 1fr 340px; gap: 25px; align-items: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(16px);
+            border-radius: 24px; margin-bottom: 35px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(255,184,0,0.15), 0 20px 60px rgba(0,0,0,0.7);
         }
 
-        .canvas-3d-box {
-            width: 100%; height: 230px;
-            background: radial-gradient(circle at center, rgba(255, 184, 0, 0.15), rgba(8, 10, 15, 0.9));
-            border: 1px solid var(--card-border); border-radius: 18px;
-            position: relative; cursor: grab; overflow: hidden;
+        .hero-3d-showcase::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(to right,
+                rgba(8,10,15,0.95) 0%,
+                rgba(8,10,15,0.5) 35%,
+                transparent 55%);
+            z-index: 2; pointer-events: none;
         }
 
-        .canvas-3d-box label {
-            position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-            font-size: 11px; color: var(--accent-emerald); font-weight: 700; letter-spacing: 1px;
-            text-transform: uppercase; pointer-events: none;
+        .ring-3d-iframe {
+            width: 100%; height: 440px;
+            border: none; display: block;
+            background: #06080f;
+        }
+
+        .hero-overlay-info {
+            position: absolute; top: 0; left: 0; bottom: 0;
+            width: 42%; padding: 32px 36px;
+            display: flex; flex-direction: column; justify-content: center;
+            z-index: 3; pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,184,0,0.15); border: 1px solid rgba(255,184,0,0.4);
+            border-radius: 20px; padding: 5px 14px; font-size: 11px;
+            color: var(--accent-gold); font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 16px; width: fit-content;
+        }
+
+        .hero-ring-name {
+            font-size: 28px; font-weight: 800; color: #fff; line-height: 1.2;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .hero-ring-name span {
+            background: linear-gradient(90deg, #ffb800, #ffe066);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero-ring-desc {
+            font-size: 13px; color: var(--text-muted); line-height: 1.7;
+            margin-bottom: 20px; max-width: 380px;
+        }
+
+        .hero-specs {
+            display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px;
+        }
+
+        .hero-spec-row {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 12px; color: rgba(255,255,255,0.7);
+        }
+
+        .hero-spec-row .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent-gold); flex-shrink: 0;
+        }
+
+        .hero-price {
+            font-size: 38px; font-weight: 800;
+            font-family: var(--font-head);
+            background: linear-gradient(90deg, #ffb800, #ffe066);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero-price-label {
+            font-size: 11px; color: var(--text-muted); letter-spacing: 1px;
+            text-transform: uppercase; margin-top: 2px;
+        }
+
+        .hero-drag-hint {
+            position: absolute; bottom: 18px; right: 20px;
+            font-size: 11px; color: rgba(255,255,255,0.3);
+            letter-spacing: 1px; z-index: 3; pointer-events: none;
+            display: flex; align-items: center; gap: 6px;
         }
 
         /* Metrics 3D Tilt Grid */
@@ -237,15 +304,40 @@
 
     <div class="container">
 
-        <!-- 3D Hero Jewelry Display -->
-        <div class="hero-3d-panel">
-            <div>
-                <h2 style="font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 10px;">Anel Solitário Ponto de Luz 18k (3D WebGL)</h2>
-                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Modelagem 3D tridimensional em tempo real do lendário <strong>Anel Solitário Ponto de Luz</strong> do catálogo Amarlena. O fundo de partículas acompanha a rotação do seu mouse em tempo real!</p>
+        <!-- ─── HERO 3D SHOWCASE: Anel Solitário Ponto de Luz (PBR Ultra-Realista) ─── -->
+        <div class="hero-3d-showcase">
+
+            <!-- Ultra-Realistic PBR Ring 3D iFrame -->
+            <iframe
+                class="ring-3d-iframe"
+                src="assets/ring3d_amarlena.html"
+                id="ring3d-frame"
+                title="Anel Solitário Ponto de Luz 3D - Amarlena"
+                loading="eager"
+                allow="accelerometer"
+                scrolling="no"
+            ></iframe>
+
+            <!-- Text Overlay (left side, on top of iframe) -->
+            <div class="hero-overlay-info">
+                <div class="hero-badge">⚡ 3D WebGL • PBR • Catálogo #003</div>
+                <h2 class="hero-ring-name">Anel Solitário<br><span>Ponto de Luz Zircônia</span></h2>
+                <p class="hero-ring-desc">
+                    Modelagem <strong>fotorrealista em tempo real</strong> do item #003 do catálogo Amarlena.
+                    Renderizado com Physically Based Rendering (PBR), refração IOR 2.42 e ambiente HDR dinâmico.
+                    Arraste para girar em qualquer direção.
+                </p>
+                <div class="hero-specs">
+                    <div class="hero-spec-row"><div class="dot"></div> Banhado a Ouro 18k — 10 Milésimos</div>
+                    <div class="hero-spec-row"><div class="dot"></div> Zircônia Cúbica Lapidação Brilhante</div>
+                    <div class="hero-spec-row"><div class="dot"></div> Aro Solitário Tension-Set Delicado</div>
+                    <div class="hero-spec-row"><div class="dot"></div> Medidas: Aro nº14 ao nº24 ajustável</div>
+                </div>
+                <div class="hero-price">R$ 39,00</div>
+                <div class="hero-price-label">Preço de venda recomendado</div>
             </div>
-            <div class="canvas-3d-box" id="jewelry-3d-container">
-                <label>Arraste para girar o anel solitário 3D ↺</label>
-            </div>
+
+            <div class="hero-drag-hint">↺ Arraste o anel para girar</div>
         </div>
 
         <!-- Metrics Grid (3D Tilt Cards) -->
@@ -670,82 +762,9 @@
         }
         animateBg();
 
-        // --- Hero 3D Solitaire Ring (Anel Solitário Ponto de Luz do Catálogo) ---
-        const jContainer = document.getElementById('jewelry-3d-container');
-        if (jContainer) {
-            const jScene = new THREE.Scene();
-            const jCamera = new THREE.PerspectiveCamera(50, jContainer.clientWidth / jContainer.clientHeight, 0.1, 100);
-            const jRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            jRenderer.setSize(jContainer.clientWidth, jContainer.clientHeight);
-            jContainer.appendChild(jRenderer.domElement);
-
-            // Ring Group
-            const ringGroup = new THREE.Group();
-
-            // 1. 18k Gold Band
-            const ringGeom = new THREE.TorusGeometry(1.25, 0.22, 32, 100);
-            const goldMat = new THREE.MeshStandardMaterial({ color: 0xffc21a, metalness: 0.95, roughness: 0.1, emissive: 0x3d2b00 });
-            const ringMesh = new THREE.Mesh(ringGeom, goldMat);
-            ringMesh.rotation.x = Math.PI / 2.8;
-            ringGroup.add(ringMesh);
-
-            // 2. 4 Gold Prongs (Gavras do Solitário)
-            const prongGeom = new THREE.CylinderGeometry(0.04, 0.04, 0.45, 12);
-            for (let i = 0; i < 4; i++) {
-                const prong = new THREE.Mesh(prongGeom, goldMat);
-                const angle = (i * Math.PI / 2) + Math.PI/4;
-                prong.position.set(Math.cos(angle) * 0.22, 1.25, Math.sin(angle) * 0.22);
-                prong.rotation.z = Math.cos(angle) * -0.15;
-                ringGroup.add(prong);
-            }
-
-            // 3. Solitaire Diamond Gemstone (Zircônia Cúbica Ponto de Luz)
-            const diamondGeom = new THREE.OctahedronGeometry(0.55, 1);
-            const diamondMat = new THREE.MeshStandardMaterial({
-                color: 0xffffff, metalness: 0.1, roughness: 0.02,
-                transparent: true, opacity: 0.92, emissive: 0x00e699
-            });
-            const diamondMesh = new THREE.Mesh(diamondGeom, diamondMat);
-            diamondMesh.position.y = 1.35;
-            ringGroup.add(diamondMesh);
-
-            jScene.add(ringGroup);
-
-            // Lighting setup
-            const light1 = new THREE.PointLight(0xffb800, 2.5, 50); light1.position.set(5, 5, 5); jScene.add(light1);
-            const light2 = new THREE.PointLight(0x00e699, 2.5, 50); light2.position.set(-5, -5, 5); jScene.add(light2);
-            jScene.add(new THREE.AmbientLight(0xffffff, 0.9));
-            jCamera.position.z = 4.8;
-
-            // Interactive Drag Controls
-            let isDragging = false;
-            let previousMousePosition = { x: 0, y: 0 };
-
-            jContainer.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
-
-            window.addEventListener('mouseup', () => isDragging = false);
-
-            jContainer.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                const deltaMove = { x: e.clientX - previousMousePosition.x, y: e.clientY - previousMousePosition.y };
-                ringGroup.rotation.y += deltaMove.x * 0.01;
-                ringGroup.rotation.x += deltaMove.y * 0.01;
-                previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
-
-            function animateJewelry() {
-                requestAnimationFrame(animateJewelry);
-                if (!isDragging) {
-                    ringGroup.rotation.y += 0.01;
-                    diamondMesh.rotation.y += 0.015;
-                }
-                jRenderer.render(jScene, jCamera);
-            }
-            animateJewelry();
-        }
+        // --- Hero 3D Ring is now rendered inside assets/ring3d_amarlena.html (iframe) ---
+        // Ultra-realistic PBR animation with: MeshPhysicalMaterial, IOR 2.42, dynamic CubeCamera,
+        // ACESFilmic tonemapping, tension-set open-arc band, brilliant-cut zirconia gemstone.
 
         // Vanilla 3D Tilt Cards Effect
         document.querySelectorAll('.metric-card-3d, .interactive-card-3d').forEach(card => {

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Anel Solitario Ponto de Luz - Amarlena 3D</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #080a12; overflow: hidden; width: 100%; height: 100%; font-family: "Segoe UI", sans-serif; }
+  canvas { display: block; }
+  #ring-label {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,184,0,0.9); pointer-events: none;
+    text-shadow: 0 0 12px rgba(255,184,0,0.6); white-space: nowrap;
+  }
+  #ring-hint {
+    position: absolute; top: 12px; right: 12px;
+    font-size: 10px; color: rgba(255,255,255,0.35); pointer-events: none; letter-spacing: 1px;
+  }
+  #price-tag {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(255,184,0,0.15); border: 1px solid rgba(255,184,0,0.5);
+    border-radius: 8px; padding: 5px 10px; font-size: 11px;
+    color: #ffb800; font-weight: 700; pointer-events: none; backdrop-filter: blur(8px);
+  }
+</style>
+</head>
+<body>
+<div id="price-tag">R$ 39,00 | Banhado Ouro 18k</div>
+<div id="ring-hint">Arraste para girar</div>
+<div id="ring-label">Anel Solitario Ponto de Luz Zirconia | Amarlena Semi Joias</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  var W = window.innerWidth, H = window.innerHeight;
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.6;
+  document.body.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x06080f);
+  scene.fog = new THREE.Fog(0x06080f, 12, 30);
+
+  var camera = new THREE.PerspectiveCamera(42, W/H, 0.01, 100);
+  camera.position.set(0, 0.8, 6.0);
+  camera.lookAt(0, 0, 0);
+
+  // ---- MATERIALS (PBR) ----
+  var goldMat = new THREE.MeshStandardMaterial({
+    color: 0xffc845,
+    metalness: 0.98,
+    roughness: 0.07,
+    envMapIntensity: 3.0,
+    emissive: new THREE.Color(0x2a1200),
+    emissiveIntensity: 0.2
+  });
+
+  var zircMat = new THREE.MeshPhysicalMaterial({
+    color: 0xffffff,
+    metalness: 0.0,
+    roughness: 0.0,
+    transmission: 0.95,
+    thickness: 0.6,
+    ior: 2.42,
+    reflectivity: 1.0,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.0,
+    envMapIntensity: 4.0,
+    transparent: true,
+    opacity: 0.98,
+    emissive: new THREE.Color(0x88aaff),
+    emissiveIntensity: 0.08
+  });
+
+  // ---- ENV MAP (Procedural CubeCamera) ----
+  var cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
+    format: THREE.RGBFormat,
+    generateMipmaps: true,
+    minFilter: THREE.LinearMipmapLinearFilter
+  });
+  var cubeCamera = new THREE.CubeCamera(0.1, 100, cubeRenderTarget);
+  scene.add(cubeCamera);
+
+  // ---- OPEN-ARC BAND (Tension Set Design - like catalog 003) ----
+  var ringGroup = new THREE.Group();
+  scene.add(ringGroup);
+
+  // Build open-arc band using CatmullRom tube
+  var pts = [];
+  var R = 1.12, arcFrac = 0.835;
+  var startA = Math.PI * (1.0 - arcFrac);
+  var endA   = Math.PI * (1.0 + arcFrac);
+  for (var i = 0; i <= 140; i++) {
+    var a = startA + (i/140) * (endA - startA);
+    pts.push(new THREE.Vector3(Math.cos(a)*R, Math.sin(a)*R, 0));
+  }
+  var bandPath = new THREE.CatmullRomCurve3(pts);
+  var bandGeo = new THREE.TubeGeometry(bandPath, 200, 0.11, 24, false);
+  var band = new THREE.Mesh(bandGeo, goldMat);
+  band.castShadow = true;
+  band.receiveShadow = true;
+  ringGroup.add(band);
+
+  // End caps (tension prongs) 
+  var capGeo = new THREE.SphereGeometry(0.135, 20, 16);
+  var gapAngle = Math.PI * (1.0 - arcFrac);
+  var capL = new THREE.Mesh(capGeo, goldMat);
+  capL.position.set(Math.cos(Math.PI - gapAngle)*R, Math.sin(Math.PI - gapAngle)*R, 0);
+  ringGroup.add(capL);
+  var capRmesh = new THREE.Mesh(capGeo, goldMat);
+  capRmesh.position.set(Math.cos(Math.PI + gapAngle)*R, Math.sin(Math.PI + gapAngle)*R, 0);
+  ringGroup.add(capRmesh);
+
+  // ---- BRILLIANT-CUT GEMSTONE (Round Brilliant approximation) ----
+  var gemGroup = new THREE.Group();
+  var gemR = 0.34;
+
+  // Crown (upper hemisphere)
+  var crownGeo = new THREE.SphereGeometry(gemR, 36, 18, 0, Math.PI*2, 0, Math.PI*0.46);
+  var crown = new THREE.Mesh(crownGeo, zircMat);
+  gemGroup.add(crown);
+
+  // Girdle
+  var girdleGeo = new THREE.CylinderGeometry(gemR, gemR, gemR*0.07, 36);
+  var girdle = new THREE.Mesh(girdleGeo, zircMat);
+  girdle.position.y = -gemR * 0.02;
+  gemGroup.add(girdle);
+
+  // Pavilion (inverted cone)
+  var pavilionGeo = new THREE.ConeGeometry(gemR, gemR*1.05, 36, 1);
+  var pavilion = new THREE.Mesh(pavilionGeo, zircMat);
+  pavilion.rotation.x = Math.PI;
+  pavilion.position.y = -gemR * 0.55;
+  gemGroup.add(pavilion);
+
+  // Table facet (octagonal top, flat)
+  var tableGeo = new THREE.CircleGeometry(gemR*0.6, 8);
+  var tableMat = new THREE.MeshStandardMaterial({
+    color: 0xffffff, metalness:0, roughness:0,
+    transparent:true, opacity:0.55,
+    envMapIntensity: 4.0,
+    emissive: new THREE.Color(0xaaaaff), emissiveIntensity:0.1
+  });
+  var tableTop = new THREE.Mesh(tableGeo, tableMat);
+  tableTop.rotation.x = -Math.PI/2;
+  tableTop.position.y = gemR*0.39;
+  gemGroup.add(tableTop);
+
+  // Place gemstone at ring top opening
+  gemGroup.position.set(0, R, 0);
+  ringGroup.add(gemGroup);
+
+  // ---- FACET SPARKLE FLARES (star sparkles around gem) ----
+  var flareCount = 8;
+  var flareGroup = new THREE.Group();
+  for (var f = 0; f < flareCount; f++) {
+    var phi = (f / flareCount) * Math.PI * 2;
+    var fr = 0.28 + Math.random()*0.22;
+    // Create cross-shaped sparkle using lines
+    var starGeo = new THREE.BufferGeometry();
+    var size = 0.025 + Math.random()*0.04;
+    var sverts = new Float32Array([
+      -size,0,0,  size,0,0,
+       0,-size,0,  0,size,0,
+       -size*0.6,-size*0.6,0, size*0.6,size*0.6,0,
+       size*0.6,-size*0.6,0, -size*0.6,size*0.6,0
+    ]);
+    starGeo.setAttribute('position', new THREE.BufferAttribute(sverts,3));
+    var starMat = new THREE.LineBasicMaterial({
+      color: Math.random() > 0.5 ? 0xffd700 : 0xffffff,
+      transparent: true, opacity: 0.8 + Math.random()*0.2
+    });
+    var star = new THREE.LineSegments(starGeo, starMat);
+    star.position.set(Math.cos(phi)*fr, R + (Math.random()-0.3)*0.4, Math.sin(phi)*fr*0.3);
+    flareGroup.add(star);
+  }
+  ringGroup.add(flareGroup);
+
+  // ---- REFLECTION PLATFORM ----
+  var platGeo = new THREE.CylinderGeometry(2.8, 2.8, 0.03, 64);
+  var platMat = new THREE.MeshStandardMaterial({
+    color: 0x0a0c16, metalness:0.9, roughness:0.1, envMapIntensity:2.0
+  });
+  var platform = new THREE.Mesh(platGeo, platMat);
+  platform.position.y = -1.7;
+  platform.receiveShadow = true;
+  scene.add(platform);
+
+  // ---- LIGHTING ----
+  // Key: warm gold spotlight
+  var keyLight = new THREE.SpotLight(0xffe8a0, 4.0, 25, Math.PI/7.5, 0.25, 1.5);
+  keyLight.position.set(4, 7, 5);
+  keyLight.castShadow = true;
+  keyLight.shadow.mapSize.width = 2048;
+  keyLight.shadow.mapSize.height = 2048;
+  keyLight.shadow.bias = -0.0001;
+  scene.add(keyLight);
+  scene.add(keyLight.target);
+  keyLight.target.position.set(0, 0.5, 0);
+
+  // Fill: cool cyan/emerald rim
+  var fillLight = new THREE.SpotLight(0x00ffcc, 2.0, 18, Math.PI/5, 0.5, 2);
+  fillLight.position.set(-5, 3, -5);
+  scene.add(fillLight);
+
+  // Back rim: golden backlight
+  var backLight = new THREE.PointLight(0xff9933, 1.4, 8);
+  backLight.position.set(0, -1, -4.5);
+  scene.add(backLight);
+
+  // Gem glow: tiny point light inside gemstone
+  var gemGlow = new THREE.PointLight(0xeef4ff, 2.5, 2.5);
+  gemGlow.position.set(0, R, 0);
+  scene.add(gemGlow);
+
+  // Ambient
+  scene.add(new THREE.AmbientLight(0x0d1020, 1.2));
+
+  // ---- PARTICLE BACKGROUND ----
+  var bgCount = 320;
+  var bgGeo = new THREE.BufferGeometry();
+  var bgPos = new Float32Array(bgCount*3);
+  var bgCol = new Float32Array(bgCount*3);
+  for (var i = 0; i < bgCount; i++) {
+    bgPos[i*3]   = (Math.random()-0.5)*20;
+    bgPos[i*3+1] = (Math.random()-0.5)*20;
+    bgPos[i*3+2] = (Math.random()-0.5)*20 - 5;
+    if (Math.random()>0.6) {
+      bgCol[i*3]=1.0; bgCol[i*3+1]=0.72; bgCol[i*3+2]=0.0; // gold
+    } else if (Math.random()>0.5) {
+      bgCol[i*3]=0.0; bgCol[i*3+1]=0.85; bgCol[i*3+2]=0.65; // emerald
+    } else {
+      bgCol[i*3]=0.5; bgCol[i*3+1]=0.6; bgCol[i*3+2]=1.0; // blue
+    }
+  }
+  bgGeo.setAttribute('position', new THREE.BufferAttribute(bgPos,3));
+  bgGeo.setAttribute('color', new THREE.BufferAttribute(bgCol,3));
+  var bgMat = new THREE.PointsMaterial({ size:0.07, vertexColors:true, transparent:true, opacity:0.6 });
+  var bgParticles = new THREE.Points(bgGeo, bgMat);
+  scene.add(bgParticles);
+
+  // ---- RING INITIAL ORIENTATION ----
+  ringGroup.rotation.x = Math.PI / 2.5;
+  ringGroup.rotation.y = Math.PI / 10;
+
+  // ---- INTERACTION ----
+  var isDragging = false;
+  var prevMouse = {x:0,y:0};
+  var velX = 0, velY = 0;
+  var targetRotY = ringGroup.rotation.y;
+  var targetRotX = ringGroup.rotation.x;
+
+  var el = renderer.domElement;
+  el.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    prevMouse = {x:e.clientX, y:e.clientY};
+    velX = velY = 0;
+  });
+  window.addEventListener('mouseup', function() { isDragging = false; });
+  window.addEventListener('mousemove', function(e) {
+    if (!isDragging) return;
+    var dx = e.clientX - prevMouse.x;
+    var dy = e.clientY - prevMouse.y;
+    velX = dx * 0.014; velY = dy * 0.014;
+    targetRotY += velX; targetRotX += velY;
+    prevMouse = {x:e.clientX, y:e.clientY};
+  });
+
+  var lastTouch = null;
+  el.addEventListener('touchstart', function(e) { lastTouch = e.touches[0]; velX=velY=0; }, {passive:true});
+  el.addEventListener('touchmove', function(e) {
+    if (!lastTouch) return;
+    var t = e.touches[0];
+    velX = (t.clientX - lastTouch.clientX)*0.014;
+    velY = (t.clientY - lastTouch.clientY)*0.014;
+    targetRotY += velX; targetRotX += velY;
+    lastTouch = t;
+  }, {passive:true});
+  el.addEventListener('touchend', function() { lastTouch = null; }, {passive:true});
+
+  window.addEventListener('resize', function() {
+    var w=window.innerWidth, h=window.innerHeight;
+    renderer.setSize(w,h);
+    camera.aspect = w/h;
+    camera.updateProjectionMatrix();
+  });
+
+  // ---- ANIMATION ----
+  var clock = {start: Date.now()};
+  function elapsed() { return (Date.now() - clock.start) / 1000; }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    var t = elapsed();
+
+    // Auto-rotation + inertia
+    if (!isDragging) {
+      if (Math.abs(velX)>0.0002 || Math.abs(velY)>0.0002) {
+        targetRotY += velX; targetRotX += velY;
+        velX *= 0.92; velY *= 0.92;
+      } else {
+        targetRotY += 0.005;
+      }
+    }
+    ringGroup.rotation.y += (targetRotY - ringGroup.rotation.y)*0.08;
+    ringGroup.rotation.x += (targetRotX - ringGroup.rotation.x)*0.08;
+
+    // Gem glow pulse
+    var pulse = Math.sin(t * 2.8) * 0.5 + 0.5;
+    gemGlow.intensity = 1.5 + pulse * 2.0;
+    zircMat.emissiveIntensity = 0.05 + pulse * 0.10;
+
+    // Key light breathing
+    keyLight.intensity = 3.5 + Math.sin(t*0.6)*0.8;
+
+    // Flare sparkle animation
+    flareGroup.children.forEach(function(star, idx) {
+      star.material.opacity = 0.4 + Math.abs(Math.sin(t * 3 + idx * 0.8)) * 0.6;
+      star.scale.setScalar(0.7 + Math.abs(Math.sin(t * 4 + idx)) * 0.6);
+    });
+
+    // BG particle slow drift
+    bgParticles.rotation.y += 0.0008;
+    bgParticles.rotation.x += 0.0003;
+
+    // CubeCamera update for reflections
+    if (Math.floor(t * 30) % 3 === 0) {
+      ringGroup.visible = false;
+      cubeCamera.position.copy(gemGroup.getWorldPosition(new THREE.Vector3()));
+      cubeCamera.update(renderer, scene);
+      goldMat.envMap = cubeRenderTarget.texture;
+      zircMat.envMap = cubeRenderTarget.texture;
+      ringGroup.visible = true;
+    }
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
