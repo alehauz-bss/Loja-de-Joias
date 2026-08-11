@@ -55,11 +55,11 @@
         }
 
         .models-grid {
-            max-width: 1350px;
+            max-width: 1400px;
             margin: 35px auto 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
             padding: 0 20px;
         }
 
@@ -80,6 +80,11 @@
             box-shadow: 0 20px 40px rgba(255, 184, 0, 0.25);
         }
 
+        .model-card.card-ml:hover {
+            border-color: #ffe600;
+            box-shadow: 0 20px 45px rgba(255, 230, 0, 0.35);
+        }
+
         .model-card .badge {
             display: inline-block;
             padding: 6px 14px;
@@ -94,12 +99,14 @@
         .badge-1 { background: rgba(212, 175, 55, 0.2); color: #f3e5ab; border: 1px solid #d4af37; }
         .badge-2 { background: rgba(214, 140, 120, 0.2); color: #e5a995; border: 1px solid #d68c78; }
         .badge-3 { background: linear-gradient(90deg, rgba(255, 184, 0, 0.3), rgba(0, 230, 153, 0.3)); color: #00e699; border: 1px solid #00e699; }
+        .badge-4 { background: rgba(255, 230, 0, 0.15); color: #ffe600; border: 1px solid #ffe600; }
 
         .model-card .preview-box {
-            height: 240px;
+            height: 230px;
             width: 100%;
             position: relative;
             overflow: hidden;
+            background: #0d1117;
         }
 
         .model-card .preview-box img {
@@ -116,16 +123,17 @@
         .preview-1 { border-bottom: 2px solid #d4af37; }
         .preview-2 { border-bottom: 2px solid #d68c78; }
         .preview-3 { border-bottom: 2px solid #00e699; }
+        .preview-4 { border-bottom: 3px solid #ffe600; }
 
         .model-content {
-            padding: 28px;
+            padding: 26px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .model-content h3 {
-            font-size: 22px;
+            font-size: 21px;
             color: #fff;
             margin-bottom: 10px;
             font-weight: 800;
@@ -172,6 +180,21 @@
 
         .btn-3 { background: linear-gradient(135deg, #ffb800, #00e699); color: #000; box-shadow: 0 0 20px rgba(0, 230, 153, 0.3); }
         .btn-3:hover { background: #fff; transform: translateY(-2deg); }
+
+        .btn-4 { 
+            background: linear-gradient(135deg, #ffe600, #ffcc00); 
+            color: #2d3277; 
+            box-shadow: 0 0 20px rgba(255, 230, 0, 0.35); 
+            font-weight: 800;
+            border: 1px solid #ffe600;
+        }
+        .btn-4:hover { 
+            background: #3483fa; 
+            color: #ffffff; 
+            border-color: #3483fa;
+            transform: translateY(-2deg); 
+            box-shadow: 0 0 25px rgba(52, 131, 250, 0.6);
+        }
     </style>
 </head>
 <body>
@@ -180,7 +203,7 @@
         <img src="assets/amarlena_logo.png" alt="Amarlena Semi Joias Logo" class="brand-logo-img">
         <div class="header-title">
             <h1>AMARLENA <span>— Portal Executivo de Relatórios</span></h1>
-            <p>Selecione abaixo o modelo de design desejado para acessar a plataforma completa da marca Amarlena (328 SKUs, 8 Agentes de IA, 13 Skills, Calculadora e Campanhas).</p>
+            <p>Selecione abaixo o modelo de design desejado para acessar a plataforma completa da marca Amarlena (328 SKUs, 8 Agentes de IA, 13 Skills, Calculadora, Mercado Livre e Campanhas).</p>
         </div>
     </header>
 
@@ -240,6 +263,25 @@
                     <li>✓ Cards com Efeito 3D Tilt (Perspective/Rotate)</li>
                 </ul>
                 <a href="relatorio_modelo_3_cyber_luxury.html" class="btn-open btn-3">✨ Abrir Relatório Completo Modelo 3D</a>
+            </div>
+        </div>
+
+        <!-- MODELO 4: MERCADO LIVRE -->
+        <div class="model-card card-ml">
+            <div class="preview-box preview-4">
+                <img src="assets/colar_ml_1_whitebg.png" alt="Modelo 4: Simulador Oficial Mercado Livre">
+            </div>
+            <div class="model-content">
+                <span class="badge badge-4">⚡ Mercado Livre (Fotos 5x + Skill)</span>
+                <h3>Modelo 4: Simulador Mercado Livre</h3>
+                <p>Interface oficial interativa do Mercado Livre para validação dos anúncios da Amarlena Semi Joias, com 5 fotos hiper-realistas por peça, selo Platinum e cópia SEO rápida.</p>
+                <ul class="features-list">
+                    <li>✓ Galeria com 5 Fotos Hiper-Realistas por Anúncio</li>
+                    <li>✓ Reputação MercadoLíder Platinum & Envios FULL</li>
+                    <li>✓ Ficha Técnica Oficial & FAQ Interativo</li>
+                    <li>✓ Gerador de Copy SEO ML (Skill Integrada)</li>
+                </ul>
+                <a href="preview_mercado_livre.html" class="btn-open btn-4">🟡 Abrir Preview Mercado Livre</a>
             </div>
         </div>
 

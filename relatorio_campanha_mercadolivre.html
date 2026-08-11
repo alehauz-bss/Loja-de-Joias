@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="esmeralda">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amarlena — Relatório de Atribuição da Equipe | Campanha Mercado Livre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        [data-theme="esmeralda"] {
+            --bg-dark: #070c0a;
+            --card-bg: rgba(14, 26, 21, 0.85);
+            --card-border: rgba(212, 175, 55, 0.25);
+            --primary-emerald: #063826;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --text-main: #f0f4f2;
+            --text-muted: #9ab0a6;
+            --glow: 0 0 25px rgba(212, 175, 55, 0.2);
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --header-bg: rgba(7, 12, 10, 0.92);
+            --badge-bg: rgba(212, 175, 55, 0.15);
+        }
+
+        [data-theme="minimalista"] {
+            --bg-dark: #faf7f2;
+            --card-bg: #ffffff;
+            --card-border: #eee5d8;
+            --primary-emerald: #f3dcd3;
+            --accent-gold: #d68c78;
+            --accent-gold-light: #4a2d20;
+            --text-main: #1f1d1a;
+            --text-muted: #7a7369;
+            --glow: 0 10px 30px rgba(214, 140, 120, 0.12);
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --header-bg: rgba(250, 247, 242, 0.95);
+            --badge-bg: rgba(214, 140, 120, 0.15);
+        }
+
+        [data-theme="cyber3d"] {
+            --bg-dark: #080a0f;
+            --card-bg: rgba(18, 24, 38, 0.85);
+            --card-border: rgba(255, 184, 0, 0.3);
+            --primary-emerald: #00e699;
+            --accent-gold: #ffb800;
+            --accent-gold-light: #ffffff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glow: 0 0 30px rgba(255, 184, 0, 0.3);
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --header-bg: rgba(8, 10, 15, 0.92);
+            --badge-bg: rgba(255, 184, 0, 0.15);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s ease, border-color 0.3s ease; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-head); }
+
+        .theme-switcher-bar {
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid var(--card-border);
+            padding: 12px 20px; display: flex; align-items: center;
+            justify-content: center; gap: 15px; flex-wrap: wrap; z-index: 101; position: sticky; top: 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-switcher-bar label { font-size: 12px; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; }
+
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border);
+            color: var(--text-muted); padding: 8px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+        }
+
+        .theme-btn:hover { background: rgba(255, 255, 255, 0.15); color: var(--text-main); }
+
+        .theme-btn.active {
+            background: var(--accent-gold);
+            color: #000; border-color: var(--accent-gold); font-weight: 800; box-shadow: var(--glow);
+        }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 30px 20px; }
+
+        .hero {
+            text-align: center; margin-bottom: 40px; padding: 40px 20px;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 24px; box-shadow: var(--glow); position: relative; overflow: hidden;
+        }
+
+        .hero h1 { font-size: 2.6rem; color: var(--accent-gold); margin-bottom: 12px; }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+        .metrics-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            padding: 24px; border-radius: 16px; text-align: center;
+        }
+
+        .metric-card .number { font-size: 2.4rem; font-weight: 800; color: var(--accent-gold); font-family: var(--font-head); }
+        .metric-card .label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+        .filter-nav {
+            display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            color: var(--text-main); padding: 10px 20px; border-radius: 30px;
+            font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-gold); color: #000; border-color: var(--accent-gold); font-weight: 700;
+        }
+
+        .agents-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 25px; margin-bottom: 40px;
+        }
+
+        .agent-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 20px; padding: 28px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+
+        .agent-card:hover { transform: translateY(-5px); box-shadow: var(--glow); }
+
+        .agent-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+        .agent-avatar {
+            width: 56px; height: 56px; border-radius: 50%; background: var(--badge-bg);
+            border: 2px solid var(--accent-gold); display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; flex-shrink: 0;
+        }
+
+        .agent-info h3 { font-size: 1.25rem; color: var(--text-main); }
+        .agent-info .role { font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .deliverables-list { list-style: none; margin-bottom: 20px; }
+        .deliverables-list li {
+            padding: 8px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+            font-size: 0.95rem; color: var(--text-main); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+        }
+
+        .deliverables-list li::before { content: "✦"; color: var(--accent-gold); font-weight: bold; }
+
+        .badge-tag {
+            display: inline-block; background: var(--badge-bg); color: var(--accent-gold);
+            padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 10px;
+        }
+
+        .gallery-section {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 24px; padding: 35px; margin-bottom: 40px;
+        }
+
+        .gallery-section h2 { font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 25px; text-align: center; }
+
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border);
+            background: #000; position: relative; group: hover;
+        }
+
+        .gallery-item img {
+            width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        .gallery-item .caption {
+            padding: 14px; background: rgba(0, 0, 0, 0.75); color: #fff; font-size: 0.85rem; font-weight: 600; text-align: center;
+        }
+
+        footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--card-border); }
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher-bar">
+        <label>🎨 Tema do Dashboard:</label>
+        <button class="theme-btn active" onclick="setTheme('esmeralda')">🌿 Esmeralda & Ouro</button>
+        <button class="theme-btn" onclick="setTheme('minimalista')">🌸 Minimalista Nude</button>
+        <button class="theme-btn" onclick="setTheme('cyber3d')">⚡ Cyber Luxury 3D</button>
+    </div>
+
+    <div class="container">
+        
+        <header class="hero">
+            <h1>🛍️ Relatório Executivo de Atribuição da Equipe</h1>
+            <p>Mapeamento detalhado das contribuições de cada um dos 8 Agentes de Marketing no lançamento do <strong>Trio Elegance (Colar, Anel e Bracelete)</strong> no Mercado Livre.</p>
+        </header>
+
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <div class="number">8</div>
+                <div class="label">Agentes Envolvidos</div>
+            </div>
+            <div class="metric-card">
+                <div class="number">3</div>
+                <div class="label">Anúncios no ML</div>
+            </div>
+            <div class="metric-card">
+                <div class="number">4</div>
+                <div class="label">Fotos IA Hiper-realistas</div>
+            </div>
+            <div class="metric-card">
+                <div class="number">15%</div>
+                <div class="label">ACOS Alvo (Ads)</div>
+            </div>
+            <div class="metric-card">
+                <div class="number">47%</div>
+                <div class="label">Margem Líquida Média</div>
+            </div>
+        </section>
+
+        <div class="filter-nav">
+            <button class="filter-btn active" onclick="filterAgents('all')">Todos os Agentes (8)</button>
+            <button class="filter-btn" onclick="filterAgents('gestao')">👑 Gestão & Estratégia</button>
+            <button class="filter-btn" onclick="filterAgents('conteudo')">✍️ Conteúdo & Mídia</button>
+            <button class="filter-btn" onclick="filterAgents('performance')">🎯 Performance & Vendas</button>
+        </div>
+
+        <section class="agents-grid" id="agents-container">
+
+            <!-- Armando Jóia -->
+            <div class="agent-card" data-category="gestao">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">👑</div>
+                        <div class="agent-info">
+                            <h3>Armando Jóia</h3>
+                            <div class="role">Diretor de Marca & Posicionamento</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Definiu o conceito da coleção <strong>Trio Elegance Ouro 18k</strong> (sofisticação atemporal e acabamento premium).</li>
+                        <li>Estabeleceu a política de <strong>1 Ano de Garantia</strong> no banho e selo 100% Hipoalergênico.</li>
+                        <li>Validou a percepção de valor para sustentar o preço acima de R$ 130 no Mercado Livre.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Gestão de Marca</span>
+            </div>
+
+            <!-- Hugo Hub -->
+            <div class="agent-card" data-category="gestao">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">🌐</div>
+                        <div class="agent-info">
+                            <h3>Hugo Hub</h3>
+                            <div class="role">Gestor de E-commerce & Marketplaces</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Cadastrou a estrutura dos 3 produtos no Mercado Livre (Colar, Anel e Bracelete).</li>
+                        <li>Otimizou os <strong>títulos SEO</strong> no limite exato de 60 caracteres sem pontuação proibida.</li>
+                        <li>Calculou a precificação estratégica cobrindo comissão de 16,5% do ML + taxa fixa de R$ 6,00.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Marketplace & Cadastro</span>
+            </div>
+
+            <!-- Lucas Pinto -->
+            <div class="agent-card" data-category="conteudo">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">✍️</div>
+                        <div class="agent-info">
+                            <h3>Lucas Pinto</h3>
+                            <div class="role">Copywriter & Storyteller</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Escreveu a descrição persuasiva dos anúncios em HTML/Texto limpo focada em quebra de objeções.</li>
+                        <li>Mapeou 15+ palavras-chave de alta busca (SEO ML) e 6 palavras-chave negativas.</li>
+                        <li>Criou o script de FAQ com respostas prontas em menos de 10 minutos para tirar dúvidas de clientes.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Copywriting & SEO</span>
+            </div>
+
+            <!-- Kayo Feed -->
+            <div class="agent-card" data-category="conteudo">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">📸</div>
+                        <div class="agent-info">
+                            <h3>Kayo Feed</h3>
+                            <div class="role">Social Media & Diretor Visual</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Desenvolveu a direção de fotografia e prompts para geração de <strong>4 imagens hiper-realistas 8K</strong>.</li>
+                        <li>Criou as fotos de capa em fundo de estúdio de luxo (veludo, couro, pedra minimalista).</li>
+                        <li>Produziu a foto de capa Lifestyle editorial com a modelo usando o trio completo.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Produção Visual IA</span>
+            </div>
+
+            <!-- Cássio Pix -->
+            <div class="agent-card" data-category="performance">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">🎯</div>
+                        <div class="agent-info">
+                            <h3>Cássio Pix</h3>
+                            <div class="role">Gestor de Tráfego Pago & Performance</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Estruturou a campanha de <strong>Mercado Ads (Product Ads)</strong> com ACOS Alvo de 15%.</li>
+                        <li>Configurou o orçamento diário de R$ 90/dia (R$ 30 por item) para aceleração de ranking.</li>
+                        <li>Planejou a campanha de tráfego no <strong>Meta Ads</strong> (Instagram/Facebook) direcionada à loja no ML.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Mídia Pago & Ads</span>
+            </div>
+
+            <!-- Beto Zap -->
+            <div class="agent-card" data-category="performance">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">✉️</div>
+                        <div class="agent-info">
+                            <h3>Beto Zap</h3>
+                            <div class="role">Especialista em CRM & Clienteling</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Elaborou o script de disparo VIP via WhatsApp para os clientes fiéis da base.</li>
+                        <li>Criou a oferta de frete grátis e cupom de lançamento para acelerar as primeiras 10 vendas no ML.</li>
+                        <li>Garantia da medalha de reputação no Mercado Livre através de compras de alta satisfação.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">CRM & WhatsApp</span>
+            </div>
+
+            <!-- Paula Permuta -->
+            <div class="agent-card" data-category="conteudo">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">💎</div>
+                        <div class="agent-info">
+                            <h3>Paula Permuta</h3>
+                            <div class="role">Gestora de PR & Influenciadoras</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Planejou o kit de seeding/gifting com a caixinha aveludada do Trio Elegance para 5 influenciadoras.</li>
+                        <li>Elaborou o briefing de unboxing com orientações de sticker de link direto para a loja no ML.</li>
+                        <li>Gerou prova social orgânica no Instagram para impulsionar a confiança da marca.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">PR & Influenciadoras</span>
+            </div>
+
+            <!-- Ana Revenda -->
+            <div class="agent-card" data-category="performance">
+                <div>
+                    <div class="agent-header">
+                        <div class="agent-avatar">🛍️</div>
+                        <div class="agent-info">
+                            <h3>Ana Revenda</h3>
+                            <div class="role">Gestora de Expansão & Revendedoras</div>
+                        </div>
+                    </div>
+                    <ul class="deliverables-list">
+                        <li>Disponibilizou o pacote de assets (fotos hiper-realistas) para a rede de revendedoras B2B.</li>
+                        <li>Formatou o kit de atacado do Trio Elegance para revenda direta em praças locais.</li>
+                        <li>Expandiu o alcance do produto para além dos marketplaces digitais.</li>
+                    </ul>
+                </div>
+                <span class="badge-tag">Atacado & B2B</span>
+            </div>
+
+        </section>
+
+        <section class="gallery-section">
+            <h2>📸 Galeria dos Assets Gerados para o Mercado Livre</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/anuncio_colar_mercado_livre.png" alt="Colar Gravatinha">
+                    <div class="caption">Colar Gravatinha Riviera Ouro 18k</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/anuncio_anel_mercado_livre.png" alt="Anel Solitário">
+                    <div class="caption">Anel Solitário Ajustável Zircônia</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/anuncio_bracelete_mercado_livre.png" alt="Bracelete Algema">
+                    <div class="caption">Bracelete Algema Rígido Cravejado</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/anuncio_trio_lifestyle.png" alt="Conjunto Modelo">
+                    <div class="caption">Trio Elegance — Modelo Editorial</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Amarlena — Loja de Semi Joias Fine Jewelry © 2026 | Desenvolvido com a Equipe de Agentes de Marketing</p>
+    </footer>
+
+    <script>
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function filterAgents(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.agent-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

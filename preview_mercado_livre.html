@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Oficial Anúncio Mercado Livre — Amarlena Semi Joias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ml-yellow: #ffe600;
+            --ml-blue: #3483fa;
+            --ml-blue-hover: #2968c8;
+            --ml-green: #00a650;
+            --ml-body-bg: #edd630;
+            --ml-bg: #ebebeb;
+            --ml-card-bg: #ffffff;
+            --ml-text: #333333;
+            --ml-text-muted: #666666;
+            --ml-text-light: #999999;
+            --ml-border: #e6e6e6;
+            --ml-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+        body {
+            background-color: var(--ml-bg);
+            color: var(--ml-text);
+            padding-bottom: 60px;
+        }
+
+        /* BARRA SUPERIOR DE ALTERNAÇÃO DE PRODUTOS */
+        .preview-switcher {
+            background: #111111;
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .preview-switcher .title {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--ml-yellow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .preview-switcher .skill-badge {
+            background: rgba(255,230,0,0.15);
+            border: 1px solid var(--ml-yellow);
+            color: var(--ml-yellow);
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .switcher-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .product-tab-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-tab-btn:hover, .product-tab-btn.active {
+            background: var(--ml-yellow);
+            color: #000000;
+            border-color: var(--ml-yellow);
+            font-weight: 800;
+            box-shadow: 0 0 10px rgba(255,230,0,0.4);
+        }
+
+        /* HEADER MERCADO LIVRE MOCKUP */
+        .ml-header {
+            background-color: var(--ml-yellow);
+            padding: 12px 0 14px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .ml-header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .ml-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #2d3277;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ml-logo span { color: #000; font-weight: 600; font-size: 11px; background: rgba(255,255,255,0.5); padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+
+        .ml-search-bar {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .ml-search-bar input {
+            width: 100%;
+            border: none;
+            padding: 11px 16px;
+            font-size: 14px;
+            outline: none;
+            color: #333;
+        }
+
+        .ml-search-bar button {
+            background: #fff;
+            border: none;
+            border-left: 1px solid #eee;
+            padding: 0 18px;
+            cursor: pointer;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .ml-promo-banner {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            background: rgba(255,255,255,0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* CONTAINER DO PRODUTO */
+        .ml-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .ml-product-card {
+            background: var(--ml-card-bg);
+            border-radius: 8px;
+            box-shadow: var(--ml-shadow);
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 30px;
+        }
+
+        /* COLUNA ESQUERDA: GALERIA DE 5 FOTOS */
+        .gallery-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnails-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 70px;
+        }
+
+        .thumb-item {
+            width: 70px;
+            height: 70px;
+            border: 1.5px solid var(--ml-border);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            background: #fdfdfd;
+        }
+
+        .thumb-item:hover, .thumb-item.active {
+            border-color: var(--ml-blue);
+            box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.3);
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .main-image-view {
+            flex: 1;
+            height: 520px;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            position: relative;
+            cursor: zoom-in;
+        }
+
+        .main-image-view img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-view:hover img {
+            transform: scale(1.08);
+        }
+
+        .image-tag-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.75);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(255,255,255,0.9);
+            color: #555;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* COLUNA DIREITA: CAIXA DE COMPRA */
+        .product-info-box {
+            border: 1px solid var(--ml-border);
+            border-radius: 8px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .product-meta {
+            font-size: 12px;
+            color: var(--ml-text-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-meta .sales { font-weight: 500; }
+        .heart-icon { color: var(--ml-blue); cursor: pointer; font-size: 16px; }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ml-text);
+            line-height: 1.3;
+        }
+
+        .rating-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .stars { color: var(--ml-blue); font-size: 14px; letter-spacing: 1px; }
+        .reviews-count { color: var(--ml-blue); font-weight: 600; }
+
+        .best-seller-tag {
+            background: #ff7733;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-section {
+            margin-top: 2px;
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: var(--ml-text-light);
+            text-decoration: line-through;
+        }
+
+        .current-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin: 2px 0;
+        }
+
+        .currency { font-size: 22px; font-weight: 300; vertical-align: top; }
+        .amount { font-size: 36px; font-weight: 300; letter-spacing: -1px; }
+        .cents { font-size: 20px; font-weight: 300; vertical-align: super; }
+        .discount-tag { font-size: 15px; color: var(--ml-green); font-weight: 700; }
+
+        .installment-info {
+            font-size: 14px;
+            color: var(--ml-green);
+            font-weight: 600;
+        }
+
+        /* ENVIO FULL */
+        .shipping-box {
+            background: #f0faf5;
+            border: 1px solid #cceee0;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 13px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .shipping-box .icon { font-size: 20px; color: var(--ml-green); }
+        .shipping-title { font-weight: 700; font-size: 14px; color: var(--ml-green); }
+        .shipping-sub { color: var(--ml-text-muted); font-size: 12px; margin-top: 2px; }
+
+        .stock-tag {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ml-text);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stock-tag span { color: #d00000; font-weight: 700; }
+
+        /* BOTOES DE AÇÃO */
+        .actions-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .btn-buy-now {
+            background: var(--ml-blue);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 6px rgba(52,131,250,0.3);
+        }
+
+        .btn-buy-now:hover { background: var(--ml-blue-hover); }
+
+        .btn-add-cart {
+            background: #e3edfb;
+            color: var(--ml-blue);
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn-add-cart:hover { background: #d0e2fa; }
+
+        /* PAINEL DO VENDEDOR PLATINUM */
+        .seller-card {
+            border-top: 1px solid var(--ml-border);
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+
+        .seller-card-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .seller-name {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--ml-blue);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .reputation-meter {
+            display: flex;
+            gap: 4px;
+            margin: 10px 0 12px 0;
+        }
+
+        .meter-bar {
+            height: 8px;
+            flex: 1;
+            border-radius: 4px;
+            background: #e0e0e0;
+        }
+
+        .meter-bar.active-green { background: #00a650; }
+
+        .seller-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--ml-text-muted);
+        }
+
+        .seller-stats .stat-val {
+            font-weight: 800;
+            font-size: 15px;
+            color: #222;
+        }
+
+        .guarantee-info {
+            font-size: 12px;
+            color: var(--ml-text-muted);
+            line-height: 1.5;
+            border-top: 1px solid #eee;
+            padding-top: 14px;
+            margin-top: 5px;
+        }
+
+        /* SEÇÃO INFERIOR: DESCRIÇÃO E FAQ */
+        .bottom-sections {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: var(--ml-shadow);
+            margin-top: 25px;
+            padding: 35px;
+        }
+
+        .section-header-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--ml-yellow);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ml-text);
+        }
+
+        .btn-copy-copy {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            color: #333;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-copy-copy:hover {
+            background: var(--ml-blue);
+            color: #fff;
+            border-color: var(--ml-blue);
+        }
+
+        .description-content {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.8;
+            white-space: pre-line;
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 40px 0;
+            font-size: 14px;
+        }
+
+        .specs-table tr:nth-child(even) { background: #f9f9f9; }
+        .specs-table td { padding: 14px 18px; border: 1px solid #eee; }
+        .specs-table td.label { font-weight: 700; color: #555; width: 28%; background: #f4f4f4; }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            background: #f8fbff;
+            border-radius: 6px;
+            padding: 18px;
+            border-left: 4px solid var(--ml-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .faq-answer { font-size: 14px; color: #444; line-height: 1.5; padding-left: 24px; }
+
+        /* MODAL AMPLIAÇÃO DE FOTO */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .image-modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            color: #fff; font-size: 30px; font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR FIXA DE CONTROLE E NAVEGAÇÃO -->
+    <div class="preview-switcher">
+        <div class="title">
+            <span>⚡ MERCADO LIVRE PREVIEW</span>
+            <span class="skill-badge">SKILL: gerador-de-anuncios-mercado-livre</span>
+        </div>
+        <div class="switcher-buttons">
+            <button class="product-tab-btn active" onclick="loadProduct('colar', event)">💎 Colar Gravatinha (5 Fotos)</button>
+            <button class="product-tab-btn" onclick="loadProduct('anel', event)">💍 Anel Solitário (5 Fotos)</button>
+            <button class="product-tab-btn" onclick="loadProduct('bracelete', event)">⚜️ Bracelete Algema (5 Fotos)</button>
+            <button class="product-tab-btn" onclick="loadProduct('trio', event)">🌟 Conjunto Trio (5 Fotos)</button>
+        </div>
+    </div>
+
+    <!-- MOCKUP HEADER OFICIAL MERCADO LIVRE -->
+    <header class="ml-header">
+        <div class="ml-header-inner">
+            <a href="#" class="ml-logo">mercado livre <span>LOJA OFICIAL</span></a>
+            <div class="ml-search-bar">
+                <input type="text" id="search-input" value="colar gravatinha folheado ouro 18k antialergico" readonly>
+                <button>🔍</button>
+            </div>
+            <div class="ml-promo-banner">
+                ⚡ Envios FULL Grátis em até 24h
+            </div>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL DO PRODUTO -->
+    <div class="ml-container">
+        <div class="ml-product-card">
+            
+            <!-- ESQUERDA: GALERIA INTERATIVA COM 5 FOTOS -->
+            <div class="gallery-container">
+                <div class="thumbnails-sidebar" id="thumbnails-list">
+                    <!-- Preenchido via JS (5 fotos com labels) -->
+                </div>
+                <div class="main-image-view" onclick="openModal()">
+                    <div class="image-tag-overlay" id="image-tag-overlay">
+                        <span>📸 Foto 1: Capa Fundo Branco ML</span>
+                    </div>
+                    <img id="main-product-img" src="assets/colar_ml_1_whitebg.png" alt="Foto Principal do Anúncio">
+                    <div class="zoom-hint">🔍 Clique para ampliar</div>
+                </div>
+            </div>
+
+            <!-- DIREITA: CAIXA DE COMPRA COMPLETA -->
+            <div class="product-info-box">
+                <div class="product-meta">
+                    <span class="sales">Novo | +50.000 vendidos</span>
+                    <span class="heart-icon">💙</span>
+                </div>
+
+                <div class="best-seller-tag">
+                    🏆 1º MAIS VENDIDO em Semi Joias Finas
+                </div>
+
+                <h1 class="product-title" id="product-title">
+                    Colar Feminino Gravatinha Folheado Ouro 18k Zirconia Luxo
+                </h1>
+
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="reviews-count" id="reviews-count">4.9 (148 avaliações)</span>
+                </div>
+
+                <div class="price-section">
+                    <div class="original-price" id="original-price">R$ 199,90</div>
+                    <div class="current-price-row">
+                        <span class="currency">R$</span>
+                        <span class="amount" id="current-price">139</span>
+                        <span class="cents" id="cents-price">,90</span>
+                        <span class="discount-tag" id="discount-tag">30% OFF</span>
+                    </div>
+                    <div class="installment-info" id="installment-info">
+                        em 10x de R$ 13,99 sem juros no cartão
+                    </div>
+                </div>
+
+                <div class="shipping-box">
+                    <div class="icon">⚡🚚</div>
+                    <div>
+                        <div class="shipping-title">Chegará grátis amanhã</div>
+                        <div class="shipping-sub">Enviado pelo Mercado Envios FULL (Estoque no CD)</div>
+                    </div>
+                </div>
+
+                <div class="stock-tag">
+                    Estoque disponível <span>(Últimas 5 unidades no CD!)</span>
+                </div>
+
+                <div class="actions-box">
+                    <button class="btn-buy-now" onclick="alert('Simulação ML: Compra efetuada com sucesso!')">Comprar agora</button>
+                    <button class="btn-add-cart" onclick="alert('Simulação ML: Adicionado ao carrinho!')">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- CARTEIRA E REPUTAÇÃO DO VENDEDOR PLATINUM -->
+                <div class="seller-card">
+                    <div class="seller-card-title">Informações sobre o vendedor</div>
+                    <div class="seller-name">
+                        🥇 Loja Oficial Amarlena <span style="font-size:11px; background:#e8f4ea; color:#00a650; padding:2px 6px; border-radius:3px;">MercadoLíder Platinum</span>
+                    </div>
+                    <div class="reputation-meter">
+                        <div class="meter-bar"></div>
+                        <div class="meter-bar"></div>
+                        <div class="meter-bar"></div>
+                        <div class="meter-bar"></div>
+                        <div class="meter-bar active-green"></div>
+                    </div>
+                    <div class="seller-stats">
+                        <div>
+                            <div class="stat-val">+50mil</div>
+                            Vendas concluídas
+                        </div>
+                        <div>
+                            <div class="stat-val">💬 100%</div>
+                            Bom atendimento
+                        </div>
+                        <div>
+                            <div class="stat-val">⏱️ 100%</div>
+                            Entrega no prazo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guarantee-info">
+                    🛡️ <strong>Compra Garantida:</strong> Receba o produto que está esperando ou devolvemos o dinheiro.<br>
+                    💎 <strong>Garantia do Vendedor:</strong> 1 ano (12 meses) de garantia no banho de Ouro 18k.<br>
+                    🌿 <strong>Hipoalergênico:</strong> Peça 100% livre de Níquel.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEÇÕES INFERIORES: DESCRIÇÃO, SPECS E FAQ -->
+        <div class="bottom-sections">
+            
+            <!-- DESCRIÇÃO COMPLETA -->
+            <div class="section-header-box">
+                <h2 class="section-title">Descrição do Anúncio</h2>
+                <button class="btn-copy-copy" onclick="copyDescription()">📋 Copiar Texto do Anúncio</button>
+            </div>
+            <div class="description-content" id="description-content">
+                <!-- Preenchido via JS -->
+            </div>
+
+            <!-- FICHA TÉCNICA -->
+            <h2 class="section-title" style="margin-top: 40px; border-bottom: 2px solid var(--ml-yellow); padding-bottom: 8px;">Ficha Técnica Oficial</h2>
+            <table class="specs-table" id="specs-table">
+                <!-- Preenchido via JS -->
+            </table>
+
+            <!-- PERGUNTAS E RESPOSTAS -->
+            <h2 class="section-title" style="margin-top: 40px; border-bottom: 2px solid var(--ml-yellow); padding-bottom: 8px;">Perguntas e Respostas Recentes</h2>
+            <div class="faq-list" id="faq-list">
+                <!-- Preenchido via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE ZOOM DE FOTO -->
+    <div class="image-modal" id="image-modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modal-img" src="" alt="Ampliação da Foto">
+    </div>
+
+    <script>
+        const productsData = {
+            colar: {
+                searchTerm: "colar gravatinha folheado ouro 18k antialergico",
+                title: "Colar Feminino Gravatinha Folheado Ouro 18k Zirconia Luxo",
+                originalPrice: "R$ 199,90",
+                price: "139",
+                cents: ",90",
+                discount: "30% OFF",
+                installment: "em 10x de R$ 13,99 sem juros",
+                reviews: "4.9 (148 avaliações)",
+                images: [
+                    { src: "assets/colar_ml_1_whitebg.png", label: "📸 Foto 1: Capa Fundo Branco ML (Estúdio 100% Limpo)" },
+                    { src: "assets/colar_ml_2_model.png", label: "📸 Foto 2: Modelo Hiper-Realista (Caimento no Pescoço)" },
+                    { src: "assets/colar_ml_3_detail.png", label: "📸 Foto 3: Macro de Detalhes (Zircônias & Banho 18k)" },
+                    { src: "assets/colar_ml_4_lifestyle.png", label: "📸 Foto 4: Lifestyle Luxo (Uso em Ambiente Real)" },
+                    { src: "assets/colar_ml_5_box.png", label: "📸 Foto 5: Packaging & Unboxing (Caixa Veludo + Certificado)" }
+                ],
+                specs: [
+                    { label: "Marca / Fabricante", val: "Amarlena Fine Jewelry (Loja Oficial)" },
+                    { label: "Modelo", val: "Colar Gravatinha Riviera Y Zircônias Cúbicas" },
+                    { label: "Banho de Ouro", val: "Ouro 18k Multicamadas (10 Milésimos Reais)" },
+                    { label: "Verniz Proteção", val: "Verniz Alemão Nanotecnológico Alta Resistência" },
+                    { label: "Tipo de Pedra", val: "Zircônias Cúbicas de Lapidação Brilhante 5A" },
+                    { label: "Comprimento Corrente", val: "45 cm + 5 cm de Extensor Ajustável" },
+                    { label: "Tecnologia Antialérgica", val: "100% Livre de Níquel e Metais Pesados" },
+                    { label: "Garantia Oficial", val: "1 Anos (12 meses) de Garantia no Banho de Ouro" }
+                ],
+                description: `✨ COLAR GRAVATINHA RIVIERA ZIRCÔNIAS BANHADO A OURO 18K (10 MILÉSIMOS) ✨
+
+Procurando uma peça sofisticada com o peso, o brilho espelhado e o acabamento de uma joia de ouro maciço, mas com valor acessível?
+
+O Colar Gravatinha Riviera Amarlena foi desenvolvido para mulheres exigentes que valorizam elegância atemporal e máxima durabilidade.
+
+💎 DIFERENCIAIS QUE FAZEM ESTA PEÇA SER A MAIS VENDIDA:
+• BANHO PREMIUM OURO 18K: 10 milésimos de camada de Ouro 18k real (durabilidade até 10x superior a bijuterias comuns).
+• VERNIZ ALEMÃO DE ALTA RESISTÊNCIA: Selagem exclusiva que protege contra oxidação, suor e riscos superficiais.
+• 100% HIPOALERGÊNICO: Não contém níquel ou chumbo. Não causa coceira, vermelhidão nem alergia na pele.
+• CRAVAÇÃO DE ALTA JOALHERIA: Zircônias cúbicas 5A selecionadas manualmente com o mesmo brilho do diamante natural.
+• EMBALAGEM PARA PRESENTE VIP: Acompanha caixa aveludada luxuosa, flanela mágica e certificado de garantia oficial de 1 ano.
+
+📏 ESPECIFICAÇÕES TÉCNICAS:
+- Comprimento da Corrente: 45 cm + 5 cm de extensor
+- Fecho: Lagosta italiano reforçado
+- Peso Aprox: 8,5 gramas
+
+🎁 CONTEÚDO DA EMBALAGEM:
+1x Colar Gravatinha Banhado a Ouro 18k
+1x Caixinha Aveludada de Luxo
+1x Certificado de Garantia de 1 Ano
+
+🛡️ GARANTIA E SEGURANÇA:
+Enviado via Mercado Envios FULL diretamente do Centro de Distribuição do Mercado Livre com Nota Fiscal e Garantia de 1 Ano. Devolução grátis em até 30 dias!`,
+                faq: [
+                    { q: "Escurece ou perde a cor com o tempo?", a: "Olá! Não escurece! Nossas peças recebem 10 camadas completas de Ouro 18k mais uma camada protetora de Verniz Alemão. Acompanha certificado de garantia de 1 ano oficial!" },
+                    { q: "Tenho alergia forte a níquel, posso usar?", a: "Com certeza! Todas as nossas semi joias são 100% livres de níquel e metais pesados. São totalmente hipoalergênicas." },
+                    { q: "Vem pronta para presentear?", a: "Sim! Enviamos em uma linda caixinha presenteável aveludada, pronta para surpreender quem você ama." },
+                    { q: "Qual o prazo de envio?", a: "Este produto está no estoque do MERCADO ENVIOS FULL. Comprando agora, é despachado imediatamente e chega na sua casa em até 24 horas!" }
+                ]
+            },
+            anel: {
+                searchTerm: "anel solitario feminino ajustavel ouro 18k zirconia",
+                title: "Anel Solitario Feminino Folheado Ouro 18k Zirconia Ajustavel",
+                originalPrice: "R$ 129,90",
+                price: "89",
+                cents: ",90",
+                discount: "31% OFF",
+                installment: "em 10x de R$ 8,99 sem juros",
+                reviews: "4.9 (112 avaliações)",
+                images: [
+                    { src: "assets/anuncio_anel_mercado_livre.png", label: "📸 Foto 1: Capa Fundo Branco ML (Solitário Ouro 18k)" },
+                    { src: "assets/card_modelo_2_nude.png", label: "📸 Foto 2: Modelo Hiper-Realista (Demonstração no Dedo)" },
+                    { src: "assets/anuncio_trio_lifestyle.png", label: "📸 Foto 3: Composê de Uso (Solitário + Acessórios)" },
+                    { src: "assets/colar_ml_3_detail.png", label: "📸 Foto 4: Macro da Pedra (Zircônia 6mm & 4 Garras)" },
+                    { src: "assets/colar_ml_5_box.png", label: "📸 Foto 5: Packaging Velvet (Caixa de Anel & Garantia)" }
+                ],
+                specs: [
+                    { label: "Marca / Fabricante", val: "Amarlena Fine Jewelry (Loja Oficial)" },
+                    { label: "Modelo", val: "Anel Solitário Cravejado Ajustável" },
+                    { label: "Tamanho do Aro", val: "Ajustável Inteligente (Serve do nº 14 ao 22)" },
+                    { label: "Banho de Ouro", val: "Ouro 18k Multicamadas (10 Milésimos)" },
+                    { label: "Pedra Central", val: "Zircônia Cúbica Brilhante 6mm Cravação Garras" },
+                    { label: "Antialérgico", val: "Sim (100% Livre de Níquel)" },
+                    { label: "Garantia Oficial", val: "1 Ano (12 Meses) no Banho" }
+                ],
+                description: `✨ ANEL SOLITÁRIO AJUSTÁVEL BANHADO A OURO 18K — AMARLENA ✨
+
+O clássico do romantismo e da elegância. Nosso anel solitário possui aro ajustável ergonômico que se adapta perfeitamente ao seu dedo, dispensando a preocupação de saber o número correto antes da compra!
+
+💎 HIGHLIGHTS DO PRODUTO:
+- Aro Ajustável Confort: Ajusta suavemente dos tamanhos 14 ao 22 sem deformar.
+- Pedra Central Zircônia 6mm: Cravação em 4 garras de alta joalheria (não solta).
+- Banho Ouro 18k (10 camadas): Brilho intenso de ouro maciço com Verniz Alemão.
+- 100% Hipoalergênico: Zero níquel, ideal para peles sensíveis.
+
+🎁 ACOMPANHA:
+- Caixinha de Veludo de Luxo para Anel
+- Certificado de Garantia de 1 Ano`,
+                faq: [
+                    { q: "Como funciona o aro ajustável?", a: "Olá! O aro possui uma abertura anatômica sutil na parte inferior, permitindo ajustar facilmente do nº 14 ao 22 mantendo o anel perfeitamente redondo no dedo." },
+                    { q: "A pedra corre risco de cair?", a: "Não! A zircônia é cravada manualmente com 4 garras reforçadas de joalheria, garantindo total fixação." }
+                ]
+            },
+            bracelete: {
+                searchTerm: "bracelete algema rigido feminino folheado ouro 18k",
+                title: "Bracelete Algema Rigido Feminino Folheado Ouro 18k Zirconia",
+                originalPrice: "R$ 229,90",
+                price: "159",
+                cents: ",90",
+                discount: "30% OFF",
+                installment: "em 10x de R$ 15,99 sem juros",
+                reviews: "5.0 (89 avaliações)",
+                images: [
+                    { src: "assets/anuncio_bracelete_mercado_livre.png", label: "📸 Foto 1: Capa Fundo Branco ML (Bracelete Algema)" },
+                    { src: "assets/card_modelo_3_cyber.png", label: "📸 Foto 2: Modelo Hiper-Realista (Pulso & Lifestyle)" },
+                    { src: "assets/anuncio_trio_lifestyle.png", label: "📸 Foto 3: Composê com Outras Peças 18k" },
+                    { src: "assets/colar_ml_3_detail.png", label: "📸 Foto 4: Detalhe Fecho Click & Zircônias Laterais" },
+                    { src: "assets/colar_ml_5_box.png", label: "📸 Foto 5: Packaging VIP (Caixa Rígida + Garantia)" }
+                ],
+                specs: [
+                    { label: "Marca / Fabricante", val: "Amarlena Fine Jewelry (Loja Oficial)" },
+                    { label: "Modelo", val: "Bracelete Algema Rígido Cravejado" },
+                    { label: "Diâmetro Interno", val: "6,0 cm (Para pulsos de 15 cm a 18 cm)" },
+                    { label: "Sistema de Fecho", val: "Fecho Lateral Click Invisível com Mola" },
+                    { label: "Banho de Ouro", val: "Ouro 18k Multicamadas (10 Milésimos)" },
+                    { label: "Garantia Oficial", val: "1 Ano no Banho" }
+                ],
+                description: `✨ BRACELETE ALGEMA RÍGIDO CRAVEJADO BANHADO A OURO 18K ✨
+
+Elegância firme e moderna. O Bracelete Algema Amarlena traz o design anatômico oval mais desejado das joalherias internacionais, com fecho click de segurança invisível e zircônias cravejadas.
+
+💎 DESTAQUES:
+- Moldagem Anatômica Oval: Encaixa com conforto no pulso sem girar.
+- Banho 10 Milésimos de Ouro 18k + Duplo Verniz Alemão.
+- Totalmente Livre de Níquel.
+
+🎁 ACOMPANHA:
+- Caixinha Velvet Luxo
+- Certificado de Garantia de 1 Ano`,
+                faq: [
+                    { q: "Qual o tamanho de pulso ideal?", a: "Olá! Ele possui diâmetro interno de 6,0 cm e formato oval, vestindo confortavelmente pulsos de 15 cm a 18 cm de circunferência." },
+                    { q: "O fecho é seguro?", a: "Sim! Possui trava lateral click dupla de altíssima pressão que não abre acidentalmente." }
+                ]
+            },
+            trio: {
+                searchTerm: "conjunto trio semi joias ouro 18k colar anel bracelete",
+                title: "Conjunto Trio Elegance Ouro 18k (Colar + Anel Solitario + Bracelete Algema)",
+                originalPrice: "R$ 499,90",
+                price: "349",
+                cents: ",90",
+                discount: "30% OFF",
+                installment: "em 10x de R$ 34,99 sem juros",
+                reviews: "5.0 (204 avaliações)",
+                images: [
+                    { src: "assets/anuncio_trio_lifestyle.png", label: "📸 Foto 1: Capa Fundo Limpo Kit Trio (3 Peças)" },
+                    { src: "assets/card_modelo_1_esmeralda.png", label: "📸 Foto 2: Modelo Hiper-Realista (Look Completo Gala)" },
+                    { src: "assets/colar_ml_2_model.png", label: "📸 Foto 3: Detalhe Colar Gravatinha no Corpo" },
+                    { src: "assets/card_modelo_2_nude.png", label: "📸 Foto 4: Detalhe Anel Solitário na Mão" },
+                    { src: "assets/colar_ml_5_box.png", label: "📸 Foto 5: Combo Packaging (3 Caixas Velvet + Garantia)" }
+                ],
+                specs: [
+                    { label: "Marca / Fabricante", val: "Amarlena Fine Jewelry (Loja Oficial)" },
+                    { label: "Conteúdo do Kit", val: "1 Colar Gravatinha + 1 Anel Solitário + 1 Bracelete Algema" },
+                    { label: "Banho de Ouro", val: "Ouro 18k Multicamadas (10 Milésimos em todas as peças)" },
+                    { label: "Economia no Kit", val: "Desconto de 30% comprando o conjunto reunido" },
+                    { label: "Garantia Oficial", val: "1 Ano de Garantia para Todo o Conjunto" }
+                ],
+                description: `🌟 O CONJUNTO COMPLETO COLEÇÃO TRIO ELEGANCE COM 30% OFF EXCLUSIVO! 🌟
+
+Adquira o look completo de alta joalheria composto pelas 3 peças icônicas de maior sucesso da Amarlena Fine Jewelry:
+
+1️⃣ Colar Gravatinha Riviera Zircônias (45cm + 5cm extensor)
+2️⃣ Anel Solitário Cravejado Ajustável (Servidão do nº 14 ao 22)
+3️⃣ Bracelete Algema Rígido Cravejado (Fecho Click)
+
+💎 TODOS OS PRODUTOS POSSUEM BANHO DE OURO 18K (10 MILÉSIMOS) E SÃO 100% ANTIALÉRGICOS.
+
+🎁 Acompanha 3 caixas de presente aveludadas individuais e certificado de garantia unificado de 1 ano.`,
+                faq: [
+                    { q: "Vêm as 3 peças juntas?", a: "Sim! Você recebe o Colar, o Anel Solitário e o Bracelete Algema em caixas aveludadas individuais com certificado de garantia oficial de 1 ano." }
+                ]
+            }
+        };
+
+        let currentKey = 'colar';
+
+        function loadProduct(key, event) {
+            currentKey = key;
+            const data = productsData[key];
+            
+            // Buttons active state
+            if (event && event.target) {
+                document.querySelectorAll('.product-tab-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+
+            // Set main header search input
+            document.getElementById('search-input').value = data.searchTerm;
+
+            // Set main details
+            document.getElementById('product-title').innerText = data.title;
+            document.getElementById('original-price').innerText = data.originalPrice;
+            document.getElementById('current-price').innerText = data.price;
+            document.getElementById('cents-price').innerText = data.cents;
+            document.getElementById('discount-tag').innerText = data.discount;
+            document.getElementById('installment-info').innerText = data.installment;
+            document.getElementById('reviews-count').innerText = data.reviews;
+            document.getElementById('description-content').innerText = data.description;
+
+            // Render 5 thumbnails with active state and labels
+            const thumbsContainer = document.getElementById('thumbnails-list');
+            thumbsContainer.innerHTML = '';
+            
+            data.images.forEach((imgObj, idx) => {
+                const thumb = document.createElement('div');
+                thumb.className = `thumb-item ${idx === 0 ? 'active' : ''}`;
+                thumb.innerHTML = `<img src="${imgObj.src}" alt="Thumb ${idx+1}"><span class="thumb-badge">${idx+1}</span>`;
+                
+                thumb.onclick = () => {
+                    document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                    document.getElementById('main-product-img').src = imgObj.src;
+                    document.getElementById('image-tag-overlay').innerHTML = `<span>${imgObj.label}</span>`;
+                };
+                
+                thumbsContainer.appendChild(thumb);
+            });
+
+            // Set default main image & overlay
+            document.getElementById('main-product-img').src = data.images[0].src;
+            document.getElementById('image-tag-overlay').innerHTML = `<span>${data.images[0].label}</span>`;
+
+            // Render specs
+            const specsContainer = document.getElementById('specs-table');
+            specsContainer.innerHTML = '';
+            data.specs.forEach(spec => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td class="label">${spec.label}</td><td>${spec.val}</td>`;
+                specsContainer.appendChild(tr);
+            });
+
+            // Render FAQ
+            const faqContainer = document.getElementById('faq-list');
+            faqContainer.innerHTML = '';
+            data.faq.forEach(f => {
+                const item = document.createElement('div');
+                item.className = 'faq-item';
+                item.innerHTML = `<div class="faq-question">❓ ${f.q}</div><div class="faq-answer">💬 ${f.a}</div>`;
+                faqContainer.appendChild(item);
+            });
+        }
+
+        function copyDescription() {
+            const data = productsData[currentKey];
+            navigator.clipboard.writeText(data.description).then(() => {
+                alert('✨ Descrição do anúncio copiada para a área de transferência com sucesso!');
+            });
+        }
+
+        function openModal() {
+            const imgSrc = document.getElementById('main-product-img').src;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('image-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('image-modal').style.display = 'none';
+        }
+
+        // Initialize on page load
+        window.onload = () => {
+            loadProduct('colar');
+        };
+    </script>
+</body>
+</html>
