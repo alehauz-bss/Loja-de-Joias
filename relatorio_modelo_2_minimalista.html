@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="minimalista">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo 2: Minimalista Nude & Rosé Gold — Hub Joias</title>
+    <title>Modelo 2: Minimalista Nude & Rosé — Relatório Completo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -17,94 +17,77 @@
             --text-dark: #1f1d1a;
             --text-muted: #7a7369;
             --shadow-soft: 0 10px 30px rgba(214, 140, 120, 0.08);
+            --font-head: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
+            font-family: var(--font-body);
             min-height: 100vh;
             padding-bottom: 60px;
         }
 
-        h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
+        h1, h2, h3, h4, .serif { font-family: var(--font-head); }
 
         .model-banner {
             background: linear-gradient(90deg, #e8cfc4, #dfb79b);
-            color: #4a2d20;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            color: #4a2d20; text-align: center; padding: 8px 15px;
+            font-size: 13px; font-weight: 800; letter-spacing: 0.5px;
         }
 
         header {
             border-bottom: 1px solid var(--card-border);
             background: rgba(250, 247, 242, 0.95);
             backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky; top: 0; z-index: 100;
+            padding: 18px 40px; display: flex;
+            justify-content: space-between; align-items: center;
         }
 
-        .brand-logo { display: flex; align-items: center; gap: 12px; }
+        .brand-logo { display: flex; align-items: center; gap: 14px; }
         .brand-logo .icon {
-            width: 42px; height: 42px;
+            width: 44px; height: 44px;
             background: linear-gradient(135deg, #f3dcd3, #e5a995);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 22px; color: #4a2d20; box-shadow: var(--shadow-soft);
         }
 
         .brand-logo h1 { font-size: 24px; color: var(--text-dark); font-weight: 600; }
         .brand-logo span { color: var(--accent-rose); font-style: italic; }
 
-        .btn-editorial {
-            background: #ffffff;
-            border: 1px solid var(--accent-rose);
-            color: var(--accent-rose);
-            padding: 8px 18px; border-radius: 20px;
-            font-size: 13px; font-weight: 600; cursor: pointer;
-            transition: all 0.2s ease; shadow: var(--shadow-soft);
+        .btn-portal-back {
+            background: #ffffff; border: 1px solid var(--accent-rose);
+            color: var(--accent-rose); padding: 8px 18px; border-radius: 20px;
+            font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none;
+            transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; box-shadow: var(--shadow-soft);
         }
 
-        .btn-editorial:hover { background: var(--accent-rose); color: #fff; }
+        .btn-portal-back:hover { background: var(--accent-rose); color: #fff; }
 
         .container { max-width: 1300px; margin: 0 auto; padding: 35px 20px; }
 
+        /* Metrics Grid */
         .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 20px; margin-bottom: 40px;
         }
 
         .metric-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px; padding: 24px;
-            transition: all 0.3s ease; box-shadow: var(--shadow-soft);
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 18px; padding: 24px; transition: all 0.3s ease; box-shadow: var(--shadow-soft);
         }
 
-        .metric-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-rose);
-        }
+        .metric-card:hover { transform: translateY(-4px); border-color: var(--accent-rose); }
 
-        .metric-card .value {
-            font-size: 38px; font-weight: 600;
-            color: var(--text-dark);
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .metric-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .metric-card .value { font-size: 38px; font-weight: 600; color: var(--text-dark); font-family: var(--font-head); }
+        .metric-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
         .metric-card .subtext { font-size: 12px; color: #a39686; margin-top: 6px; }
 
+        /* Navigation Tabs */
         .tabs-nav {
             display: flex; gap: 12px; border-bottom: 1px solid var(--card-border);
             margin-bottom: 35px; overflow-x: auto; padding-bottom: 12px;
@@ -117,9 +100,9 @@
         }
 
         .tab-btn:hover { color: var(--text-dark); background: rgba(214, 140, 120, 0.08); }
+
         .tab-btn.active {
-            color: #fff;
-            background: var(--accent-rose);
+            color: #fff; background: var(--accent-rose);
             font-weight: 600; box-shadow: var(--shadow-soft);
         }
 
@@ -141,25 +124,30 @@
         .interactive-card {
             background: #fff; border: 1px solid var(--card-border);
             border-radius: 16px; padding: 24px; transition: all 0.3s ease; box-shadow: var(--shadow-soft);
-            display: flex; flex-direction: column;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
 
         .interactive-card:hover { border-color: var(--accent-rose); transform: translateY(-3px); }
+
+        .interactive-card .header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
         .interactive-card .avatar {
             width: 48px; height: 48px; border-radius: 50%;
             background: #fdf5f2; border: 1px solid var(--accent-rose);
-            display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
         }
-        .interactive-card .title { font-size: 18px; font-weight: 600; color: var(--text-dark); font-family: 'Cormorant Garamond', serif; }
-        .interactive-card .subtitle { font-size: 12px; color: var(--accent-rose); margin-bottom: 12px; font-weight: 500; }
+
+        .interactive-card .title { font-size: 18px; font-weight: 600; color: var(--text-dark); font-family: var(--font-head); }
+        .interactive-card .subtitle { font-size: 12px; color: var(--accent-rose); font-weight: 600; margin-bottom: 10px; }
         .interactive-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
 
-        .btn-action {
+        .btn-view-details {
             background: #fdf5f2; border: 1px solid var(--accent-rose);
             color: var(--accent-rose); padding: 10px 16px; border-radius: 25px;
-            font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; width: 100%; text-align: center; margin-top: auto;
+            font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+            text-align: center; width: 100%; margin-top: auto;
         }
-        .btn-action:hover { background: var(--accent-rose); color: #fff; }
+
+        .btn-view-details:hover { background: var(--accent-rose); color: #fff; }
 
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
         th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid #f2e9de; font-size: 14px; }
@@ -171,31 +159,65 @@
         .form-group label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
         .form-group input {
             width: 100%; background: #fff; border: 1px solid var(--card-border);
-            color: var(--text-dark); padding: 12px 16px; border-radius: 10px; font-size: 15px;
+            color: var(--text-dark); padding: 12px 16px; border-radius: 10px; font-size: 15px; font-weight: 600;
         }
+
         .calc-result {
             background: linear-gradient(135deg, #fff, #fdf5f2);
             border: 1px solid var(--accent-rose); border-radius: 16px; padding: 30px; text-align: center; box-shadow: var(--shadow-soft);
         }
-        .price-final { font-size: 46px; font-weight: 700; color: var(--accent-rose); font-family: 'Cormorant Garamond', serif; margin: 10px 0; }
+
+        .calc-result .price-final { font-size: 46px; font-weight: 700; color: var(--accent-rose); font-family: var(--font-head); margin: 10px 0; }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(31, 29, 26, 0.6); backdrop-filter: blur(8px);
+            display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px;
+        }
+
+        .modal-overlay.active { display: flex; animation: modalFade 0.3s ease; }
+        @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal-box {
+            background: #ffffff; border: 1px solid var(--accent-rose);
+            border-radius: 20px; width: 100%; max-width: 850px; max-height: 85vh;
+            display: flex; flex-direction: column; box-shadow: var(--shadow-soft); overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 20px 25px; border-bottom: 1px solid #f2e9de;
+            display: flex; justify-content: space-between; align-items: center; background: #faf5ee;
+        }
+
+        .modal-header h3 { font-size: 20px; color: var(--text-dark); font-family: var(--font-head); }
+        .modal-close { background: transparent; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; }
+        .modal-close:hover { color: var(--text-dark); }
+
+        .modal-body { padding: 25px; overflow-y: auto; font-size: 14px; line-height: 1.7; color: var(--text-dark); }
+        .modal-body pre {
+            background: #faf5ee; border: 1px solid var(--card-border);
+            padding: 16px; border-radius: 10px; overflow-x: auto; font-family: monospace; font-size: 13px; color: #4a2d20; margin: 15px 0; white-space: pre-wrap;
+        }
     </style>
 </head>
 <body>
 
-    <div class="model-banner">🌸 MODELO 2: MINIMALISTA NUDE & ROSÉ GOLD (Light Mode Editorial Vogue/Elle)</div>
+    <div class="model-banner">🌸 MODELO 2: MINIMALISTA NUDE & ROSÉ — RELATÓRIO COMPLETO</div>
 
     <header>
         <div class="brand-logo">
             <div class="icon">✨</div>
             <div>
-                <h1>HUB JOIAS <span>/ Relatório de Coleção</span></h1>
+                <h1>HUB JOIAS <span>/ Relatório Editorial Completo</span></h1>
             </div>
         </div>
-        <button class="btn-editorial" onclick="alert('Modelo 2 selecionado! Design editorial leve e elegante.')">🌸 Design Editorial</button>
+        <a href="index.html" class="btn-portal-back">⬅ Voltar ao Portal de Escolha</a>
     </header>
 
     <div class="container">
-        <!-- Metrics -->
+
+        <!-- Metrics Grid -->
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="value">328</div>
@@ -204,13 +226,13 @@
             </div>
             <div class="metric-card">
                 <div class="value">1.312</div>
-                <div class="label">Ativos de Fotografia</div>
-                <div class="subtext">Fotos Still, Editorial e Tráfego</div>
+                <div class="label">Ativos Digitais</div>
+                <div class="subtext">Fotos Still, Hover, JSONs, TXTs</div>
             </div>
             <div class="metric-card">
                 <div class="value">8</div>
-                <div class="label">Especialistas de IA</div>
-                <div class="subtext">Equipe de Comunicação e Branding</div>
+                <div class="label">Especialistas IA</div>
+                <div class="subtext">Equipe de Marketing Integrada</div>
             </div>
             <div class="metric-card">
                 <div class="value">13</div>
@@ -220,117 +242,303 @@
             <div class="metric-card">
                 <div class="value">100%</div>
                 <div class="label">Qualidade Garantida</div>
-                <div class="subtext">Banho Ouro 18k e Antialérgico</div>
+                <div class="subtext">SLA 24h & Banho 10 Milésimos</div>
             </div>
         </div>
 
         <!-- Navigation Tabs -->
         <div class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab('tab-1')">✨ Visão Editorial</button>
-            <button class="tab-btn" onclick="switchTab('tab-2')">👥 Time Criativo (8)</button>
-            <button class="tab-btn" onclick="switchTab('tab-3')">📚 Habilidades (13)</button>
-            <button class="tab-btn" onclick="switchTab('tab-4')">🧮 Simulação de Preço</button>
+            <button class="tab-btn active" onclick="switchTab('tab-visao-geral')">✨ Visão Editorial</button>
+            <button class="tab-btn" onclick="switchTab('tab-catalogo')">💎 Catálogo (328 SKUs)</button>
+            <button class="tab-btn" onclick="switchTab('tab-agentes')">👥 Time Criativo (8)</button>
+            <button class="tab-btn" onclick="switchTab('tab-skills')">📚 Habilidades (13)</button>
+            <button class="tab-btn" onclick="switchTab('tab-campanha')">🌸 Lançamento Dia das Mães</button>
+            <button class="tab-btn" onclick="switchTab('tab-operacao')">📋 Plano Operacional</button>
+            <button class="tab-btn" onclick="switchTab('tab-precificacao')">🧮 Simulação de Preço</button>
         </div>
 
-        <!-- TAB 1 -->
-        <div id="tab-1" class="tab-content active">
+        <!-- TAB 1: VISÃO GERAL -->
+        <div id="tab-visao-geral" class="tab-content active">
             <div class="card-panel">
                 <h2>🌸 Visão Geral do Universo da Marca</h2>
-                <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 15px;">Documentação completa com acervo de 328 peças, 8 especialistas autônomos e 13 manuais de estilo e vendas para semi joias finas.</p>
+                <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                    Todo o ecossistema da <strong>Loja de Joias</strong> foi mapeado, estruturado e automatizado. O projeto une um catálogo completo de dropshipping nacional da Hub Joias a uma equipe inteligente de agentes de IA e estratégias de alta conversão.
+                </p>
+
                 <div class="grid-2">
                     <div style="background: #faf5ee; padding: 24px; border-radius: 16px; border: 1px solid var(--card-border);">
-                        <h3 style="color: var(--accent-rose); margin-bottom: 12px; font-family: 'Cormorant Garamond', serif; font-size: 22px;">💎 Pilares da Coleção</h3>
-                        <ul style="line-height: 1.9; color: var(--text-dark); font-size: 14px; padding-left: 20px;">
-                            <li>Fotografia com luz natural do dia em modelos reais</li>
-                            <li>Comunicação acolhedora e transparente no WhatsApp</li>
-                            <li>Embalagem com aroma exclusivo da marca</li>
-                            <li>Tráfego pago inteligente em Meta e Google Ads</li>
-                        </ul>
+                        <h3 style="color: var(--accent-rose); margin-bottom: 12px; font-size: 22px;">📊 Quantificação dos Ativos Gerados</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Módulo</th>
+                                    <th>Quantidade</th>
+                                    <th>Detalhamento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Catálogo Geral</strong></td>
+                                    <td>328 Produtos</td>
+                                    <td>24 Anéis, 130 Brincos, 87 Colares, 54 Pulseiras, 23 Masculinos, 10 Tornozeleiras</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Arquivos Técnicos</strong></td>
+                                    <td>1.312 Arquivos</td>
+                                    <td>JSONs com atributos, descrições TXT, Fotos Still e Photos Hover</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Agentes de IA</strong></td>
+                                    <td>8 Personas</td>
+                                    <td>Direção de Marca, Copywriting, Social Media, Tráfego, CRM, PR, Revenda e E-commerce</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Skills & Playbooks</strong></td>
+                                    <td>13 Matrizes</td>
+                                    <td>Manual de marca, roteiros de Reels, scripts de WhatsApp, tráfego pago máster, criador de skills</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                     <div style="background: #faf5ee; padding: 24px; border-radius: 16px; border: 1px solid var(--card-border);">
-                        <h3 style="color: var(--accent-rose); margin-bottom: 12px; font-family: 'Cormorant Garamond', serif; font-size: 22px;">🕊️ Objetivos de Marca</h3>
-                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">
-                            • **Experiência Premium**: Entregas em caixas presenteáveis perfumadas.<br>
-                            • **Fidelização**: Atendimento VIP humano e individualizado.<br>
-                            • **Conversão**: ROAS de 3.5x a 5.0x no tráfego pago.
+                        <h3 style="color: var(--accent-rose); margin-bottom: 12px; font-size: 22px;">🕊️ Pilares Operacionais Confirmados</h3>
+                        <p style="margin-bottom: 10px; font-size: 14px;">✨ <strong>Qualidade e Garantia</strong>: Banho em Ouro 24K (10 milésimos), Ródio legítimo e Prata 925 maciça com tecnologia antialérgica.</p>
+                        <p style="margin-bottom: 10px; font-size: 14px;">⚡ <strong>Logística Dropshipping</strong>: Despacho em até 24 horas úteis diretamente ao cliente final.</p>
+                        <p style="margin-bottom: 10px; font-size: 14px;">📦 <strong>Kit de Valor Percebido</strong>: Embalagem presenteável, caixinha de veludo esmeralda e cartão personalizado.</p>
+                        <p style="margin-bottom: 14px; font-size: 14px;">🌐 <strong>Canais Integrados</strong>: Mercado Livre, Shopee, Nuvemshop, Shopify e TikTok Shop.</p>
+                        <button class="btn-view-details" onclick="openModal('op-plan')">📄 Ler Plano Operacional Completo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: CATÁLOGO -->
+        <div id="tab-catalogo" class="tab-content">
+            <div class="card-panel">
+                <h2>💎 Mapeamento de Produtos (328 SKUs)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Distribuição completa das semijoias por categoria e volume de ativos.</p>
+
+                <div class="grid-3">
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">💍</div>
+                            <div>
+                                <div class="title">Anéis</div>
+                                <div class="subtitle">24 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Aparadores, solitários ponto de luz, anéis de coração e alianças cravadas em zircônia.</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">✨</div>
+                            <div>
+                                <div class="title">Brincos</div>
+                                <div class="subtitle">130 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Argolinhas, ear cuffs, pérolas em gota, trios ponto de luz, piercings de pressão e peças religiosas.</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">📿</div>
+                            <div>
+                                <div class="title">Colares</div>
+                                <div class="subtitle">87 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Chokers riviera, colares gravatinha, medalhas religiosas, trevos madrepérola e cordões baianos.</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">🕶️</div>
+                            <div>
+                                <div class="title">Masculino</div>
+                                <div class="subtitle">23 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Correntes elo 3x1 (3mm a 5mm), escapulários de São Jorge, pingentes cruz e medalhas em Prata 925.</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">💫</div>
+                            <div>
+                                <div class="title">Pulseiras</div>
+                                <div class="subtitle">54 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Pulseiras riviera, dez mandamentos, elo português com pérolas e braceletes em Prata 925.</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="header">
+                            <div class="avatar">🦶</div>
+                            <div>
+                                <div class="title">Tornozeleiras</div>
+                                <div class="subtitle">10 Produtos Catalogados</div>
+                            </div>
+                        </div>
+                        <p>Tornozeleiras de bolinhas, três corações e elementos fundo do mar com pérolas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: AGENTES -->
+        <div id="tab-agentes" class="tab-content">
+            <div class="card-panel">
+                <h2>👥 Especialistas e Agentes Criativos (8)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Clique em qualquer agente para visualizar seu perfil completo e responsabilidades.</p>
+
+                <div class="grid-2">
+                    <div class="interactive-card">
+                        <div>
+                            <div class="header">
+                                <div class="avatar">👑</div>
+                                <div>
+                                    <div class="title">Armando Joia</div>
+                                    <div class="subtitle">Direção Criativa & Branding</div>
+                                </div>
+                            </div>
+                            <p>Responsável pelo posicionamento sofisticado, limpo e acolhedor da marca.</p>
+                        </div>
+                        <button class="btn-view-details" onclick="openModal('agent-01')">🔍 Ver Prompt & Detalhes</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div>
+                            <div class="header">
+                                <div class="avatar">✍️</div>
+                                <div>
+                                    <div class="title">Lucas Pinto</div>
+                                    <div class="subtitle">Redação & Storytelling</div>
+                                </div>
+                            </div>
+                            <p>Escreve legendas e descrições com poesia, clareza e desejo imediato.</p>
+                        </div>
+                        <button class="btn-view-details" onclick="openModal('agent-02')">🔍 Ver Prompt & Detalhes</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div>
+                            <div class="header">
+                                <div class="avatar">🎯</div>
+                                <div>
+                                    <div class="title">Cássio Pix</div>
+                                    <div class="subtitle">Gestor de Tráfego Pago</div>
+                                </div>
+                            </div>
+                            <p>Especialista em anúncios de alta conversão em Meta Ads e Google PMax.</p>
+                        </div>
+                        <button class="btn-view-details" onclick="openModal('agent-04')">🔍 Ver Prompt & Detalhes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: SKILLS -->
+        <div id="tab-skills" class="tab-content">
+            <div class="card-panel">
+                <h2>📚 Matriz de Habilidades (13)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Clique em qualquer skill para abrir seu manual completo de execução.</p>
+
+                <div class="grid-3">
+                    <div class="interactive-card">
+                        <div class="title">01. Identidade Semi Joias</div>
+                        <p>Transparência sobre o banho de ouro 18k e antialérgico.</p>
+                        <button class="btn-view-details" onclick="openModal('skill-01')">📖 Abrir Playbook</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="title">02. Branding & Posicionamento</div>
+                        <p>Sofisticação acessível e embalagem perfumada.</p>
+                        <button class="btn-view-details" onclick="openModal('skill-02')">📖 Abrir Playbook</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="title">05. Tráfego Pago Máster</div>
+                        <p>Anúncios em Meta Ads e Google Ads PMax.</p>
+                        <button class="btn-view-details" onclick="openModal('skill-05')">📖 Abrir Playbook</button>
+                    </div>
+
+                    <div class="interactive-card">
+                        <div class="title">13. Criador de Skills</div>
+                        <p>Criação autônoma de manuais de estilo e vendas.</p>
+                        <button class="btn-view-details" onclick="openModal('skill-13')">📖 Abrir Playbook</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: CAMPANHA -->
+        <div id="tab-campanha" class="tab-content">
+            <div class="card-panel">
+                <h2>🌸 Lançamento Completo: Colar "Amor Eterno"</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Exemplo prático de campanha gerada com a atuação integrada dos agentes de IA.</p>
+
+                <div class="grid-2">
+                    <div style="background: #faf5ee; padding: 20px; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <h3 style="color: var(--text-dark); margin-bottom: 12px;">📌 Detalhes da Peça Anunciada</h3>
+                        <p style="line-height: 1.7; font-size: 14px;">
+                            • <strong>Nome</strong>: Colar Coração Amor Eterno<br>
+                            • <strong>Material</strong>: Banho Ouro 24K (10 milésimos) + Zircônia Cúbica<br>
+                            • <strong>Preço Sugerido</strong>: R$ 149,90 (Custo: R$ 34,90)<br>
+                            • <strong>Público-Alvo</strong>: Filhos(as) presenteando mães & esposas
+                        </p>
+                    </div>
+
+                    <div style="background: #faf5ee; padding: 20px; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <h3 style="color: var(--text-dark); margin-bottom: 12px;">🚀 Canais de Divulgação</h3>
+                        <p style="line-height: 1.7; font-size: 14px;">
+                            • <strong>Meta Ads</strong>: Anúncio de vídeo de unboxing em Reels.<br>
+                            • <strong>WhatsApp</strong>: Disparo de lista VIP para clientes antigas.<br>
+                            • <strong>E-mail</strong>: Régua especial de Dia das Mães com frete grátis.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 2 -->
-        <div id="tab-2" class="tab-content">
+        <!-- TAB 6: PLANO OPERACIONAL -->
+        <div id="tab-operacao" class="tab-content">
             <div class="card-panel">
-                <h2>👥 Especialistas e Agentes Criativos</h2>
-                <div class="grid-3">
-                    <div class="interactive-card">
-                        <div class="avatar">👑</div>
-                        <div class="title">Armando Joia</div>
-                        <div class="subtitle">Direção Criativa & Branding</div>
-                        <p>Responsável pelo posicionamento sofisticado, limpo e acolhedor da marca.</p>
-                        <button class="btn-action">Ver Perfil</button>
-                    </div>
-                    <div class="interactive-card">
-                        <div class="avatar">✍️</div>
-                        <div class="title">Lucas Pinto</div>
-                        <div class="subtitle">Redação & Storytelling</div>
-                        <p>Escreve legendas e descrições com poesia, clareza e desejo imediato.</p>
-                        <button class="btn-action">Ver Perfil</button>
-                    </div>
-                    <div class="interactive-card">
-                        <div class="avatar">🎯</div>
-                        <div class="title">Cássio Pix</div>
-                        <div class="subtitle">Gestor de Tráfego Pago</div>
-                        <p>Especialista em atrair clientes interessadas em acessórios de luxo.</p>
-                        <button class="btn-action">Ver Perfil</button>
-                    </div>
+                <h2>📋 Plano Operacional & Integração ERP</h2>
+                <div style="background: #faf5ee; padding: 20px; border-radius: 12px; border: 1px solid var(--card-border); margin-bottom: 20px;">
+                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">📦 Fluxo Logístico Dropshipping SLA 24h</h3>
+                    <p style="line-height: 1.7; font-size: 14px;">
+                        1. Cliente efetua a compra no site ou marketplace.<br>
+                        2. Pedido entra automaticamente no Bling/Tiny ERP via API.<br>
+                        3. Pedido é faturado e enviado em 24h úteis direto ao cliente.<br>
+                        4. Rastreamento enviado via WhatsApp e e-mail.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 3 -->
-        <div id="tab-3" class="tab-content">
-            <div class="card-panel">
-                <h2>📚 Matriz de Habilidades</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Habilidade</th>
-                            <th>Foco Principal</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>01</td><td>Identidade de Semi Joias</td><td>Transparência sobre o banho de ouro 18k</td><td><span style="color: var(--accent-rose); font-weight:600;">Ativo</span></td></tr>
-                        <tr><td>02</td><td>Branding & Posicionamento</td><td>Sofisticação acessível e embalagem perfumada</td><td><span style="color: var(--accent-rose); font-weight:600;">Ativo</span></td></tr>
-                        <tr><td>05</td><td>Tráfego Pago Máster</td><td>Anúncios em Meta Ads e Google Ads PMax</td><td><span style="color: #2b9348; font-weight:600;">Máster</span></td></tr>
-                        <tr><td>13</td><td>Criador de Skills</td><td>Criação autônoma de manuais de estilo</td><td><span style="color: var(--accent-rose); font-weight:600;">Meta-Skill</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- TAB 4 -->
-        <div id="tab-4" class="tab-content">
+        <!-- TAB 7: PRECIFICAÇÃO -->
+        <div id="tab-precificacao" class="tab-content">
             <div class="card-panel">
                 <h2>🧮 Simulação de Margem de Venda</h2>
                 <div class="grid-2">
                     <div class="calc-box">
                         <div class="form-group">
-                            <label>Custo da Peça (R$):</label>
+                            <label>Custo do Produto (R$):</label>
                             <input type="number" id="cost" value="30.00" oninput="calc()">
                         </div>
                         <div class="form-group">
-                            <label>Preço Sugerido de Venda (R$):</label>
+                            <label>Preço de Venda no Site (R$):</label>
                             <input type="number" id="price" value="120.00" oninput="calc()">
                         </div>
                     </div>
                     <div class="calc-result">
-                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Lucro Líquido Estimado</div>
+                        <div style="font-size: 13px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Lucro Líquido Estimado</div>
                         <div class="price-final" id="res">R$ 90,00</div>
-                        <div style="font-size: 14px; color: var(--accent-rose); font-weight: 600;">Retorno de 75,0% por peça</div>
+                        <div style="font-size: 14px; color: var(--accent-rose); font-weight: 700;" id="margin-pct">75,0% de Margem Bruta</div>
                     </div>
                 </div>
             </div>
@@ -338,18 +546,69 @@
 
     </div>
 
+    <!-- Modal Viewer -->
+    <div class="modal-overlay" id="modal-viewer">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">Detalhes do Módulo</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <p>Carregando conteúdo...</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) targetContent.classList.add('active');
+            if (event && event.target) event.target.classList.add('active');
         }
+
         function calc() {
             let cost = parseFloat(document.getElementById('cost').value) || 0;
             let price = parseFloat(document.getElementById('price').value) || 0;
             let profit = price - cost;
+            let margin = price > 0 ? ((profit / price) * 100).toFixed(1) : 0;
             document.getElementById('res').innerText = 'R$ ' + profit.toFixed(2);
+            document.getElementById('margin-pct').innerText = margin + '% de Margem Bruta';
+        }
+
+        const modalData = {
+            'op-plan': {
+                title: '📄 Plano Operacional Dropshipping SLA 24h',
+                content: `<p>Este plano garante expedição direta com qualidade de joalheria, banho de 10 milésimos de ouro 24k, embalagem presenteável e integração em tempo real com Bling ERP e Shopify/Nuvemshop.</p>`
+            },
+            'agent-01': {
+                title: '👑 Armando Joia — Diretor de Marca',
+                content: `<p>Guardião do posicionamento sofisticado e acessível. Orienta o tom de voz elegante, transparente e humano da loja de semi joias.</p>`
+            },
+            'agent-02': {
+                title: '✍️ Lucas Pinto — Copywriter Sênior',
+                content: `<p>Especialista em criar textos de alta conversão, descrições fascinantes e e-mails que encantam e vendem.</p>`
+            },
+            'agent-04': {
+                title: '🎯 Cássio Pix — Gestor de Tráfego Pago',
+                content: `<p>Especialista em anúncios em Meta Ads Advantage+ e Google Ads Performance Max direcionados para compras com ROAS alto.</p>`
+            },
+            'skill-05': {
+                title: '📖 Playbook: Tráfego Pago Máster',
+                content: `<p>Guia definitivo de tráfego pago para semi joias, com listas completas de palavras-chave positivas e negativas, testes criativos e tagueamento CAPI.</p>`
+            }
+        };
+
+        function openModal(key) {
+            const data = modalData[key] || { title: 'Detalhes do Módulo', content: '<p>Conteúdo detalhado indisponível no momento.</p>' };
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-content').innerHTML = data.content;
+            document.getElementById('modal-viewer').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-viewer').classList.remove('active');
         }
     </script>
 </body>
